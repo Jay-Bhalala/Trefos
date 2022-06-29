@@ -10,7 +10,6 @@ function App() {
     <>
       <Routes>
         <Route path="/nologin" element={<NavbarNoLogin />} />
-        <Route path="/" element={<NavbarNoLogin />} />
         <Route path="/nonprofit" element={<NavbarFoodBank />} />
         <Route path="/restaurant" element={<NavbarRestaurant />} />
       </Routes>

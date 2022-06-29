@@ -38,7 +38,7 @@ function NavbarFoodBank(props) {
                     <Nav.Link href="/foodbank/liked">Liked</Nav.Link>
                     <Nav.Link href="/foodbank/map">Map</Nav.Link>
                     <Nav.Link href="/foodbank/aboutus">About Us</Nav.Link>
-                    <Nav.Link href="/foodbank/contact">Contact</Nav.Link>
+                    <Nav.Link href="/foodbank/contactus">Contact</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>

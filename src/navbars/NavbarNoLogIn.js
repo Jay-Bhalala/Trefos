@@ -1,16 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {Navbar,Nav,Container, NavDropdown, Offcanvas} from 'react-bootstrap'
 import logo from './Cratos.svg';
 
-function NavbarNoLogin() {
+function NavbarNoLogIn() {
   return (
     <div>
       <>
         {['sm'].map((expand) => (
           <Navbar key={expand} bg="light" variant="light" expand={expand} className="mb-3">
             <Container fluid>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/nologin/home">
                <img
                 alt=""
                 src={logo}
@@ -37,11 +36,11 @@ function NavbarNoLogin() {
                       title="Login/SignUp"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
                     >
-                      <NavDropdown.Item href="#action3">Login/Signup as a Food Bank</NavDropdown.Item>
-                      <NavDropdown.Item href="#action4">Login/Signup as a Restaurant</NavDropdown.Item>
+                      <NavDropdown.Item href="/nologin/loginsignupfoodbank">Login/Signup as a Food Bank</NavDropdown.Item>
+                      <NavDropdown.Item href="/nologin/loginsignuprestaurant">Login/Signup as a Restaurant</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link href="#action1">About Us</Nav.Link>
-                    <Nav.Link href="#action2">Contact</Nav.Link>
+                    <Nav.Link href="/nologin/aboutus">About Us</Nav.Link>
+                    <Nav.Link href="/nologin/contactus">Contact</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
@@ -53,4 +52,4 @@ function NavbarNoLogin() {
   );
 }
 
-export default NavbarNoLogin;
+export default NavbarNoLogIn;

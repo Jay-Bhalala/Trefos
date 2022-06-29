@@ -1,5 +1,5 @@
 import React from "react";
-import {Navbar,Nav,Container, NavDropdown, Offcanvas} from 'react-bootstrap'
+import {Navbar,Nav,Container, Offcanvas} from 'react-bootstrap'
 import logo from './Cratos.svg';
 
 //find, liked, map, about us, contact

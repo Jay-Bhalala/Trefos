@@ -11,7 +11,7 @@ function NavbarRestaurant(props) {
         {['sm'].map((expand) => (
           <Navbar key={expand} bg="light" variant="light" expand={expand} className="mb-3">
             <Container fluid>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/restaurant/home">
                <img
                 alt=""
                 src={logo}
@@ -34,7 +34,7 @@ function NavbarRestaurant(props) {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link href="#action2">Your Restraunt's Personal Dashboard</Nav.Link>
+                    <Nav.Link href="/restaurant">Your Restraunt's Personal Dashboard</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>

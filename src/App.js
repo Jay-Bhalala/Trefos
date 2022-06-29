@@ -10,6 +10,10 @@ import LoginSignupNonProfit from "./pages/LoginSignupNonProfit.js";
 import LoginSignupRestaurant from "./pages/LoginSignupRestaurant.js";
 import Contact from "./pages/Contact.js";
 import AboutUs from "./pages/AboutUs.js";
+import RestaurantDashboard from "./pages/RestaurantDashboard.js";
+import Discover from "./pages/Discover.js";
+import Liked from "./pages/Liked.js";
+import Map from "./pages/Map.js";
 
 function App() {
   return (
@@ -23,19 +27,16 @@ function App() {
         <Route exact path="/nologin/aboutus" element={<><NavbarNoLogIn /><AboutUs /></>} />
         <Route exact path="/nologin/contactus" element={<><NavbarNoLogIn /><Contact /></>} />
 
-        <Route path="/nonprofit" element={<NavbarFoodBank />} />
-        <Route exact path="/nologin/home" element={<><NavbarFoodBank /><Home/></>} />
-        <Route exact path="/nologin/loginsignupfoodbank" element={<><NavbarFoodBank /><LoginSignupNonProfit /></>} />
-        <Route exact path="/nologin/loginsignuprestaurant" element={<><NavbarFoodBank /><LoginSignupRestaurant /></>} />
-        <Route exact path="/nologin/aboutus" element={<><NavbarFoodBank /><AboutUs /></>} />
-        <Route exact path="/nologin/contactus" element={<><NavbarFoodBank /><Contact /></>} />
+        <Route path="/foodbank" element={<NavbarFoodBank />} />
+        <Route exact path="/foodbank/home" element={<><NavbarFoodBank /><Home/></>} />
+        <Route exact path="/foodbank/discover" element={<><NavbarFoodBank /><Discover /></>} />
+        <Route exact path="/foodbank/liked" element={<><NavbarFoodBank /><Liked /></>} />
+        <Route exact path="/foodbank/map" element={<><NavbarFoodBank /><Map /></>} />
+        <Route exact path="/foodbank/aboutus" element={<><NavbarFoodBank /><AboutUs /></>} />
+        <Route exact path="/foodbank/contactus" element={<><NavbarFoodBank /><Contact /></>} />
 
-        <Route path="/restaurant" element={<NavbarRestaurant />} />
-        <Route exact path="/nologin/home" element={<><NavbarRestaurant /><Home/></>} />
-        <Route exact path="/nologin/loginsignupfoodbank" element={<><NavbarRestaurant /><LoginSignupNonProfit /></>} />
-        <Route exact path="/nologin/loginsignuprestaurant" element={<><NavbarRestaurant /><LoginSignupRestaurant /></>} />
-        <Route exact path="/nologin/aboutus" element={<><NavbarRestaurant /><AboutUs /></>} />
-        <Route exact path="/nologin/contactus" element={<><NavbarRestaurant /><Contact /></>} />
+        <Route path="/restaurant" element={<><NavbarRestaurant /><RestaurantDashboard/></>} />
+        <Route exact path="/restaurant/home" element={<><NavbarRestaurant /><Home/></>} />
 
       </Routes>
     </>

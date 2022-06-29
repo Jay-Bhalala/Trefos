@@ -11,7 +11,7 @@ function NavbarFoodBank(props) {
         {['sm'].map((expand) => (
           <Navbar key={expand} bg="light" variant="light" expand={expand} className="mb-3">
             <Container fluid>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/foodbank/home">
                <img
                 alt=""
                 src={logo}
@@ -34,11 +34,11 @@ function NavbarFoodBank(props) {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link href="#action1">Discover</Nav.Link>
-                    <Nav.Link href="#action1">Liked</Nav.Link>
-                    <Nav.Link href="#action1">Map</Nav.Link>
-                    <Nav.Link href="#action1">About Us</Nav.Link>
-                    <Nav.Link href="#action2">Contact</Nav.Link>
+                    <Nav.Link href="/foodbank/discover">Discover</Nav.Link>
+                    <Nav.Link href="/foodbank/liked">Liked</Nav.Link>
+                    <Nav.Link href="/foodbank/map">Map</Nav.Link>
+                    <Nav.Link href="/foodbank/aboutus">About Us</Nav.Link>
+                    <Nav.Link href="/foodbank/contact">Contact</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>

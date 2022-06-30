@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './discover.css';
+import './css-files/discover.css';
 
 // This holds a list of some fiction people
 // Some  have the same name but different age and id
@@ -16,7 +16,7 @@ const USERS = [
   { id: 9, name: 'Starbucks', distance: 23 },
 ];
 
-function discover() {
+function Discover() {
   // the value of the search field 
   const [name, setName] = useState('');
 
@@ -67,4 +67,4 @@ function discover() {
   );
 }
 
-export default discover;
+export default Discover;

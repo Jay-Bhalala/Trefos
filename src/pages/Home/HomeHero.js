@@ -6,7 +6,6 @@ import NavbarNoLogin from "../../navbars/NavbarNoLogIn";
 function HomeHero(props) {
   return (
     <div>
-      <NavbarNoLogin />
       <div className="container">
         <div className="text-container">
           <div>

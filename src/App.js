@@ -5,7 +5,7 @@ import NavbarNoLogIn from "./navbars/NavbarNoLogIn.js";
 import NavbarFoodBank from "./navbars/NavbarFoodBank.js";
 import NavbarRestaurant from "./navbars/NavbarRestaurant.js";
 
-import Home from "./pages/Home.js";
+import Home from "./pages//Home/Home.js";
 import LoginSignupNonProfit from "./pages/LoginSignupNonProfit.js";
 import LoginSignupRestaurant from "./pages/LoginSignupRestaurant.js";
 import Contact from "./pages/Contact.js";

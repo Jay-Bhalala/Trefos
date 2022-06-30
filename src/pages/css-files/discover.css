@@ -1,36 +1,43 @@
 .container {
-    padding-top: 30px;
-    width: 300px;
-    margin: auto;
-  }
+  padding-top: 30px;
+  width: 300px;
+  margin: auto;
   
-  .input {
-    padding: 5px 15px;
-    width: 300px;
-  }
+}
+
+.input {
+  padding: 50px 80px;
+  width: 30px;
+  color: rgb(0, 0, 0);
+  align-self: baseline;
+}
+
+.user-list {
+  margin-top: 30px;
+  color: white;
+}
+
+.user {
+  list-style: none;
+  margin: 15px 0;
+  padding: 30px;
+  background: #446477;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
   
-  .user-list {
-    margin-top: 30px;
-  }
-  
-  .user {
-    list-style: none;
-    margin: 10px 0;
-    padding: 10px;
-    background: #eee;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .user-id {
-    color: red;
-    margin-right: 20px;
-  }
-  
-  .user-name {
-    color: blue;
-  }
-  
-  .user-age {
-    margin-left: auto;
-  }
+}
+
+.user-id {
+  color: white;
+  margin-right: 20px;
+}
+
+.user-name {
+  color: white;
+}
+
+.user-distance {
+  margin-left: auto
+}
+

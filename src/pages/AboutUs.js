@@ -23,7 +23,7 @@ function AboutUs(props) {
           </p>
         </div>
       </div>
-      <div>
+      <div className="lol">
         <div className="about-us-heading-text-3">
           <h1>How we Impact</h1>
         </div>

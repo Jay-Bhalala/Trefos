@@ -41,17 +41,35 @@
 
 .how-we-impact-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     text-align: center;
+}
+
+.lol{
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+@media screen and (min-width: 850px) {
+  .how-we-impact-container{
+    flex-direction: row;
+  }
+  .values-conatiner{
+    width: 20%;
+  }
+  .lol{
+    margin-right: 0rem;
+  margin-left: 0rem;
+  }
 }
 
 .values-conatiner{
     background-color: lightgray;
     padding: .5rem;
     border-radius: .5rem;
-    width: 20%;
+    margin-bottom: 2rem;
 }
 
 .impact-description-container{

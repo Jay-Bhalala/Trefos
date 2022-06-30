@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import NavbarNoLogIn from "./navbars/NavbarNoLogIn.js";
 import NavbarFoodBank from "./navbars/NavbarFoodBank.js";
 import NavbarRestaurant from "./navbars/NavbarRestaurant.js";
-import Home from "./pages/Home/Home";
 
 import Home from "./pages/Home.js";
 import LoginSignupNonProfit from "./pages/LoginSignupNonProfit.js";
@@ -19,7 +18,6 @@ import Map from "./pages/Map.js";
 function App() {
   return (
     <>
-<<<<<<< Updated upstream
       <Routes>
 
         <Route exact path="/nologin" element={<NavbarNoLogIn />} />
@@ -41,14 +39,6 @@ function App() {
         <Route exact path="/restaurant/home" element={<><NavbarRestaurant /><Home/></>} />
 
       </Routes>
-=======
-      <Home />
-      {/* <Routes>
-        <Route path="/nologin" element={<NavbarNoLogin />} />
-        <Route path="/nonprofit" element={<NavbarFoodBank />} />
-        <Route path="/restaurant" element={<NavbarRestaurant />} />
-      </Routes> */}
->>>>>>> Stashed changes
     </>
   );
 }

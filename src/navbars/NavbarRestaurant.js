@@ -1,8 +1,6 @@
 import React from "react";
 import {Navbar,Nav,Container, Offcanvas} from 'react-bootstrap'
-import logo from './Cratos.svg';
-
-//manage restaurants, about us, contact
+import logoo from './logoo.svg';
 
 function NavbarRestaurant(props) {
     return (
@@ -13,13 +11,12 @@ function NavbarRestaurant(props) {
             <Container fluid>
             <Navbar.Brand href="/restaurant/home">
                <img
-                alt=""
-                src={logo}
                 width="30"
                 height="30"
+                src={logoo}
                 className="d-inline-block align-top"
+                alt=""
               />{' '}
-            Cratos
             </Navbar.Brand>
               <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
               <Navbar.Offcanvas
@@ -29,7 +26,7 @@ function NavbarRestaurant(props) {
               >
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    Offcanvas
+                    Cratos
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>

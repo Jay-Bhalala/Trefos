@@ -32,8 +32,6 @@ function App() {
         <Route exact path="/foodbank/discover" element={<><NavbarFoodBank /><Discover /></>} />
         <Route exact path="/foodbank/liked" element={<><NavbarFoodBank /><Liked /></>} />
         <Route exact path="/foodbank/map" element={<><NavbarFoodBank /><Map /></>} />
-        <Route exact path="/foodbank/aboutus" element={<><NavbarFoodBank /><AboutUs /></>} />
-        <Route exact path="/foodbank/contactus" element={<><NavbarFoodBank /><Contact /></>} />
 
         <Route path="/restaurant" element={<><NavbarRestaurant /><RestaurantDashboard/></>} />
         <Route exact path="/restaurant/home" element={<><NavbarRestaurant /><Home/></>} />

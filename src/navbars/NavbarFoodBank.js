@@ -2,8 +2,6 @@ import React from "react";
 import {Navbar,Nav,Container, Offcanvas} from 'react-bootstrap'
 import logo from './Cratos.svg';
 
-//find, liked, map, about us, contact
-
 function NavbarFoodBank(props) {
   return (
     <div>
@@ -19,7 +17,6 @@ function NavbarFoodBank(props) {
                 height="30"
                 className="d-inline-block align-top"
               />{' '}
-            Cratos
             </Navbar.Brand>
               <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
               <Navbar.Offcanvas
@@ -29,7 +26,7 @@ function NavbarFoodBank(props) {
               >
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    Offcanvas
+                    Cratos
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
@@ -37,8 +34,6 @@ function NavbarFoodBank(props) {
                     <Nav.Link href="/foodbank/discover">Discover</Nav.Link>
                     <Nav.Link href="/foodbank/liked">Liked</Nav.Link>
                     <Nav.Link href="/foodbank/map">Map</Nav.Link>
-                    <Nav.Link href="/foodbank/aboutus">About Us</Nav.Link>
-                    <Nav.Link href="/foodbank/contactus">Contact</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>

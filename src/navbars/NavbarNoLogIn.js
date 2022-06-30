@@ -17,7 +17,6 @@ function NavbarNoLogIn() {
                 height="30"
                 className="d-inline-block align-top"
               />{' '}
-            Cratos
             </Navbar.Brand>
               <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
               <Navbar.Offcanvas
@@ -27,7 +26,7 @@ function NavbarNoLogIn() {
               >
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    Offcanvas
+                    Cratos
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>

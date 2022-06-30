@@ -13,7 +13,7 @@ import AboutUs from "./pages/AboutUs.js";
 import RestaurantDashboard from "./pages/RestaurantDashboard.js";
 import Discover from "./pages/Discover.js";
 import Liked from "./pages/Liked.js";
-import Map from "./pages/Map.js";
+import MapDisplay from "./pages/MapDisplay.js";
 import Footer from "./Footer.js";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
         <Route exact path="/foodbank/home" element={<><NavbarFoodBank /><Home/></>} />
         <Route exact path="/foodbank/discover" element={<><NavbarFoodBank /><Discover /></>} />
         <Route exact path="/foodbank/liked" element={<><NavbarFoodBank /><Liked /></>} />
-        <Route exact path="/foodbank/map" element={<><NavbarFoodBank /><Map /></>} />
+        <Route exact path="/foodbank/map" element={<><NavbarFoodBank /><MapDisplay /></>} />
 
         <Route path="/restaurant" element={<><NavbarRestaurant /><RestaurantDashboard/></>} />
         <Route exact path="/restaurant/home" element={<><NavbarRestaurant /><Home/></>} />

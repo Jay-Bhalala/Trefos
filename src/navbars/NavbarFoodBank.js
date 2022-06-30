@@ -1,24 +1,30 @@
 import React from "react";
-import {Navbar,Nav,Container, Offcanvas} from 'react-bootstrap'
-import logo from './Cratos.svg';
+import { Navbar, Nav, Container, Offcanvas } from "react-bootstrap";
+import logo from "./Cratos_3_1.svg";
 
 function NavbarFoodBank(props) {
   return (
     <div>
       <>
-        {['sm'].map((expand) => (
-          <Navbar key={expand} bg="light" variant="light" expand={expand} className="mb-3">
+        {["sm"].map((expand) => (
+          <Navbar
+            key={expand}
+            bg="light"
+            variant="light"
+            expand={expand}
+            className="mb-3"
+          >
             <Container fluid>
-            <Navbar.Brand href="/foodbank/home">
-               <img
-                alt=""
-                src={logo}
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-              />{' '}
-            </Navbar.Brand>
-              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+              <Navbar.Brand href="/foodbank/home">
+                <img
+                  alt=""
+                  src={logo}
+                  className="d-inline-block align-top logoImage"
+                />{" "}
+              </Navbar.Brand>
+              <Navbar.Toggle
+                aria-controls={`offcanvasNavbar-expand-${expand}`}
+              />
               <Navbar.Offcanvas
                 id={`offcanvasNavbar-expand-${expand}`}
                 aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}

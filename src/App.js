@@ -14,6 +14,7 @@ import RestaurantDashboard from "./pages/RestaurantDashboard.js";
 import Discover from "./pages/Discover.js";
 import Liked from "./pages/Liked.js";
 import Map from "./pages/Map.js";
+import Footer from "./Footer.js";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route exact path="/restaurant/home" element={<><NavbarRestaurant /><Home/></>} />
 
       </Routes>
+      <Footer />
     </>
   );
 }

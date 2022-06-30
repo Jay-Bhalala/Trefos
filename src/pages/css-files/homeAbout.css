@@ -1,0 +1,29 @@
+.home-about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.grid-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.section-container{
+    font-size: xx-large;
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 768px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        
+        justify-items: center;
+    }
+}
+

@@ -2,42 +2,42 @@
   padding-top: 30px;
   width: 300px;
   margin: auto;
-  
 }
 
 .input {
-  padding: 50px 80px;
-  width: 30px;
-  color: rgb(0, 0, 0);
-  align-self: baseline;
+  margin-left: auto;
+  padding: 5px 15px;
+  width: 300px;
 }
 
 .user-list {
   margin-top: 30px;
-  color: white;
+  
 }
 
 .user {
   list-style: none;
-  margin: 15px 0;
-  padding: 30px;
+  margin: 10px 0;
+  padding: 10px;
   background: #446477;
   display: flex;
   justify-content: space-between;
-  position: relative;
-  
 }
 
 .user-id {
-  color: white;
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+.user-distance {
+  color: #ffffff;
   margin-right: 20px;
 }
 
 .user-name {
-  color: white;
+  color: #ffffff;
 }
 
-.user-distance {
-  margin-left: auto
+.user-age {
+  margin-left: auto;
 }
-

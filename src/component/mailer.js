@@ -29,13 +29,13 @@ const Mailer = () => {
         padding: "1.5rem",
       }}
     >
-      <h1 style={{ marginTop: "25px" }}> contact form</h1>
+      <h1 style={{ marginTop: "25px" }}> Contact Form</h1>
       <form
         className="row"
         style={{ marginTop: "25px 85px 75px 100px" }}
         onSubmit={sendEmail}
       >
-        <label>name</label>
+        <label>Name</label>
         <input type="text" name="name" className="form-control" />
 
         <label>Email</label>
@@ -51,7 +51,7 @@ const Mailer = () => {
 
         <input
           type="submit"
-          value="send"
+          value="Send"
           className="form-control btn btn-primary"
           style={{ marginTop: "30px" }}
         />

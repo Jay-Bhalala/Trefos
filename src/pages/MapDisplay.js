@@ -59,12 +59,12 @@ function MapDisplay(props) {
         <hr />
         <div className="d-flex justify-content-end">
           <Button onClick={() => setShow(false)} variant="outline-success">
-            Close
+            Close Instructions
           </Button>
         </div>
       </Alert>
 
-      {!show && <Button onClick={() => setShow(true)}>Show Alert</Button>}
+      {!show && <Button onClick={() => setShow(true)}>Show Instructions</Button>}
     </>
     <div className="col">
       <Map 

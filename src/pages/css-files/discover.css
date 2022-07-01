@@ -5,30 +5,37 @@
 }
 
 .input {
+  margin-left: auto;
   padding: 5px 15px;
   width: 300px;
 }
 
 .user-list {
   margin-top: 30px;
+  
 }
 
 .user {
   list-style: none;
   margin: 10px 0;
   padding: 10px;
-  background: #eee;
+  background: #446477;
   display: flex;
   justify-content: space-between;
 }
 
 .user-id {
-  color: red;
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+.user-distance {
+  color: #ffffff;
   margin-right: 20px;
 }
 
 .user-name {
-  color: blue;
+  color: #ffffff;
 }
 
 .user-age {

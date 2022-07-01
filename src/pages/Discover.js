@@ -1,32 +1,23 @@
 import React, { useState } from 'react';
+import { Dropdown } from 'react-bootstrap';
 import './css-files/discover.css';
 
 
 const USERS = [
-  {id:1 , name: "Pizza hut", distance:2 , food: "Pizza"},
-  {id:2 , name: "Dominos", distance:3 , food: "Pizza"},
-  {id:3 , name: "Chiptole", distance:4 , food: "Mexican"},
-  {id:4 , name: "Taco Bell", distance:5 , food: "Mexican"},
-  {id:5 , name: "Mcdonalds", distance:6 , food: "Burgers"},
-  {id:6 , name: "Starbucks", distance:7 , food: "Coffee"},
-  {id:7 , name: "Chick-Fil-A", distance:8 , food: "Chicken"},
-  {id:8 , name: "Popeyes", distance:9 , food: "Chicken"},
-  {id:9 , name: "Panda Express", distance:10 , food: "Chinese"},
-  {id:10 , name: "Sushi", distance:11 , food: "Fish"}
-]
-
-//let numbers = [64, 84, 22, 32, 83, 65, 51, 26, 23, 56];
-
-
-
-
-
-
+  { id: 1, name: 'Pizza Hut', distance: 32 },
+  { id: 2, name: 'Chipotle', distance: 30 },
+  { id: 3, name: 'Dominos', distance: 40 },
+  { id: 4, name: 'Taco Bell', distance: 50 },
+  { id: 5, name: 'McDonalds', distance: 30 },
+  { id: 6, name: 'Popeyes', distance: 68 },
+  { id: 7, name: 'Chick-Fil-A', distance: 34 },
+  { id: 8, name: 'Starbucks', distance: 28 },
+  { id: 9, name: 'Piada', distance: 23 },
+];
 
 function Discover() {
   const [name, setName] = useState('');
 
-  // the search result
   const [foundUsers, setFoundUsers] = useState(USERS);
 
   const filter = (e) => {
@@ -35,22 +26,17 @@ function Discover() {
     if (keyword !== '') {
       const results = USERS.filter((user) => {
         return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-        // Use the toLowerCase() method to make it case-insensitive
       });
       setFoundUsers(results);
     } else {
       setFoundUsers(USERS);
-      // If the text field is empty, show all users
     }
 
     setName(keyword);
   };
-  
-  return (
 
+  return (
     <div className="container">
-      
-      <button > Hi </button>
       <input
         type="search"
         value={name}
@@ -63,7 +49,7 @@ function Discover() {
         {foundUsers && foundUsers.length > 0 ? (
           foundUsers.map((user) => (
             <li key={user.id} className="user">
-              <span style={{width:100}} className="user-id">{user.id}</span><button style={{width:30}}></button>
+              <span className="user-id">{user.id}</span><button> </button>
               <span className="user-name">{user.name}</span>
               <span className="user-age">{user.distance} miles away</span>
             </li>
@@ -71,10 +57,21 @@ function Discover() {
         ) : (
           <h1>No results found!</h1>
         )}
+        
       </div>
-    </div>   
+      <Dropdown>
+       <Dropdown.Toggle variant="success" id="dropdown-basic">
+         Filter
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item  href={console.log('hello')}>Filter By Distance</Dropdown.Item>
+          <Dropdown.Item href="#/action-2">Filter By Food</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+      </div>
+    
   );
 }
 
-export default Discover();
-
+export default Discover;

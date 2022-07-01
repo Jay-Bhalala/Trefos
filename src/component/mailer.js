@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 
 const Mailer = () => {
-  function sendEmail(e) {
+  function sendEmail(e, onSubmitProps) {
     e.preventDefault();
 
     emailjs
@@ -15,6 +15,8 @@ const Mailer = () => {
         console.log(res);
       })
       .catch((err) => console.log(err));
+
+    e.target.reset();
   }
 
   return (
@@ -40,7 +42,12 @@ const Mailer = () => {
         <input type="email" name="user_email" className="form-control" />
 
         <label>Message</label>
-        <textarea type="message" rows="4" className="form-control" />
+        <textarea
+          type="message"
+          name="message"
+          rows="4"
+          className="form-control"
+        />
 
         <input
           type="submit"

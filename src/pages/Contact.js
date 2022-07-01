@@ -1,9 +1,10 @@
 import React from "react";
+import Mailer from "../component/mailer.js";
 
 function Contact(props) {
   return (
     <div>
-      <h2>Contact</h2>
+      <Mailer />
     </div>
   );
 }

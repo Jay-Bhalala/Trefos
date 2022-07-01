@@ -6,21 +6,20 @@ import "leaflet/dist/leaflet.css"
 import L from "leaflet";
 import cities from "./cities.json";
 import useGeoLocation from "../hooks/useGeoLocation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Alert, Button } from "react-bootstrap";
 
 const markerIcon = new L.Icon({
   iconUrl: require("./marker.png"),
   iconSize: [40, 40],
-  iconAnchor: [17, 46], //[left/right, top/bottom]
-  popupAnchor: [0, -46], //[left/right, top/bottom]
+  iconAnchor: [17, 46],
+  popupAnchor: [0, -46],
 });
 
 const markerIcon2 = new L.Icon({
   iconUrl: require("./marker2.png"),
   iconSize: [20, 20],
-  iconAnchor: [0, 0], //[left/right, top/bottom]
-  popupAnchor: [0, 0], //[left/right, top/bottom]
+  iconAnchor: [0, 0],
+  popupAnchor: [0, 0],
 });
 
 function MapDisplay(props) {
@@ -64,7 +63,7 @@ function MapDisplay(props) {
         </div>
       </Alert>
 
-      {!show && <Button onClick={() => setShow(true)}>Show Instructions</Button>}
+      {!show && <Button variant="outline-success" onClick={() => setShow(true)}>Show Instructions</Button>}
     </>
     <div className="col">
       <Map 

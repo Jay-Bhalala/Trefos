@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './css-files/discover.css';
 
+
 const USERS = [
   {id:1 , name: "Pizza hut", distance:2 , food: "Pizza"},
   {id:2 , name: "Dominos", distance:3 , food: "Pizza"},
@@ -14,8 +15,15 @@ const USERS = [
   {id:10 , name: "Sushi", distance:11 , food: "Fish"}
 ]
 
+//let numbers = [64, 84, 22, 32, 83, 65, 51, 26, 23, 56];
+
+
+
+
+
+
+
 function Discover() {
-  // the value of the search field 
   const [name, setName] = useState('');
 
   // the search result
@@ -39,8 +47,10 @@ function Discover() {
   };
   
   return (
+
     <div className="container">
       
+      <button > Hi </button>
       <input
         type="search"
         value={name}
@@ -62,11 +72,9 @@ function Discover() {
           <h1>No results found!</h1>
         )}
       </div>
-      <filter />
-    </div>
-    
+    </div>   
   );
 }
 
-export default Discover;
+export default Discover();
 

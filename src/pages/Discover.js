@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import './css-files/discover.css';
+import RestaurantCard from './RestaurantCard';
 
 
 const USERS = [
-  { id: 1, name: 'Pizza Hut', distance: 32 },
+  { id: 1, name: 'Pizza Hut', distance: 32, img: '' },
   { id: 2, name: 'Chipotle', distance: 30 },
   { id: 3, name: 'Dominos', distance: 40 },
   { id: 4, name: 'Taco Bell', distance: 50 },
@@ -37,7 +38,7 @@ function Discover() {
   };
 
   return (
-    <div className="container-search-bar">
+    <div style={{color:"white"}} className="container-search-bar">
       <input
         type="search"
         value={name}

@@ -1,9 +1,12 @@
+.body {
+  background-color: lightblue;
+}
+
 .container-search-bar{
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .input{
@@ -11,12 +14,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 85%;
+  width: 50%;
+  height: 50px;
+}
+
+.view-restaurant{
+  width: 28%;
 }
 
 .user-list {
   margin-top: 30px;
-  width: 85%;
+  width: 50%;
 }
 
 .user {
@@ -26,7 +34,7 @@
   background: #446477;
   display: flex;
   justify-content: space-between;
-  
+  border-radius: 12px;
 }
 
 .user-id {
@@ -72,4 +80,5 @@
     background-color: #609DB4;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
+    padding: 14px 40px;
 }

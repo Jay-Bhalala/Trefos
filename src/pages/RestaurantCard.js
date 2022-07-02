@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCol } from 'mdb-react-ui-kit';
 import Badge from 'react-bootstrap/Badge';
 import { MDBBtn } from 'mdb-react-ui-kit';
-import ToggleButton from 'react-toggle-button'
+//import ToggleButton from 'react-toggle-button'
 
 
 function RestaurantCard(props) {

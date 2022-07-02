@@ -1,18 +1,22 @@
-.container {
-  padding-top: 30px;
-  width: 300px;
-  margin: auto;
+.container-search-bar{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
-.input {
-  margin-left: auto;
-  padding: 5px 15px;
-  width: 300px;
+.input{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
 }
 
 .user-list {
   margin-top: 30px;
-  
+  width: 85%;
 }
 
 .user {
@@ -22,6 +26,7 @@
   background: #446477;
   display: flex;
   justify-content: space-between;
+  
 }
 
 .user-id {
@@ -38,6 +43,33 @@
   color: #ffffff;
 }
 
-.user-age {
-  margin-left: auto;
+.filter-button{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-restaurant{
+  
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #609DB4;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+.view-restaurant:hover {background-color: #243C44}
+
+.view-restaurant:active {
+    background-color: #609DB4;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }

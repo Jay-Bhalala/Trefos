@@ -43,7 +43,7 @@ function App() {
         <Route exact path="/foodbank/liked" element={<><NavbarFoodBank /><Liked /></>} />
         <Route exact path="/foodbank/map" element={<><NavbarFoodBank /><MapDisplay /></>} />
 
-        <Route path="/restaurant" element={<><NavbarRestaurant /><RestaurantDashboard/></>} />
+        <Route path="/restaurant" element={<><NavbarRestaurant /><RestaurantDashboard companyName="Example Company Name"/></>} />
         <Route exact path="/restaurant/home" element={<><NavbarRestaurant /><Home/></>} />
 
       </Routes>

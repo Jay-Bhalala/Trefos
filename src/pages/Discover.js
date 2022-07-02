@@ -15,6 +15,7 @@ const USERS = [
   { id: 9, name: 'Piada', distance: 23 },
 ];
 
+
 function Discover() {
   const [name, setName] = useState('');
 
@@ -36,7 +37,7 @@ function Discover() {
   };
 
   return (
-    <div className="container">
+    <div className="container-search-bar">
       <input
         type="search"
         value={name}
@@ -49,7 +50,7 @@ function Discover() {
         {foundUsers && foundUsers.length > 0 ? (
           foundUsers.map((user) => (
             <li key={user.id} className="user">
-              <span className="user-id">{user.id}</span><button> </button>
+              <span className="user-id">{user.id}</span><button class='view-restaurant'> View Restaurant </button>
               <span className="user-name">{user.name}</span>
               <span className="user-age">{user.distance} miles away</span>
             </li>
@@ -59,17 +60,19 @@ function Discover() {
         )}
         
       </div>
+      <div>
       <Dropdown>
-       <Dropdown.Toggle variant="success" id="dropdown-basic">
+       <Dropdown.Toggle className='filter-button'>
          Filter
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item  href={console.log('hello')}>Filter By Distance</Dropdown.Item>
+          <Dropdown.Item  href="#/action-1" > Filter By Distance</Dropdown.Item>
           <Dropdown.Item href="#/action-2">Filter By Food</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
       </div>
+    </div>
     
   );
 }

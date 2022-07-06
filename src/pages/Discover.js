@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import './css-files/discover.css';
 import RestaurantCard from './RestaurantCard';
-
+import Button from '../component/Button';
 
 const USERS = [
   { id: 1, name: 'Pizza Hut', distance: 32, img: '' },
@@ -15,7 +15,6 @@ const USERS = [
   { id: 8, name: 'Starbucks', distance: 28 },
   { id: 9, name: 'Piada', distance: 23 },
 ];
-
 
 function Discover() {
   const [name, setName] = useState('');
@@ -62,16 +61,7 @@ function Discover() {
         
       </div>
       <div>
-      <Dropdown>
-       <Dropdown.Toggle className='filter-button'>
-         Filter
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item  href="#/action-1" > Filter By Distance</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Filter By Food</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
+      <button onClick={<Button />} > Click Me </button> 
       </div>
     </div>
     

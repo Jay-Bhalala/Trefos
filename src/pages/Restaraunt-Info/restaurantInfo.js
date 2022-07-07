@@ -6,7 +6,7 @@ import {
   faPhone,
   faMailForward,
 } from "@fortawesome/free-solid-svg-icons";
-import StaticMap from "./StaticMap.js";
+import StaticMap from "../DashboardForRestaurant/StaticMap.js";
 import Edit from "../DashboardForRestaurant/Edit.js";
 
 function RestaurantInfo(props) {

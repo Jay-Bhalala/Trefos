@@ -1,7 +1,6 @@
 import React from "react";
 import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCol } from 'mdb-react-ui-kit';
-import Like from './LikeButton.js';
-//import ToggleButton from 'react-toggle-button'
+import Like from './Liked/LikeButton.js';
 
 
 function RestaurantCard(props) {

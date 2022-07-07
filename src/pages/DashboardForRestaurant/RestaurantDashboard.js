@@ -1,7 +1,7 @@
 import React from "react";
-import RestarauntFoodCard from "./Restaraunt-Info/restarauntFoodCard";
-import RestaurantInfo from "./Restaraunt-Info/restaurantInfo.js";
-import img from "./Restaraunt-Info/lettuceTestImage.svg";
+import RestarauntFoodCard from "../Restaraunt-Info/restarauntFoodCard";
+import RestaurantInfo from "../Restaraunt-Info/restaurantInfo.js";
+import img from "../Restaraunt-Info/lettuceTestImage.svg";
 
 function RestaurantDashboard(props) {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import { MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBRow, MDBCol } from 'mdb-react-ui-kit';
-import RestaurantCard from "./RestaurantCard.js";
+import { MDBRow } from 'mdb-react-ui-kit';
+import RestaurantCard from "../RestaurantCard.js";
 
 function Liked(props) {
   return (

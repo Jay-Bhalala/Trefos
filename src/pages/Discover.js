@@ -1,70 +1,99 @@
 import React, { useState } from 'react';
-import { Dropdown } from 'react-bootstrap';
-import './css-files/discover.css';
+import { MDBRow } from 'mdb-react-ui-kit';
 import RestaurantCard from './RestaurantCard';
-import Button from '../component/Button';
+import { MDBCol } from "mdbreact";
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
 
-const USERS = [
-  { id: 1, name: 'Pizza Hut', distance: 32, img: '' },
-  { id: 2, name: 'Chipotle', distance: 30 },
-  { id: 3, name: 'Dominos', distance: 40 },
-  { id: 4, name: 'Taco Bell', distance: 50 },
-  { id: 5, name: 'McDonalds', distance: 30 },
-  { id: 6, name: 'Popeyes', distance: 68 },
-  { id: 7, name: 'Chick-Fil-A', distance: 34 },
-  { id: 8, name: 'Starbucks', distance: 28 },
-  { id: 9, name: 'Piada', distance: 23 },
+const marks = [
+  {
+    value: 0,
+    label: '0',
+  },
+  {
+    value: 100,
+    label: '100',
+  },
 ];
 
-function Discover() {
-  const [name, setName] = useState('');
+function valuetext(value) {
+  return `${value}°C`;
+}
 
-  const [foundUsers, setFoundUsers] = useState(USERS);
-
-  const filter = (e) => {
-    const keyword = e.target.value;
-
-    if (keyword !== '') {
-      const results = USERS.filter((user) => {
-        return user.name.toLowerCase().startsWith(keyword.toLowerCase());
-      });
-      setFoundUsers(results);
-    } else {
-      setFoundUsers(USERS);
-    }
-
-    setName(keyword);
-  };
-
+function Discover(props) {
   return (
-    <div style={{color:"white"}} className="container-search-bar">
-      <input
-        type="search"
-        value={name}
-        onChange={filter}
-        className="input"
-        placeholder="Filter"
+    <>
+    <h2>Discover Restaurants</h2>
+    <MDBCol md="6">
+      <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
+    </MDBCol>
+    <Box sx={{ width: 300 }}>
+      <h1 style={{fontSize: '20px'}} >Distance in Miles: </h1>
+      <Slider
+        aria-label="Always visible"
+        defaultValue={80}
+        getAriaValueText={valuetext}
+        step={5}
+        marks={marks}
+        valueLabelDisplay="on"
       />
-
-      <div className="user-list">
-        {foundUsers && foundUsers.length > 0 ? (
-          foundUsers.map((user) => (
-            <li key={user.id} className="user">
-              <span className="user-id">{user.id}</span><button class='view-restaurant'> View Restaurant </button>
-              <span className="user-name">{user.name}</span>
-              <span className="user-age">{user.distance} miles away</span>
-            </li>
-          ))
-        ) : (
-          <h1>No results found!</h1>
-        )}
-        
-      </div>
-      <div>
-      <button onClick={<Button />} > Click Me </button> 
-      </div>
+    </Box>
+    <Box sx={{ width: 300 }}>
+      <h1 style={{fontSize: '20px'}} >Weight of Food Available in Pounds: </h1>
+      <Slider
+        aria-label="Always visible"
+        defaultValue={80}
+        getAriaValueText={valuetext}
+        step={5}
+        marks={marks}
+        valueLabelDisplay="on"
+      />
+    </Box>
+    <div className="liked container">
+      <MDBRow className='row-cols-1 row-cols-md-4 g-4'>
+        <RestaurantCard
+          restaurantName="Sample Restaurant"
+          src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
+          href1="/foodbank/liked/sample-restaurant-info"
+        />
+        <RestaurantCard
+          restaurantName="Sample Restaurant"
+          src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
+          href1="/foodbank/liked/sample-restaurant-info"
+        />
+        <RestaurantCard
+          restaurantName="Sample Restaurant"
+          src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
+          href1="/foodbank/liked/sample-restaurant-info"
+        />
+        <RestaurantCard
+          restaurantName="Sample Restaurant"
+          src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
+          href1="/foodbank/liked/sample-restaurant-info"
+        />
+        <RestaurantCard
+          restaurantName="Sample Restaurant"
+          src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
+          href1="/foodbank/liked/sample-restaurant-info"
+        />
+        <RestaurantCard
+          restaurantName="Sample Restaurant"
+          src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
+          href1="/foodbank/liked/sample-restaurant-info"
+        />
+        <RestaurantCard
+          restaurantName="Sample Restaurant"
+          src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
+          href1="/foodbank/liked/sample-restaurant-info"
+        />
+        <RestaurantCard
+          restaurantName="Sample Restaurant"
+          src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
+          href1="/foodbank/liked/sample-restaurant-info"
+        />
+      </MDBRow>
     </div>
-    
+    </>
   );
 }
 

@@ -1,0 +1,29 @@
+.slider-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    margin-top: 2rem;
+}
+
+.slider-box-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    margin-top: 1.75rem;
+}
+
+@media screen and (max-width: 768px) {
+    .slider-box .slider-box-2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 45%;
+        margin-top: 2rem;
+    }
+    .slider-text-style{
+        margin-top: 2rem;
+    }
+  }

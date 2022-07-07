@@ -10,7 +10,7 @@ import StaticMap from "../DashboardForRestaurant/StaticMap.js";
 import Edit from "../DashboardForRestaurant/Edit.js";
 
 function RestaurantInfo(props) {
-  const [fullName, setFullName] = useState("Joe Abraham");
+  const [fullName, setFullName] = useState("123 dad street");
   const [showInputEle, setShowInputEle] = useState(false);
 
   const [fullNumber, setFullNumber] = useState("123456789");

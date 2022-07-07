@@ -8,7 +8,6 @@ import "../css-files/RestaurantDashboard.css";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
 function RestaurantDashboard(props) {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
 
@@ -54,8 +53,35 @@ function RestaurantDashboard(props) {
                 old="3"
               />
             </div>
-            <div >
-              <FontAwesomeIcon icon={faPlusCircle} size='5x'/>
+            <div>
+              <RestarauntFoodCard
+                image={img}
+                foodTitle="lettuce"
+                days="3"
+                quantity="25"
+                old="3"
+              />
+            </div>
+            <div>
+              <RestarauntFoodCard
+                image={img}
+                foodTitle="lettuce"
+                days="3"
+                quantity="25"
+                old="3"
+              />
+            </div>
+            <div>
+              <RestarauntFoodCard
+                image={img}
+                foodTitle="lettuce"
+                days="3"
+                quantity="25"
+                old="3"
+              />
+            </div>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <FontAwesomeIcon icon={faPlusCircle} size="5x" />
             </div>
           </div>
         </div>

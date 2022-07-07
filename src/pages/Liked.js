@@ -12,25 +12,6 @@ function Liked(props) {
           restaurantName="Sample Restaurant"
           src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
           href1="/foodbank/liked/sample-restaurant-info"
-          state1="false"
-        />
-        <RestaurantCard
-        restaurantName="Sample Restaurant"
-        src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
-        href1="/foodbank/liked/sample-restaurant-info"
-        state1="false"
-        />
-        <RestaurantCard
-        restaurantName="Sample Restaurant"
-        src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
-        href1="/foodbank/liked/sample-restaurant-info"
-        state1="false"
-        />
-        <RestaurantCard
-        restaurantName="Sample Restaurant"
-        src1='https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg'
-        href1="/foodbank/liked/sample-restaurant-info"
-        state1="false"
         />
       </MDBRow>
     </div>

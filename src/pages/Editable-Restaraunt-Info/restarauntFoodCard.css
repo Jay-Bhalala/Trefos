@@ -1,0 +1,10 @@
+.restaraunt-food-card-image{
+    width: 100%; height: auto;
+}
+
+.restaraunt-food-card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

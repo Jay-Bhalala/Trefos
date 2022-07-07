@@ -16,6 +16,7 @@ import Liked from "./pages/Liked/Liked.js";
 import MapDisplay from "./pages/MapDisplay.js";
 import Footer from "./Footer.js";
 import LoadingScreen from "./pages/LoadingScreen.js";
+import Viewable from "./pages/Viewable";
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -41,7 +42,7 @@ function App() {
         <Route exact path="/foodbank/home" element={<><NavbarFoodBank /><Home/></>} />
         <Route exact path="/foodbank/discover" element={<><NavbarFoodBank /><Discover /></>} />
         <Route exact path="/foodbank/liked" element={<><NavbarFoodBank /><Liked /></>} />
-        <Route exact path="/foodbank/liked/sample-restaurant-info" element={<><NavbarFoodBank /><RestaurantDashboard companyName="Sample Restaurant" /></>} />
+        <Route exact path="/foodbank/liked/sample-restaurant-info" element={<><NavbarFoodBank /><Viewable companyName="Sample Restaurant" /></>} />
         <Route exact path="/foodbank/map" element={<><NavbarFoodBank /><MapDisplay /></>} />
 
         <Route path="/restaurant" element={<><NavbarRestaurant /><RestaurantDashboard companyName="Example Company Name"/></>} />

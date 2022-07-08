@@ -12,24 +12,24 @@ function homeAbout(props) {
         <div className="grid-content">
           <AboutCard
             image={foodIcon}
-            heading="Food"
-            description="Engrossed listening. Park gate sell they west hard for the."
+            heading="Discover"
+            description="The Trefo team first looks for potiential restaurants and their quality of food to decided if it can be donated"
           />
         </div>
         <AboutCard
           image={nonProfitIcon}
+          heading="Connects"
+          description="The Trefo team connect restaurants to local food banks in the area that help serve the community."
+        />
+        <AboutCard
+          image={foodIcon}
+          heading="Deliver"
+          description="The Trefo team helps deliver the food from the restaurants to the food banks."
+        />
+        <AboutCard
+          image={foodIcon}
           heading="Non Profit"
-          description="Engrossed listening. Park gate sell they west hard for the."
-        />
-        <AboutCard
-          image={foodIcon}
-          heading="Food"
-          description="Engrossed listening. Park gate sell they west hard for the."
-        />
-        <AboutCard
-          image={foodIcon}
-          heading="Food"
-          description="Engrossed listening. Park gate sell they west hard for the."
+          description="Trefo is a non profit and every donation will be given to a local food bank in the area."
         />
       </div>
     </div>

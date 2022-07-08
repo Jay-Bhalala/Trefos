@@ -9,13 +9,12 @@ function HomeHero(props) {
       <div className="container">
         <div className="text-container">
           <div>
-            <h1 className="large-text">Connecting resources to need</h1>
+            <h1 className="large-text">Providing resources to those in need</h1>
           </div>
           <div>
             <p className="description-text">
-              Built Wicket longer admire do barton vanity itself do in it.
-              Preferred to sportsmen it engrossed listening. Park gate sell they
-              west hard for the.
+            Trefo aims to reduce the amount of food being wasted in our community 
+            by connecting local restaurants to nearby food banks.
             </p>
           </div>
           <div>

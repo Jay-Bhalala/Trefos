@@ -11,22 +11,22 @@ function howitWorks(props) {
         <HowitWorksCard
           number="1"
           image={searchIcon}
-          heading="Find a Restarunt"
-          description="First find a restarunt to conenct with"
+          heading="Notification"
+          description="A restarunt has excesses food from service and a local food bank is then notified"
         />
         <hr className="h-2" />
         <HowitWorksCard
           number="2"
           image={searchIcon}
-          heading="Find a Restarunt"
-          description="First find a restarunt to conenct with"
+          heading="Delivery"
+          description="The excess food from the restarunt is delivered to and stored at a local food bank"
         />
         <hr className="h-2" />
         <HowitWorksCard
           number="3"
           image={searchIcon}
-          heading="Find a Restarunt"
-          description="First find a restarunt to conenct with"
+          heading="Distrubtion"
+          description="The food bank can now provide more food to those in need"
         />
         <hr className="h-2" />
       </div>

@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
-    background-image: linear-gradient(to bottom, #446477 50%, white 50%);
+    background-image: linear-gradient(to bottom, #F4ccac 50%, white 50%);
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -44,6 +44,6 @@
     background-color: white;
     }
     .how-work-container{
-        background-image: linear-gradient(to bottom, #446477 50%, #446477 50%);
+        background-image: linear-gradient(to bottom, #F4ccac 50%, #F4ccac 50%);
     }
   }

@@ -28,7 +28,7 @@ return (
 			</Column>
 			<Column>
 				<Heading>Social Media</Heading>
-				<FooterLink href="https://www.instagram.com/trefos.network/">
+				<FooterLink href="https://www.instagram.com/trefos.network/" target="_blank">
 				<i className="fab fa-instagram">
 					<span style={{ marginLeft: "10px" }}>
 					Instagram

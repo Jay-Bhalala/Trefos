@@ -31,6 +31,7 @@ function RestaurantInfo(props) {
           <StaticMap lat1={props.lat2} lng1={props.lng2} />
           <Card.Body>
             <Card.Title>Contact Info</Card.Title>
+            <h1 style={{ fontSize: ".85rem" }}>**Double-click any of the 3 text fields below to edit your information</h1>
             <Card.Text>
               <FontAwesomeIcon icon={faThumbTack} /> Address:
               <Edit

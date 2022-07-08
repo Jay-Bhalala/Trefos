@@ -67,7 +67,7 @@ function AboutUs(props) {
         <div class="team">
           <div class="team_member">
             <div class="team_img">
-              <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEoAq_eO6uAiA/profile-displayphoto-shrink_400_400/0/1619297408553?e=1662595200&v=beta&t=6PeG9fwDDA5OGlePVlTyRWxQQLFEg8ZuJ-ot6__ysDA" alt="Team_image" />
+              <img class="rounded-circle z-depth-2" src="https://media-exp1.licdn.com/dms/image/C4E03AQEoAq_eO6uAiA/profile-displayphoto-shrink_400_400/0/1619297408553?e=1662595200&v=beta&t=6PeG9fwDDA5OGlePVlTyRWxQQLFEg8ZuJ-ot6__ysDA" alt="Team_image" />
             </div>
             <h3>Jay Bhalala</h3>
             <p class="role">Backend developer</p>
@@ -79,7 +79,7 @@ function AboutUs(props) {
           </div>
           <div class="team_member">
             <div class="team_img">
-              <img src="https://media-exp1.licdn.com/dms/image/C4D03AQGNVANBE7dCww/profile-displayphoto-shrink_400_400/0/1655150440686?e=1662595200&v=beta&t=gQU7-bD29WXv2fL56lruwOOfGdgtU1-bs-uNITl75rg" alt="Team_image" />
+              <img class="rounded-circle z-depth-2" src="https://media-exp1.licdn.com/dms/image/C4D03AQGNVANBE7dCww/profile-displayphoto-shrink_400_400/0/1655150440686?e=1662595200&v=beta&t=gQU7-bD29WXv2fL56lruwOOfGdgtU1-bs-uNITl75rg" alt="Team_image" />
             </div>
             <h3>Emmanuel Tawiah</h3>
             <p class="role">Backend developer</p>
@@ -91,7 +91,7 @@ function AboutUs(props) {
           </div>
           <div class="team_member">
             <div class="team_img">
-              <img src="https://media-exp1.licdn.com/dms/image/C5603AQGSH3NUBJpvAw/profile-displayphoto-shrink_400_400/0/1650497222877?e=1662595200&v=beta&t=8bCzHiEOVLlbSUl1FQrLxhRgV3Ue3vyxzRpWJbslqW8" alt="Team_image" />
+              <img class="rounded-circle z-depth-2" src="https://media-exp1.licdn.com/dms/image/C5603AQGSH3NUBJpvAw/profile-displayphoto-shrink_400_400/0/1650497222877?e=1662595200&v=beta&t=8bCzHiEOVLlbSUl1FQrLxhRgV3Ue3vyxzRpWJbslqW8" alt="Team_image" />
             </div>
             <h3>Jeremy Chuah</h3>
             <p class="role">Frontend developer</p>
@@ -103,7 +103,7 @@ function AboutUs(props) {
           </div>
           <div class="team_member">
             <div class="team_img">
-              <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHDveFR7dRwbw/profile-displayphoto-shrink_400_400/0/1646675440410?e=1662595200&v=beta&t=rZAoNVorbdytFF2xMpXyUiqEHABn3hNQ4o7twpHAejU" alt="Team_image" />
+              <img class="rounded-circle z-depth-2" src="https://media-exp1.licdn.com/dms/image/C4E03AQHDveFR7dRwbw/profile-displayphoto-shrink_400_400/0/1646675440410?e=1662595200&v=beta&t=rZAoNVorbdytFF2xMpXyUiqEHABn3hNQ4o7twpHAejU" alt="Team_image" />
             </div>
             <h3>Nikil Jain</h3>
             <p class="role">Frontend developer</p>

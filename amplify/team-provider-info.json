@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-trefos-dev-170357-authRole",
+      "UnauthRoleArn": "arn:aws:iam::029980394507:role/amplify-trefos-dev-170357-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::029980394507:role/amplify-trefos-dev-170357-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-trefos-dev-170357-deployment",
+      "UnauthRoleName": "amplify-trefos-dev-170357-unauthRole",
+      "StackName": "amplify-trefos-dev-170357",
+      "StackId": "arn:aws:cloudformation:us-east-1:029980394507:stack/amplify-trefos-dev-170357/085986b0-ffd3-11ec-99bd-0ecac979c2f5",
+      "AmplifyAppId": "d2wv9qp0htgxnu"
+    },
+    "categories": {
+      "auth": {
+        "trefos2b464d13": {}
+      }
+    }
+  }
+}

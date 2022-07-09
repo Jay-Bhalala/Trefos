@@ -26,12 +26,15 @@ function RestaurantInfo(props) {
         crossorigin="anonymous"
       ></script>
       <div>
-        <Card style={{ width: "30rem", height: "auto" }}>
+        <Card style={{ width: "100%", height: "auto" }}>
           {/* <Card.Img variant="top" src={Test} /> */}
           <StaticMap lat1={props.lat2} lng1={props.lng2} />
           <Card.Body>
             <Card.Title>Contact Info</Card.Title>
-            <h1 style={{ fontSize: ".85rem" }}>**Double-click any of the 3 text fields below to edit your information</h1>
+            <h1 style={{ fontSize: ".85rem" }}>
+              **Double-click any of the 3 text fields below to edit your
+              information
+            </h1>
             <Card.Text>
               <FontAwesomeIcon icon={faThumbTack} /> Address:
               <Edit

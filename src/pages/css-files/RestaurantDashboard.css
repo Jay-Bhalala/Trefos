@@ -11,6 +11,15 @@
     gap: 0.75rem; /* 12px */
 }
 
+.drag-drop-button{
+    background-color: gray;
+    color: white;
+    text-align: center;
+    border-radius: .75rem;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
 @media screen and (max-width: 1341px) {
     
     .dashboard-layout{
@@ -42,5 +51,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .restaurant-info-box{
+        width: 80%;
     }
   }

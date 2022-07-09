@@ -22,7 +22,7 @@ function RestaurantDashboard(props) {
       <h2>{props.companyName}</h2>
 
       <div className="dashboard-layout">
-        <div>
+        <div className="restaurant-info-box">
           <RestaurantInfo
             address="skdjghdhb"
             phoneNumber="098726345"
@@ -32,10 +32,10 @@ function RestaurantDashboard(props) {
           />
           <div {...getRootProps({ className: "dropzone" })}>
             <input {...getInputProps()} />
-            <Badge bg="secondary">
+            <div className="drag-drop-button">
               Drag 'n' drop your restaurant's profile picture here, or click to
               select a file
-            </Badge>
+            </div>
           </div>
           <aside>
             <ul>{files}</ul>

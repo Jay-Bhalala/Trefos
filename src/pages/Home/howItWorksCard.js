@@ -18,7 +18,7 @@ function howitWorksCard(props) {
             <p>{props.heading}</p>
           </div>
           <div>
-            <p>{props.description}</p>
+            <p style={{ textAlign: "center" }}>{props.description}</p>
           </div>
         </div>
         <hr className="h" />

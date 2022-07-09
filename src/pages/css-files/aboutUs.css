@@ -65,12 +65,25 @@
   }
 }
 
+@media screen and (min-width: 1400px ) {
+  .values-conatiner{
+    width: 20%;
+    height: 15rem;
+  }
+}
+
+
+
 .values-conatiner{
     background-color: lightgray;
     padding: .5rem;
     border-radius: .5rem;
     margin-bottom: 2rem;
-}
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
 
 .impact-description-container{
     width: 100%;

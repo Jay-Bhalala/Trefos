@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import NavbarNoLogIn from "./navbars/NavbarNoLogIn.js";
@@ -15,20 +15,12 @@ import Discover from "./pages/Discover.js";
 import Liked from "./pages/Liked/Liked.js";
 import MapDisplay from "./pages/MapDisplay.js";
 import Footer from "./Footer.js";
-import LoadingScreen from "./pages/LoadingScreen.js";
 import Viewable from "./pages/Viewable";
 
 function App() {
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 1000)
-  }, [])
 
   return (
     <>
-    {loading === false ? (
-      <>
       <Routes>
 
         <Route exact path="/nologin" element={<NavbarNoLogIn />} />
@@ -50,10 +42,6 @@ function App() {
 
       </Routes>
       <Footer />
-      </>
-      ) : (
-        <LoadingScreen />
-      )}
     </>
   );
 }

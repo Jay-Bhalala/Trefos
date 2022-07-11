@@ -5,6 +5,7 @@ import { MDBCol } from "mdbreact";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import "./css-files/Discover.css";
+import { Link } from "react-router-dom";
 
 const marks = [
   {
@@ -70,7 +71,21 @@ function Discover(props) {
           />
         </div>
       </div>
-      <div style={{padding: "2rem"}}>
+      <div className="disover-buttons-outside-container">
+        <div className="discover-buttons-container">
+          <div>
+            <Link to="/liked" className="link-button">
+              Liked
+            </Link>
+          </div>
+          <div>
+            <Link to="/map" className="link-button">
+              Map
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div style={{ padding: "2rem" }}>
         <MDBRow className="row-cols-1 row-cols-md-4 g-4">
           <RestaurantCard
             restaurantName="Sample Restaurant"

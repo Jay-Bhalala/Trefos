@@ -14,6 +14,34 @@
     margin-top: 1.75rem;
 }
 
+.discover-buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%
+}
+
+.disover-buttons-outside-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-button{
+    text-decoration: none;
+    background: #F4ba9b;
+    color: white;
+    padding: .5rem;
+    border-radius: .25rem;
+}
+
+.link-button:hover{
+    text-decoration: none;
+    color: white;
+    background: #f49464;
+}
+
 @media screen and (max-width: 768px) {
     .slider-box .slider-box-2{
         display: flex;
@@ -25,5 +53,11 @@
     }
     .slider-text-style{
         margin-top: 2rem;
+    }
+    .disover-buttons-outside-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
     }
   }

@@ -2,10 +2,7 @@ import React from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import NavbarDefault from "./navbars/NavbarDefault.js";
-
 import Home from "./pages//Home/Home.js";
-import LoginSignupNonProfit from "./pages/LoginSignupNonProfit.js";
-import LoginSignupRestaurant from "./pages/LoginSignupRestaurant.js";
 import Contact from "./pages/Contact.js";
 import AboutUs from "./pages/AboutUs.js";
 import RestaurantDashboard from "./pages/DashboardForRestaurant/RestaurantDashboard.js";
@@ -16,7 +13,6 @@ import Footer from "./Footer.js";
 import Viewable from "./pages/Viewable";
 
 function App() {
-
   return (
     <>
       <NavbarDefault />

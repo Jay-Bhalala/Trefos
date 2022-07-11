@@ -8,6 +8,8 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Popup from "./Popup";
 import AddFoodForm from "./addFoodForm";
+import {Authenticator} from 'aws-amplify/ui-react';
+import 'aws-amplify/ui-react/styles.css';
 
 function RestaurantDashboard(props) {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();

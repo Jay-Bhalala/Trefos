@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import RestarauntFoodCard from "./restarauntFoodCard";
 import RestaurantInfo from "../Restaraunt-Info/restaurantInfo.js";
 import img from "./lettuceTestImage.svg";
 import { useDropzone } from "react-dropzone";
-import { Badge } from "react-bootstrap";
 import "../css-files/RestaurantDashboard.css";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Popup from "./Popup";
+import AddFoodForm from "./addFoodForm";
 
 function RestaurantDashboard(props) {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+
+  const [openPopup, setOpenPopup] = useState(false);
 
   const files = acceptedFiles.map((file) => (
     <li key={file.path}>
@@ -81,11 +84,23 @@ function RestaurantDashboard(props) {
               />
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
-              <FontAwesomeIcon icon={faPlusCircle} size="5x" />
+              <button
+                style={{ background: "none", border: "none" }}
+                onClick={() => setOpenPopup(true)}
+              >
+                <FontAwesomeIcon icon={faPlusCircle} size="5x" />
+              </button>
             </div>
           </div>
         </div>
       </div>
+      <Popup
+        openPopup={openPopup}
+        setOpenPopup={setOpenPopup}
+        title={"add new food"}
+      >
+        <AddFoodForm></AddFoodForm>
+      </Popup>
     </div>
   );
 }

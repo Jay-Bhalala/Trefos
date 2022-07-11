@@ -70,7 +70,7 @@ function Discover(props) {
           />
         </div>
       </div>
-      <div>
+      <div style={{padding: "2rem"}}>
         <MDBRow className="row-cols-1 row-cols-md-4 g-4">
           <RestaurantCard
             restaurantName="Sample Restaurant"

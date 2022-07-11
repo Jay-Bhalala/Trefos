@@ -1,7 +1,6 @@
 import React from "react";
 import icon from "./hhicon.svg";
 import "../css-files/HomeHero.css";
-import NavbarNoLogin from "../../navbars/NavbarNoLogIn";
 
 function HomeHero(props) {
   return (

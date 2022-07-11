@@ -2,7 +2,6 @@ import React from "react";
 import RestarauntFoodCard from "./DashboardForRestaurant/restarauntFoodCard";
 import RestaurantInfo from "./Restaraunt-Info/viewableRestaurantInfo.js";
 import img from "./DashboardForRestaurant/lettuceTestImage.svg";
-import { useDropzone } from "react-dropzone";
 import "./css-files/RestaurantDashboard.css";
 
 

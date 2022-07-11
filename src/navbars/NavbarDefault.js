@@ -1,8 +1,14 @@
 import React from "react";
-import { Navbar, Nav, Container, Offcanvas } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Container,
+  NavDropdown,
+  Offcanvas,
+} from "react-bootstrap";
 import logo from "./Cratos_3_1.svg";
 
-function NavbarRestaurant(props) {
+function NavbarDefault() {
   return (
     <div>
       <>
@@ -15,7 +21,7 @@ function NavbarRestaurant(props) {
             className="mb-3"
           >
             <Container fluid>
-              <Navbar.Brand href="/restaurant/home">
+              <Navbar.Brand href="/nologin/home">
                 <img
                   alt=""
                   src={logo}
@@ -37,9 +43,10 @@ function NavbarRestaurant(props) {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link href="/restaurant">
-                      Your Restraunt's Personal Dashboard
-                    </Nav.Link>
+                    <Nav.Link href="/discover">Discover Restaurants</Nav.Link>
+                    <Nav.Link href="/restaurant">Restaurant Dashboard</Nav.Link>
+                    <Nav.Link href="/aboutus">About Us</Nav.Link>
+                    <Nav.Link href="/contactus">Contact</Nav.Link>
                   </Nav>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
@@ -51,4 +58,4 @@ function NavbarRestaurant(props) {
   );
 }
 
-export default NavbarRestaurant;
+export default NavbarDefault;

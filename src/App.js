@@ -1,9 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import NavbarNoLogIn from "./navbars/NavbarNoLogIn.js";
-import NavbarFoodBank from "./navbars/NavbarFoodBank.js";
-import NavbarRestaurant from "./navbars/NavbarRestaurant.js";
+import NavbarDefault from "./navbars/NavbarDefault.js";
 
 import Home from "./pages//Home/Home.js";
 import LoginSignupNonProfit from "./pages/LoginSignupNonProfit.js";
@@ -21,25 +19,16 @@ function App() {
 
   return (
     <>
+      <NavbarDefault />
       <Routes>
-
-        <Route exact path="/nologin" element={<NavbarNoLogIn />} />
-        <Route exact path="/nologin/home" element={<><NavbarNoLogIn /><Home/></>} />
-        <Route exact path="/nologin/loginsignupfoodbank" element={<><NavbarNoLogIn /><LoginSignupNonProfit /></>} />
-        <Route exact path="/nologin/loginsignuprestaurant" element={<><NavbarNoLogIn /><LoginSignupRestaurant /></>} />
-        <Route exact path="/nologin/aboutus" element={<><NavbarNoLogIn /><AboutUs /></>} />
-        <Route exact path="/nologin/contactus" element={<><NavbarNoLogIn /><Contact /></>} />
-
-        <Route path="/foodbank" element={<NavbarFoodBank />} />
-        <Route exact path="/foodbank/home" element={<><NavbarFoodBank /><Home/></>} />
-        <Route exact path="/foodbank/discover" element={<><NavbarFoodBank /><Discover /></>} />
-        <Route exact path="/foodbank/liked" element={<><NavbarFoodBank /><Liked /></>} />
-        <Route exact path="/foodbank/liked/sample-restaurant-info" element={<><NavbarFoodBank /><Viewable companyName="Sample Restaurant" /></>} />
-        <Route exact path="/foodbank/map" element={<><NavbarFoodBank /><MapDisplay /></>} />
-
-        <Route path="/restaurant" element={<><NavbarRestaurant /><RestaurantDashboard companyName="Example Company Name"/></>} />
-        <Route exact path="/restaurant/home" element={<><NavbarRestaurant /><Home/></>} />
-
+        <Route exact path="/" element={<Home/>} />
+        <Route exact path="/aboutus" element={<AboutUs />} />
+        <Route exact path="/contactus" element={<Contact />} />
+        <Route exact path="/discover" element={<Discover />} />
+        <Route exact path="/liked" element={<Liked />} />
+        <Route exact path="/sample-restaurant-info" element={<Viewable companyName="Sample Restaurant" />} />
+        <Route exact path="/map" element={<MapDisplay />} />
+        <Route path="/restaurant" element={<RestaurantDashboard companyName="Example Company Name"/>} />
       </Routes>
       <Footer />
     </>

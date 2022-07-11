@@ -75,42 +75,42 @@ function Discover(props) {
           <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
-            href1="/foodbank/liked/sample-restaurant-info"
+            href1="/sample-restaurant-info"
           />
           <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
-            href1="/foodbank/liked/sample-restaurant-info"
+            href1="/sample-restaurant-info"
           />
           <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
-            href1="/foodbank/liked/sample-restaurant-info"
+            href1="/sample-restaurant-info"
           />
           <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
-            href1="/foodbank/liked/sample-restaurant-info"
+            href1="/sample-restaurant-info"
           />
           <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
-            href1="/foodbank/liked/sample-restaurant-info"
+            href1="/sample-restaurant-info"
           />
           <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
-            href1="/foodbank/liked/sample-restaurant-info"
+            href1="/sample-restaurant-info"
           />
           <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
-            href1="/foodbank/liked/sample-restaurant-info"
+            href1="/sample-restaurant-info"
           />
           <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
-            href1="/foodbank/liked/sample-restaurant-info"
+            href1="/sample-restaurant-info"
           />
         </MDBRow>
       </div>

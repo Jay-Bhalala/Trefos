@@ -10,13 +10,13 @@ import StaticMap from "../DashboardForRestaurant/StaticMap.js";
 import Edit from "../DashboardForRestaurant/Edit.js";
 
 function RestaurantInfo(props) {
-  const [fullName, setFullName] = useState("123 dad street");
+  const [fullName, setFullName] = useState("Enter Address");
   const [showInputEle, setShowInputEle] = useState(false);
 
-  const [fullNumber, setFullNumber] = useState("123456789");
+  const [fullNumber, setFullNumber] = useState("Enter Phone Number");
   const [showInputEle2, setShowInputEle2] = useState(false);
 
-  const [fullEmail, setFullEmail] = useState("jayisafag@gmail.com");
+  const [fullEmail, setFullEmail] = useState("Enter Email");
   const [showInputEle3, setShowInputEle3] = useState(false);
 
   return (

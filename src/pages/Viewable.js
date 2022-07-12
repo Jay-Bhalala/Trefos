@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import RestarauntFoodCard from "./DashboardForRestaurant/restarauntFoodCard";
 import RestaurantInfo from "./Restaraunt-Info/viewableRestaurantInfo.js";
 import img from "./DashboardForRestaurant/lettuceTestImage.svg";
 import "./css-files/RestaurantDashboard.css";
-
+import { listFoods } from "../graphql/queries.js";
+import { API } from "aws-amplify";
 
 function Viewable(props) {
-
   return (
     <div>
       <h2>{props.companyName}</h2>

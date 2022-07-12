@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
+import { v4 } from "uuid";
 import Button from "@mui/material/Button";
+import { API, graphqlOperation } from "aws-amplify";
+import { createFood } from "../../../src/graphql/mutations.js";
 
 const theme = createTheme({
   palette: {
@@ -13,8 +16,8 @@ const theme = createTheme({
 });
 
 const initialValues = {
-  id: 0,
-  foodName: "",
+  id: "",
+  name: "",
   daysOld: "",
   pounds: "",
   pickUp: "",
@@ -34,7 +37,7 @@ function AddFoodForm(props) {
 
   const validate = () => {
     let temp = {};
-    temp.foodName = values.foodName ? "" : "This Field is Required.";
+    temp.name = values.name ? "" : "This Field is Required.";
     temp.daysOld = values.daysOld ? "" : "This Field is Required.";
     temp.pounds = values.pounds ? "" : "This Field is Required.";
     temp.pickUp = values.pickUp ? "" : "This Field is Required.";
@@ -45,10 +48,24 @@ function AddFoodForm(props) {
     return Object.values(temp).every((x) => x == "");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      window.alert("Hi");
+      await API.graphql({
+        query: createFood,
+        variables: {
+          input: {
+            id: v4(),
+            name: values.name,
+            pounds: values.pounds,
+            daysOld: values.daysOld,
+            pickUp: values.pickUp,
+            restaurantID: v4(),
+          },
+        },
+      });
+      setValues(initialValues);
+      setErrors({});
     }
   };
 
@@ -58,13 +75,13 @@ function AddFoodForm(props) {
         <TextField
           variant="outlined"
           label="Food Name"
-          value={values.foodName}
+          value={values.name}
           style={{ margin: "1rem" }}
-          name="foodName"
+          name="name"
           onChange={handleInputChange}
-          {...(errors.foodName && {
+          {...(errors.name && {
             error: true,
-            helperText: errors.foodName,
+            helperText: errors.name,
           })}
         />
         <TextField

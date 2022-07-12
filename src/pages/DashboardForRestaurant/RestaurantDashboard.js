@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RestarauntFoodCard from "./restarauntFoodCard";
 import RestaurantInfo from "../Restaraunt-Info/restaurantInfo.js";
 import img from "./lettuceTestImage.svg";
@@ -10,6 +10,8 @@ import Popup from "./Popup";
 import AddFoodForm from "./addFoodForm";
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
+import { API, graphqlOperation } from "aws-amplify";
+import { listFoods } from "../../graphql/queries";
 
 function RestaurantDashboard(props) {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
@@ -22,97 +24,110 @@ function RestaurantDashboard(props) {
     </li>
   ));
 
+  const [foodInfo, setFoodInfo] = useState([]);
+
+  useEffect(() => {
+    fetchFoods();
+  }, [foodInfo]);
+
+  const fetchFoods = async () => {
+    try {
+      const foodData = await API.graphql(graphqlOperation(listFoods));
+      const foodList = foodData.data.listFoods.items;
+      console.log(foodList);
+      setFoodInfo(foodList);
+    } catch (error) {
+      console.log("error on fetching foods", error);
+    }
+  };
+
   return (
     <>
-    <h1 style={{ display: 'flex',  justifyContent:'center', alignItems:'center', height: '10vh', fontSize: "1.5rem" }} >The Following Content Is Only Available For Restaurant Accounts</h1>
-    <Authenticator>
-      {({ signOut }) => (
-        <div>
-          <h2>{props.companyName}</h2>
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "10vh",
+          fontSize: "1.5rem",
+        }}
+      >
+        The Following Content Is Only Available For Restaurant Accounts
+      </h1>
+      <Authenticator>
+        {({ signOut }) => (
+          <div>
+            <h2>{props.companyName}</h2>
 
-          <div className="dashboard-layout">
-            <div className="restaurant-info-box">
-              <RestaurantInfo
-                address="skdjghdhb"
-                phoneNumber="098726345"
-                email="hfehebv@ijfhvdfnjv.com"
-                lat2="20.5937"
-                lng2="78.9629"
-              />
-              <div {...getRootProps({ className: "dropzone" })}>
-                <input {...getInputProps()} />
-                <div className="drag-drop-button">
-                  Drag 'n' drop your restaurant's profile picture here, or click
-                  to select a file
+            <div className="dashboard-layout">
+              <div className="restaurant-info-box">
+                <RestaurantInfo
+                  address="skdjghdhb"
+                  phoneNumber="098726345"
+                  email="hfehebv@ijfhvdfnjv.com"
+                  lat2="20.5937"
+                  lng2="78.9629"
+                />
+                <div {...getRootProps({ className: "dropzone" })}>
+                  <input {...getInputProps()} />
+                  <div className="drag-drop-button">
+                    Drag 'n' drop your restaurant's profile picture here, or
+                    click to select a file
+                  </div>
                 </div>
+                <aside>
+                  <ul>{files}</ul>
+                </aside>
+                <button onClick={signOut} className="sign-out-button">
+                  Sign Out
+                </button>
               </div>
-              <aside>
-                <ul>{files}</ul>
-              </aside>
-              <button onClick={signOut} className="sign-out-button">
-                Sign Out
-              </button>
-            </div>
-            <div>
-              <h1>Avaiable Foods</h1>
-              <div className="food-card-grid">
-                <div>
-                  <RestarauntFoodCard
-                    image={img}
-                    foodTitle="lettuce"
-                    days="3"
-                    quantity="25"
-                    old="3"
-                  />
-                </div>
-                <div>
-                  <RestarauntFoodCard
-                    image={img}
-                    foodTitle="lettuce"
-                    days="3"
-                    quantity="25"
-                    old="3"
-                  />
-                </div>
-                <div>
-                  <RestarauntFoodCard
-                    image={img}
-                    foodTitle="lettuce"
-                    days="3"
-                    quantity="25"
-                    old="3"
-                  />
-                </div>
-                <div>
-                  <RestarauntFoodCard
-                    image={img}
-                    foodTitle="lettuce"
-                    days="3"
-                    quantity="25"
-                    old="3"
-                  />
-                </div>
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <button
-                    style={{ background: "none", border: "none" }}
-                    onClick={() => setOpenPopup(true)}
-                  >
-                    <FontAwesomeIcon icon={faPlusCircle} size="5x" />
-                  </button>
+              <div>
+                <h1>Avaiable Foods</h1>
+                <div className="food-card-grid">
+                  {/* <div>
+                    <RestarauntFoodCard
+                      image={img}
+                      foodTitle="lettuce"
+                      days="3"
+                      quantity="25"
+                      old="3"
+                    />
+                  </div> */}
+                  {foodInfo.map((food) => {
+                    return (
+                      <div>
+                        <RestarauntFoodCard
+                          image={img}
+                          foodTitle={food.name}
+                          days={food.pickUp}
+                          quantity={food.pounds}
+                          old={food.daysOld}
+                        />
+                      </div>
+                    );
+                  })}
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <button
+                      style={{ background: "none", border: "none" }}
+                      onClick={() => setOpenPopup(true)}
+                    >
+                      <FontAwesomeIcon icon={faPlusCircle} size="5x" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
+            <Popup
+              openPopup={openPopup}
+              setOpenPopup={setOpenPopup}
+              title={"add new food"}
+            >
+              <AddFoodForm></AddFoodForm>
+            </Popup>
           </div>
-          <Popup
-            openPopup={openPopup}
-            setOpenPopup={setOpenPopup}
-            title={"add new food"}
-          >
-            <AddFoodForm></AddFoodForm>
-          </Popup>
-        </div>
-      )}
-    </Authenticator>
+        )}
+      </Authenticator>
     </>
   );
 }

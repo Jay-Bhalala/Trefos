@@ -20,6 +20,14 @@
     padding: 1rem;
 }
 
+.sign-out-button{
+    background: #F49464;
+    border: none;
+    color: white;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
 @media screen and (max-width: 1341px) {
     
     .dashboard-layout{

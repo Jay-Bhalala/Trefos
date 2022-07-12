@@ -3,7 +3,6 @@ import {
   Navbar,
   Nav,
   Container,
-  NavDropdown,
   Offcanvas,
 } from "react-bootstrap";
 import logo from "./Cratos_3_1.svg";
@@ -21,7 +20,7 @@ function NavbarDefault() {
             className="mb-3"
           >
             <Container fluid>
-              <Navbar.Brand href="/nologin/home">
+              <Navbar.Brand href="/">
                 <img
                   alt=""
                   src={logo}

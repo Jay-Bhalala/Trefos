@@ -23,6 +23,8 @@ function RestaurantDashboard(props) {
   ));
 
   return (
+    <>
+    <h1 style={{ display: 'flex',  justifyContent:'center', alignItems:'center', height: '10vh', fontSize: "1.5rem" }} >The Following Content Is Only Available For Restaurant Accounts</h1>
     <Authenticator>
       {({ signOut }) => (
         <div>
@@ -111,6 +113,7 @@ function RestaurantDashboard(props) {
         </div>
       )}
     </Authenticator>
+    </>
   );
 }
 

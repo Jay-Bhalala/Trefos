@@ -56,7 +56,7 @@ function CreateRestForm(props) {
         variables: {
           input: {
             id: v4(),
-            name: values.name,
+            name: stringUrl(values.name),
             address: values.address,
             phone: values.phone,
             email: values.email,
@@ -67,6 +67,12 @@ function CreateRestForm(props) {
       setErrors({});
     }
   };
+
+  function stringUrl(string) {
+    if (string.includes(" ")) {
+      return string.replaceAll(" ", "%20");
+    }
+  }
 
   return (
     <form onSubmit={handleSubmit}>

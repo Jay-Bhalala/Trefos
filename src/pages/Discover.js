@@ -68,6 +68,13 @@ function Discover(props) {
       setValue(newValue);
     }
   };
+
+  function stringUrl(string) {
+    if (string.includes("%20")) {
+      return string.replaceAll("%20", " ");
+    }
+  }
+
   return (
     <>
       <div
@@ -136,7 +143,7 @@ function Discover(props) {
           {restarauntInfo.map((restaurant) => {
             return (
               <RestaurantCard
-                restaurantName={restaurant.name}
+                restaurantName={stringUrl(restaurant.name)}
                 src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
               />
             );

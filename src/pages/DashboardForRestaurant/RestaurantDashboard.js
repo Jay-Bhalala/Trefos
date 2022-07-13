@@ -175,7 +175,9 @@ function RestaurantDashboard(props) {
               setOpenPopup={setOpenPopup}
               title={"add new food"}
             >
-              <AddFoodForm></AddFoodForm>
+              {check.map((restaurant) => {
+                return <AddFoodForm id={restaurant.id}></AddFoodForm>;
+              })}
             </Popup>
             <Popup
               openPopup={openCreatePopup}

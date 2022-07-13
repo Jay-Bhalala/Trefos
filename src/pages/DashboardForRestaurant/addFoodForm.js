@@ -60,7 +60,7 @@ function AddFoodForm(props) {
             pounds: values.pounds,
             daysOld: values.daysOld,
             pickUp: values.pickUp,
-            restaurantID: v4(),
+            restaurantID: props.id,
           },
         },
       });

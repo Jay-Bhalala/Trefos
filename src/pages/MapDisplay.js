@@ -9,19 +9,19 @@ import useGeoLocation from "../hooks/useGeoLocation";
 import { Alert, Button } from "react-bootstrap";
 import Geocode from "react-geocode";
 
-// Geocode.setApiKey("AIzaSyB84ywpp1zEHfE1gxSpvoJWSOsg5lO2X4I");
-// Geocode.setLanguage("en");
+Geocode.setApiKey("AIzaSyB84ywpp1zEHfE1gxSpvoJWSOsg5lO2X4I");
+Geocode.setLanguage("en");
 
-// // Get latitude & longitude from address.
-// Geocode.fromAddress("Eiffel Tower").then(
-//   (response) => {
-//     const { lat, lng } = response.results[0].geometry.location;
-//     console.log(lat, lng);
-//   },
-//   (error) => {
-//     console.error(error);
-//   }
-// );
+// Get latitude & longitude from address.
+Geocode.fromAddress("Eiffel Tower").then(
+  (response) => {
+    const { lat, lng } = response.results[0].geometry.location;
+    console.log(lat, lng);
+  },
+  (error) => {
+    console.error(error);
+  }
+);
 
 const markerIcon = new L.Icon({
   iconUrl: require("./marker.png"),

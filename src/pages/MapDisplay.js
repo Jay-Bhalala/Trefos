@@ -1,27 +1,13 @@
-import React, { useState, useRef } from "react";
-import { MapContainer as Map, TileLayer, Marker, Popup } from "react-leaflet";
-import osm from "./osm-providers";
+import React, {useState, useRef, useEffect} from "react";
+import {MapContainer as Map, TileLayer, Marker, Popup } from "react-leaflet";
+import osm from "./osm-providers"
 import "./css-files/map.css";
-import "leaflet/dist/leaflet.css";
+import "leaflet/dist/leaflet.css"
 import L from "leaflet";
 import cities from "./cities.json";
 import useGeoLocation from "../hooks/useGeoLocation";
 import { Alert, Button } from "react-bootstrap";
 import Geocode from "react-geocode";
-
-Geocode.setApiKey("AIzaSyB84ywpp1zEHfE1gxSpvoJWSOsg5lO2X4I");
-Geocode.setLanguage("en");
-
-// Get latitude & longitude from address.
-Geocode.fromAddress("Eiffel Tower").then(
-  (response) => {
-    const { lat, lng } = response.results[0].geometry.location;
-    console.log(lat, lng);
-  },
-  (error) => {
-    console.error(error);
-  }
-);
 
 const markerIcon = new L.Icon({
   iconUrl: require("./marker.png"),
@@ -58,63 +44,77 @@ function MapDisplay(props) {
   //   }
   // };
 
+  var latitude = 0;
+  var longitude = 0;
+
+  Geocode.setApiKey("AIzaSyB84ywpp1zEHfE1gxSpvoJWSOsg5lO2X4I");
+  Geocode.setLanguage("en");
+
+  // Get latitude & longitude from address.
+  Geocode.fromAddress("4400 southpointe drive richardson texas").then(
+    (response) => {
+      const { lat, lng } = response.results[0].geometry.location;
+      latitude = lat;
+      longitude = lng;
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+
   return (
     <>
-      <>
-        <Alert show={show} variant="success">
-          <Alert.Heading>Map View</Alert.Heading>
-          <p>
-            You are currently on the map screen. Please allow this website to
-            view your location so that you can see all restaurants near you.
-            Your location is displayed with a blue dot while the locations of
-            all available restaurants are shown with red markers. Just click on
-            any of those red markers to get the address to the restaurant
-            selected.
-          </p>
-          <hr />
-          <div className="d-flex justify-content-end">
-            <Button onClick={() => setShow(false)} variant="outline-success">
-              Close Instructions
-            </Button>
-          </div>
-        </Alert>
-
-        {!show && (
-          <Button variant="outline-success" onClick={() => setShow(true)}>
-            Show Instructions
+    <>
+      <Alert show={show} variant="success">
+        <Alert.Heading>Map View</Alert.Heading>
+        <p>
+          You are currently on the map screen. Please allow this website to view 
+          your location so that you can see all restaurants near you. Your location 
+          is displayed with a blue dot while the locations of all available 
+          restaurants are shown with red markers. Just click on any of those red 
+          markers to get the address to the restaurant selected.
+        </p>
+        <hr />
+        <div className="d-flex justify-content-end">
+          <Button onClick={() => setShow(false)} variant="outline-success">
+            Close Instructions
           </Button>
+        </div>
+      </Alert>
+
+      {!show && <Button variant="outline-success" onClick={() => setShow(true)}>Show Instructions</Button>}
+    </>
+    <div className="col">
+      <Map 
+        center={center}
+        zoom={ZOOM_LEVEL}
+        ref={mapRef}
+      >
+        <TileLayer url={osm.maptiler.url} attribution={osm.maptiler.attribution} />
+        {cities.map((city, idx) =>  (
+          <Marker 
+              position={[city.lat, city.lng]}
+              icon={markerIcon}
+              key={idx}
+          >
+            <Popup>
+              <b>{city.city}, {city.country}</b>
+            </Popup>
+          </Marker>
+        ))}
+        {location.loaded && !location.error && (
+          <Marker icon={markerIcon2} position={[location.coordinates.lat, location.coordinates.lng]}></Marker>
         )}
-      </>
-      <div className="col">
-        <Map center={center} zoom={ZOOM_LEVEL} ref={mapRef}>
-          <TileLayer
-            url={osm.maptiler.url}
-            attribution={osm.maptiler.attribution}
-          />
-          {cities.map((city, idx) => (
-            <Marker position={[city.lat, city.lng]} icon={markerIcon} key={idx}>
-              <Popup>
-                <b>
-                  {city.city}, {city.country}
-                </b>
-              </Popup>
-            </Marker>
-          ))}
-          {location.loaded && !location.error && (
-            <Marker
-              icon={markerIcon2}
-              position={[location.coordinates.lat, location.coordinates.lng]}
-            ></Marker>
-          )}
-        </Map>
-        <div className="row my-4">
-          <div className="col d-flex justify-content-center">
-            {/* <button className="btn btn-primary" onClick={showMyLocation}>
+        <Marker icon={markerIcon} position={[latitude, longitude]}></Marker>
+      </Map>
+      <div className="row my-4">
+        <div className="col d-flex justify-content-center">
+          {/* <button className="btn btn-primary" onClick={showMyLocation}>
             Locate Me!
           </button> */}
-          </div>
         </div>
       </div>
+    </div>
     </>
   );
 }

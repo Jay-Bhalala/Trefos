@@ -15,6 +15,7 @@ import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import CreateRestForm from "../Restaraunt-Info/createRestForm";
 import { listFoods, listRestaurants } from "../../graphql/queries";
+import Geocode from "react-geocode";
 
 function RestaurantDashboard(props) {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
@@ -57,6 +58,24 @@ function RestaurantDashboard(props) {
     }
   };
 
+  var latitude = 0;
+  var longitude = 0;
+
+  Geocode.setApiKey("AIzaSyB84ywpp1zEHfE1gxSpvoJWSOsg5lO2X4I");
+  Geocode.setLanguage("en");
+
+  // Get latitude & longitude from address.
+  Geocode.fromAddress("4400 southpointe drive richardson texas").then(
+    (response) => {
+      const { lat, lng } = response.results[0].geometry.location;
+      latitude = lat;
+      longitude = lng;
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+
   return (
     <>
       <h1
@@ -82,8 +101,8 @@ function RestaurantDashboard(props) {
                       address="skdjghdhb"
                       phoneNumber="098726345"
                       email="hfehebv@ijfhvdfnjv.com"
-                      lat2="20.5937"
-                      lng2="78.9629"
+                      lat2={latitude}
+                      lng2={longitude}
                     />
                     <div {...getRootProps({ className: "dropzone" })}>
                       <input {...getInputProps()} />

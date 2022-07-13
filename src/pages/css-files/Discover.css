@@ -42,6 +42,21 @@
     background: #f49464;
 }
 
+.filter-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #F4ba9b;
+}
+
+.filter-button:hover{
+    text-decoration: none;
+    color: white;
+    background: #f49464;
+}
+
+
 @media screen and (max-width: 768px) {
     .slider-box .slider-box-2{
         display: flex;

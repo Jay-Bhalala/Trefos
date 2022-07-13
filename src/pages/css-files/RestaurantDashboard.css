@@ -26,6 +26,16 @@
     color: white;
     padding: .5rem;
     border-radius: .5rem;
+    width: 50%;
+    margin-top: .5rem;
+}
+
+.restaurant-info-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35%
 }
 
 @media screen and (max-width: 1341px) {

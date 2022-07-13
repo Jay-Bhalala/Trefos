@@ -6,7 +6,10 @@ import { Button } from "@mui/material";
 
 function Popup(props) {
   return (
-    <Dialog open={props.openPopup}>
+    <Dialog
+      open={props.openPopup}
+      PaperProps={{ sx: { width: "30%", height: "auto" } }}
+    >
       <DialogTitle>
         <div style={{ display: "flex", justifyContent: "space-around" }}>
           <div>{props.title}</div>

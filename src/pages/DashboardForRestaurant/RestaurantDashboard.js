@@ -11,12 +11,19 @@ import AddFoodForm from "./addFoodForm";
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import { API, graphqlOperation } from "aws-amplify";
-import { listFoods } from "../../graphql/queries";
+import Button from "@mui/material/Button";
+import AddIcon from "@mui/icons-material/Add";
+import CreateRestForm from "../Restaraunt-Info/createRestForm";
+import { listFoods, listRestaurants } from "../../graphql/queries";
 
 function RestaurantDashboard(props) {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
 
   const [openPopup, setOpenPopup] = useState(false);
+
+  const [openCreatePopup, setOpenCreatePopup] = useState(false);
+
+  const [createRestaurant, setCreateRestaurant] = useState(false);
 
   const files = acceptedFiles.map((file) => (
     <li key={file.path}>
@@ -34,8 +41,18 @@ function RestaurantDashboard(props) {
     try {
       const foodData = await API.graphql(graphqlOperation(listFoods));
       const foodList = foodData.data.listFoods.items;
-      console.log(foodList);
+
+      const restarauntData = await API.graphql(
+        graphqlOperation(listRestaurants)
+      );
+      const restarauntList = restarauntData.data.listFoods.items;
+
       setFoodInfo(foodList);
+      if (foodList === 0) {
+        setCreateRestaurant(false);
+      } else if (foodList != 0) {
+        setCreateRestaurant(true);
+      }
     } catch (error) {
       console.log("error on fetching foods", error);
     }
@@ -58,26 +75,39 @@ function RestaurantDashboard(props) {
         {({ signOut }) => (
           <div>
             <h2>{props.companyName}</h2>
-
             <div className="dashboard-layout">
               <div className="restaurant-info-box">
-                <RestaurantInfo
-                  address="skdjghdhb"
-                  phoneNumber="098726345"
-                  email="hfehebv@ijfhvdfnjv.com"
-                  lat2="20.5937"
-                  lng2="78.9629"
-                />
-                <div {...getRootProps({ className: "dropzone" })}>
-                  <input {...getInputProps()} />
-                  <div className="drag-drop-button">
-                    Drag 'n' drop your restaurant's profile picture here, or
-                    click to select a file
+                {createRestaurant ? (
+                  <div>
+                    <RestaurantInfo
+                      address="skdjghdhb"
+                      phoneNumber="098726345"
+                      email="hfehebv@ijfhvdfnjv.com"
+                      lat2="20.5937"
+                      lng2="78.9629"
+                    />
+                    <div {...getRootProps({ className: "dropzone" })}>
+                      <input {...getInputProps()} />
+                      <div className="drag-drop-button">
+                        Drag 'n' drop your restaurant's profile picture here, or
+                        click to select a file
+                      </div>
+                    </div>
+                    <aside>
+                      <ul>{files}</ul>
+                    </aside>
                   </div>
-                </div>
-                <aside>
-                  <ul>{files}</ul>
-                </aside>
+                ) : (
+                  <div>
+                    <Button
+                      variant="outlined"
+                      startIcon={<AddIcon />}
+                      onClick={() => setOpenCreatePopup(true)}
+                    >
+                      Create a Restaraunt
+                    </Button>
+                  </div>
+                )}
                 <button onClick={signOut} className="sign-out-button">
                   Sign Out
                 </button>
@@ -124,6 +154,15 @@ function RestaurantDashboard(props) {
               title={"add new food"}
             >
               <AddFoodForm></AddFoodForm>
+            </Popup>
+            <Popup
+              openPopup={openCreatePopup}
+              setOpenPopup={setOpenCreatePopup}
+              title="create new restaurant"
+            >
+              <CreateRestForm
+                setDashboard={() => setCreateRestaurant(true)}
+              ></CreateRestForm>
             </Popup>
           </div>
         )}

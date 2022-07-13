@@ -8,6 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import StaticMap from "../DashboardForRestaurant/StaticMap.js";
 import Edit from "../DashboardForRestaurant/Edit.js";
+import "../css-files/restaurantInfo.css";
+import Popup from "../DashboardForRestaurant/Popup.js";
 
 function RestaurantInfo(props) {
   const [fullName, setFullName] = useState("Enter Address");
@@ -18,6 +20,8 @@ function RestaurantInfo(props) {
 
   const [fullEmail, setFullEmail] = useState("Enter Email");
   const [showInputEle3, setShowInputEle3] = useState(false);
+
+  const [openPopup, setOpenPopup] = useState(false);
 
   return (
     <>
@@ -63,7 +67,20 @@ function RestaurantInfo(props) {
             </Card.Text>
             {/* <Button variant="primary"><FontAwesomeIcon icon={faMarker} /> Edit Info</Button> */}
           </Card.Body>
+          <div className="restaurant-info-button-container">
+            <button
+              className="restaurant-info-button"
+              onClick={() => setOpenPopup(true)}
+            >
+              Edit Profile
+            </button>
+          </div>
         </Card>
+        <Popup
+          openPopup={openPopup}
+          setOpenPopup={setOpenPopup}
+          title={"Edit Restaraunt Profile"}
+        ></Popup>
       </div>
     </>
   );

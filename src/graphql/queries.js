@@ -46,6 +46,7 @@ export const getRestaurant = /* GraphQL */ `
       address
       phone
       email
+      pounds
       Foods {
         items {
           id
@@ -79,6 +80,7 @@ export const listRestaurants = /* GraphQL */ `
         address
         phone
         email
+        pounds
         Foods {
           nextToken
         }

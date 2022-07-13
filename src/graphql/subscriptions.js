@@ -54,6 +54,7 @@ export const onCreateRestaurant = /* GraphQL */ `
       address
       phone
       email
+      pounds
       Foods {
         items {
           id
@@ -82,6 +83,7 @@ export const onUpdateRestaurant = /* GraphQL */ `
       address
       phone
       email
+      pounds
       Foods {
         items {
           id
@@ -110,6 +112,7 @@ export const onDeleteRestaurant = /* GraphQL */ `
       address
       phone
       email
+      pounds
       Foods {
         items {
           id

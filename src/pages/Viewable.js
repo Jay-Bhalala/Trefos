@@ -14,9 +14,9 @@ function Viewable(props) {
       <div className="dashboard-layout">
         <div>
           <RestaurantInfo
-            location="skdjghdhb"
-            number="098726345"
-            mail="hfehebv@ijfhvdfnjv.com"
+            location={props.address}
+            number={props.phone}
+            mail={props.email}
             lat2="20.5937"
             lng2="78.9629"
           />

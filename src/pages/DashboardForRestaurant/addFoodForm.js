@@ -19,7 +19,7 @@ const initialValues = {
   id: "",
   name: "",
   daysOld: "",
-  pounds: "",
+  pounds: 0,
   pickUp: "",
 };
 
@@ -39,7 +39,7 @@ function AddFoodForm(props) {
     let temp = {};
     temp.name = values.name ? "" : "This Field is Required.";
     temp.daysOld = values.daysOld ? "" : "This Field is Required.";
-    temp.pounds = values.pounds ? "" : "This Field is Required.";
+    temp.pounds = values.pounds ? 0 : "This Field is Required.";
     temp.pickUp = values.pickUp ? "" : "This Field is Required.";
     setErrors({
       ...temp,

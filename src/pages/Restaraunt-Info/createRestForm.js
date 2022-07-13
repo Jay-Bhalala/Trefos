@@ -65,7 +65,6 @@ function CreateRestForm(props) {
       });
       setValues(initialValues);
       setErrors({});
-      props.setDashboard();
     }
   };
 

@@ -23,7 +23,7 @@ function RestaurantDashboard(props) {
 
   const [openCreatePopup, setOpenCreatePopup] = useState(false);
 
-  const [createRestaurant, setCreateRestaurant] = useState(false);
+  // const [createRestaurant, setCreateRestaurant] = useState(false);
 
   const files = acceptedFiles.map((file) => (
     <li key={file.path}>
@@ -32,27 +32,26 @@ function RestaurantDashboard(props) {
   ));
 
   const [foodInfo, setFoodInfo] = useState([]);
+  const [check, setCheck] = useState([]);
 
   useEffect(() => {
     fetchFoods();
-  }, [foodInfo]);
+  }, [foodInfo, check]);
 
   const fetchFoods = async () => {
     try {
       const foodData = await API.graphql(graphqlOperation(listFoods));
       const foodList = foodData.data.listFoods.items;
 
-      const restarauntData = await API.graphql(
+      const restaurantData = await API.graphql(
         graphqlOperation(listRestaurants)
       );
-      const restarauntList = restarauntData.data.listFoods.items;
+      const restaurantCheck = restaurantData.data.listRestaurants.items;
 
+      console.log(restaurantCheck);
+
+      setCheck(restaurantCheck);
       setFoodInfo(foodList);
-      if (foodList === 0) {
-        setCreateRestaurant(false);
-      } else if (foodList != 0) {
-        setCreateRestaurant(true);
-      }
     } catch (error) {
       console.log("error on fetching foods", error);
     }
@@ -77,7 +76,7 @@ function RestaurantDashboard(props) {
             <h2>{props.companyName}</h2>
             <div className="dashboard-layout">
               <div className="restaurant-info-box">
-                {createRestaurant ? (
+                {check != 0 ? (
                   <div>
                     <RestaurantInfo
                       address="skdjghdhb"
@@ -138,12 +137,16 @@ function RestaurantDashboard(props) {
                     );
                   })}
                   <div style={{ display: "flex", alignItems: "center" }}>
-                    <button
-                      style={{ background: "none", border: "none" }}
-                      onClick={() => setOpenPopup(true)}
-                    >
-                      <FontAwesomeIcon icon={faPlusCircle} size="5x" />
-                    </button>
+                    {check != 0 ? (
+                      <button
+                        style={{ background: "none", border: "none" }}
+                        onClick={() => setOpenPopup(true)}
+                      >
+                        <FontAwesomeIcon icon={faPlusCircle} size="5x" />
+                      </button>
+                    ) : (
+                      <div>Create your Restaraunt!</div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -160,9 +163,7 @@ function RestaurantDashboard(props) {
               setOpenPopup={setOpenCreatePopup}
               title="create new restaurant"
             >
-              <CreateRestForm
-                setDashboard={() => setCreateRestaurant(true)}
-              ></CreateRestForm>
+              <CreateRestForm></CreateRestForm>
             </Popup>
           </div>
         )}

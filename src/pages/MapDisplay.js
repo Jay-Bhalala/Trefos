@@ -44,8 +44,8 @@ function MapDisplay(props) {
   //   }
   // };
 
-  // var latitude = 0;
-  // var longitude = 0;
+  var latitude = 0;
+  var longitude = 0;
 
   // Geocode.setApiKey("AIzaSyB84ywpp1zEHfE1gxSpvoJWSOsg5lO2X4I");
   // Geocode.setLanguage("en");
@@ -110,11 +110,7 @@ function MapDisplay(props) {
               position={[location.coordinates.lat, location.coordinates.lng]}
             ></Marker>
           )}
-          <Marker
-            icon={markerIcon}
-
-            // position={[latitude, longitude]}
-          ></Marker>
+          <Marker icon={markerIcon} position={[latitude, longitude]} ></Marker>
         </Map>
         <div className="row my-4">
           <div className="col d-flex justify-content-center">

@@ -8,12 +8,6 @@ import "./css-files/Discover.css";
 import { Link } from "react-router-dom";
 import { API, graphqlOperation } from "aws-amplify";
 import { listRestaurants } from "../graphql/queries";
-import Amplify from "aws-amplify";
-import * as queries from '../../src/graphql/queries';
-import * as mutations from '../../src/graphql/mutations';
-
-
-
 
 const marks = [
   {
@@ -49,6 +43,24 @@ function calculateValue(value) {
 }
 
 function Discover(props) {
+  const [restarauntInfo, setRestarauntInfo] = useState([]);
+
+  useEffect(() => {
+    fetchRestaurants();
+  }, [restarauntInfo]);
+
+  const fetchRestaurants = async () => {
+    try {
+      const restaurantData = await API.graphql({
+        query: listRestaurants,
+        authMode: "AWS_IAM",
+      });
+      const restaurantList = restaurantData.data.listRestaurants.items;
+      setRestarauntInfo(restaurantList);
+    } catch (error) {
+      console.log("error on fetching", error);
+    }
+  };
 
   const [value, setValue] = React.useState(1);
   const handleChange = (event, newValue) => {
@@ -60,37 +72,10 @@ function Discover(props) {
   function stringUrl(string) {
     if (string.includes("%20")) {
       return string.replaceAll("%20", " ");
+    } else {
+      return string;
     }
   }
-
-  const [restarauntInfo, setRestarauntInfo] = useState([]);
-
-  useEffect(() => {
-    fetchRestaurants();
-  }, []);
-
-  const fetchRestaurants = async () => {
-    try {
-      const restaurantData = await API.graphql({
-        query: listRestaurants,
-        authMode: "AWS_IAM",
-      });
-      const pounds = restaurantData.data.listFoods.items.pounds;
-      const restaurantList = restaurantData.data.listRestaurants.items.pounds;
-      setRestarauntInfo(restaurantList);
-      const restaurantDetails = {
-        id: 'some_id',
-        pounds: pounds+=value
-      };
-      const updateRestaurant = async() =>{
-        const updatedRestaurant = await API.graphql({ query: mutations.updateRestaurant, variables: {input: restaurantDetails}});
-        console.log(updatedRestaurant);
-      }
-    } catch (error) {
-      console.log("error on fetching", error);
-    }
-
-  };
 
   return (
     <>
@@ -130,7 +115,7 @@ function Discover(props) {
         </div>
 
         <div>
-          <button className="filter-button" onClick={fetchRestaurants}>
+          <button className="filter-button" onClick={console.log(value)}>
             {" "}
             Search{" "}
           </button>

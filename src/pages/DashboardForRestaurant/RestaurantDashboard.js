@@ -49,8 +49,6 @@ function RestaurantDashboard(props) {
       );
       const restaurantCheck = restaurantData.data.listRestaurants.items;
 
-      console.log(restaurantCheck);
-
       setCheck(restaurantCheck);
       setFoodInfo(foodList);
     } catch (error) {
@@ -127,16 +125,16 @@ function RestaurantDashboard(props) {
                   </div>
                 )}
                 <br></br>
-                  <div>
-                    <Button
-                      variant="outlined"
-                      startIcon={<AddIcon />}
-                      //onClick={() => setOpenCreatePopup(true)}
-                    >
-                      Update Photo
-                    </Button>
-                  </div>
-                  
+                <div>
+                  <Button
+                    variant="outlined"
+                    startIcon={<AddIcon />}
+                    //onClick={() => setOpenCreatePopup(true)}
+                  >
+                    Update Photo
+                  </Button>
+                </div>
+
                 <button onClick={signOut} className="sign-out-button">
                   Sign Out
                 </button>

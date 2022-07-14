@@ -71,6 +71,8 @@ function CreateRestForm(props) {
   function stringUrl(string) {
     if (string.includes(" ")) {
       return string.replaceAll(" ", "%20");
+    } else {
+      return string;
     }
   }
 

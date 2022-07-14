@@ -56,23 +56,23 @@ function RestaurantDashboard(props) {
     }
   };
 
-  var latitude = 0;
-  var longitude = 0;
+  // var latitude = 0;
+  // var longitude = 0;
 
-  Geocode.setApiKey("AIzaSyB84ywpp1zEHfE1gxSpvoJWSOsg5lO2X4I");
-  Geocode.setLanguage("en");
+  // Geocode.setApiKey("AIzaSyB84ywpp1zEHfE1gxSpvoJWSOsg5lO2X4I");
+  // Geocode.setLanguage("en");
 
-  // Get latitude & longitude from address.
-  Geocode.fromAddress("4400 southpointe drive richardson texas").then(
-    (response) => {
-      const { lat, lng } = response.results[0].geometry.location;
-      latitude = lat;
-      longitude = lng;
-    },
-    (error) => {
-      console.error(error);
-    }
-  );
+  // // Get latitude & longitude from address.
+  // Geocode.fromAddress("4400 southpointe drive richardson texas").then(
+  //   (response) => {
+  //     const { lat, lng } = response.results[0].geometry.location;
+  //     latitude = lat;
+  //     longitude = lng;
+  //   },
+  //   (error) => {
+  //     console.error(error);
+  //   }
+  // );
 
   return (
     <>

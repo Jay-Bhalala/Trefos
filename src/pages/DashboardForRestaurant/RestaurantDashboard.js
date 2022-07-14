@@ -126,6 +126,17 @@ function RestaurantDashboard(props) {
                     </Button>
                   </div>
                 )}
+                <br></br>
+                  <div>
+                    <Button
+                      variant="outlined"
+                      startIcon={<AddIcon />}
+                      //onClick={() => setOpenCreatePopup(true)}
+                    >
+                      Update Photo
+                    </Button>
+                  </div>
+                  
                 <button onClick={signOut} className="sign-out-button">
                   Sign Out
                 </button>

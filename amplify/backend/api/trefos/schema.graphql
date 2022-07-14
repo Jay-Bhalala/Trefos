@@ -15,4 +15,6 @@ type Restaurant @model @auth(rules: [{allow: owner}, {allow: public, operations:
   email: String!
   pounds: Int
   Foods: [Food] @hasMany(indexName: "byRestaurant", fields: ["id"])
+  latitude: Float!
+  longitude: Float!
 }

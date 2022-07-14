@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import { v4 } from "uuid";
 import { API } from "aws-amplify";
 import { createRestaurant } from "../../../src/graphql/mutations.js";
+import Geocode from "react-geocode";
+
 
 const initialValues = {
   id: "",
@@ -26,6 +28,9 @@ const theme = createTheme({
 function CreateRestForm(props) {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
+
+Geocode.setApiKey("AIzaSyDACU97eVz7BeST6TBxUUJh1GaH36O1kTA");
+Geocode.setLanguage("en");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -51,6 +56,18 @@ function CreateRestForm(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
+      let latitude = 0;
+      let longitude = 0;
+      await Geocode.fromAddress(values.address).then(
+        (response) => {
+          const { lat, lng } = response.results[0].geometry.location;
+          latitude = lat;
+          longitude = lng;
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
       await API.graphql({
         query: createRestaurant,
         variables: {
@@ -60,6 +77,8 @@ function CreateRestForm(props) {
             address: values.address,
             phone: values.phone,
             email: values.email,
+            latitude: latitude,
+            longitude: longitude,
           },
         },
       });

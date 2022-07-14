@@ -87,26 +87,6 @@ function RestaurantDashboard(props) {
     }
   });
 
-  const [latitude, setLatitude] = useState(0);
-  const [longitude, setLongitude] = useState(0);
-
-  Geocode.setApiKey("AIzaSyDACU97eVz7BeST6TBxUUJh1GaH36O1kTA");
-  Geocode.setLanguage("en");
-
-  // Get latitude & longitude from address.
-  Geocode.fromAddress("4400 southpointe drive richardson texas").then(
-    (response) => {
-      const { lat, lng } = response.results[0].geometry.location;
-      setLatitude(lat);
-      setLongitude(lng);
-    },
-    (error) => {
-      console.error(error);
-    }
-  );
-
-  useEffect(() => {},[latitude]);
-  useEffect(() => {},[longitude]);
 
   return (
     <>
@@ -136,8 +116,8 @@ function RestaurantDashboard(props) {
                           address={restaurant.address}
                           phoneNumber={restaurant.phone}
                           email={restaurant.email}
-                          lat2={latitude}
-                          lng2={longitude}
+                          lat2={restaurant.latitude}
+                          lng2={restaurant.longitude}
                         />
                       );
                     })}

@@ -81,6 +81,8 @@ export const createRestaurant = /* GraphQL */ `
         }
         nextToken
       }
+      latitude
+      longitude
       createdAt
       updatedAt
       owner
@@ -113,6 +115,8 @@ export const updateRestaurant = /* GraphQL */ `
         }
         nextToken
       }
+      latitude
+      longitude
       createdAt
       updatedAt
       owner
@@ -145,6 +149,8 @@ export const deleteRestaurant = /* GraphQL */ `
         }
         nextToken
       }
+      latitude
+      longitude
       createdAt
       updatedAt
       owner

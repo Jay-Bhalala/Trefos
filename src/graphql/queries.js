@@ -61,6 +61,8 @@ export const getRestaurant = /* GraphQL */ `
         }
         nextToken
       }
+      latitude
+      longitude
       createdAt
       updatedAt
       owner
@@ -84,6 +86,8 @@ export const listRestaurants = /* GraphQL */ `
         Foods {
           nextToken
         }
+        latitude
+        longitude
         createdAt
         updatedAt
         owner

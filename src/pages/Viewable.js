@@ -45,8 +45,8 @@ function Viewable(props) {
             location={props.address}
             number={props.phone}
             mail={props.email}
-            lat2="20.5937"
-            lng2="78.9629"
+            lat2={props.l2}
+            lng2={props.lg2}
           />
         </div>
         <div>

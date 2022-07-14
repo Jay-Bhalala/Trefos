@@ -7,7 +7,8 @@ import L from "leaflet";
 import cities from "./cities.json";
 import useGeoLocation from "../hooks/useGeoLocation";
 import { Alert, Button } from "react-bootstrap";
-import Geocode from "react-geocode";
+import { listRestaurants } from "../graphql/queries";
+import { API } from "aws-amplify";
 
 const markerIcon = new L.Icon({
   iconUrl: require("./marker.png"),
@@ -44,26 +45,26 @@ function MapDisplay(props) {
   //   }
   // };
 
-  const [latitude, setLatitude] = useState(0);
-  const [longitude, setLongitude] = useState(0);
+  const [restarauntInfo, setRestarauntInfo] = useState([]);
 
-  Geocode.setApiKey("AIzaSyDACU97eVz7BeST6TBxUUJh1GaH36O1kTA");
-  Geocode.setLanguage("en");
+  useEffect(() => {
+    fetchRestaurants();
+  }, [restarauntInfo]);
 
-  // Get latitude & longitude from address.
-  Geocode.fromAddress("4400 southpointe drive richardson texas").then(
-    (response) => {
-      const { lat, lng } = response.results[0].geometry.location;
-      setLatitude(lat);
-      setLongitude(lng);
-    },
-    (error) => {
-      console.error(error);
+  const fetchRestaurants = async () => {
+    try {
+      const restaurantData = await API.graphql({
+        query: listRestaurants,
+        authMode: "AWS_IAM",
+      });
+
+      const restaurantList = restaurantData.data.listRestaurants.items;
+
+      setRestarauntInfo(restaurantList);
+    } catch (error) {
+      console.log("error on fetching", error);
     }
-  );
-
-  useEffect(() => {},[latitude]);
-  useEffect(() => {},[longitude]);
+  };
 
   return (
     <>
@@ -98,11 +99,11 @@ function MapDisplay(props) {
             url={osm.maptiler.url}
             attribution={osm.maptiler.attribution}
           />
-          {cities.map((city, idx) => (
-            <Marker position={[city.lat, city.lng]} icon={markerIcon} key={idx}>
+          {restarauntInfo.map((restaurant) => (
+            <Marker position={[restaurant.latitude, restaurant.longitude]} icon={markerIcon}>
               <Popup>
                 <b>
-                  {city.city}, {city.country}
+                  {restaurant.name}
                 </b>
               </Popup>
             </Marker>
@@ -113,7 +114,6 @@ function MapDisplay(props) {
               position={[location.coordinates.lat, location.coordinates.lng]}
             ></Marker>
           )}
-          <Marker icon={markerIcon} position={[latitude, longitude]} ></Marker>
         </Map>
         <div className="row my-4">
           <div className="col d-flex justify-content-center">

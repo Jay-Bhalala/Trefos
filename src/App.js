@@ -102,7 +102,15 @@ function App() {
             />
           );
         })}
-        <Route exact path="/map" element={<MapDisplay />} />
+        <Route
+          exact
+          path="/map"
+          element={
+            <div>
+              <NavbarDefault /> <MapDisplay />
+            </div>
+          }
+        />
         <Route
           path="/restaurant"
           element={<RestaurantDashboard companyName="Example Company Name" />}

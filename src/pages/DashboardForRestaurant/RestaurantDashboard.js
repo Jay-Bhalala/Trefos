@@ -87,8 +87,8 @@ function RestaurantDashboard(props) {
     }
   });
 
-  // var latitude = 0;
-  // var longitude = 0;
+  var latitude = 0;
+  var longitude = 0;
 
   // Geocode.setApiKey("AIzaSyB84ywpp1zEHfE1gxSpvoJWSOsg5lO2X4I");
   // Geocode.setLanguage("en");
@@ -133,8 +133,8 @@ function RestaurantDashboard(props) {
                           address={restaurant.address}
                           phoneNumber={restaurant.phone}
                           email={restaurant.email}
-                          // lat2={latitude}
-                          // lng2={longitude}
+                          lat2={latitude}
+                          lng2={longitude}
                         />
                       );
                     })}

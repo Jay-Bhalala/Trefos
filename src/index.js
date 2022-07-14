@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import Amplify from "aws-amplify";
 import config from "./aws-exports";
 import { CookiesProvider } from "react-cookie";
+
 Amplify.configure(config);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

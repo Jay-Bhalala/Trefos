@@ -23,7 +23,7 @@ function RestaurantInfo(props) {
       <div>
         <Card style={{ width: "100%", height: "auto" }}>
           {/* <Card.Img variant="top" src={Test} /> */}
-          <StaticMap lat1={props.lat2} lng1={props.lng2} />
+          {/* <StaticMap lat1={props.lat2} lng1={props.lng2} /> */}
           <Card.Body>
             <Card.Title>Contact Info</Card.Title>
             <Card.Text>

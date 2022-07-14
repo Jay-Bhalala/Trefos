@@ -37,18 +37,16 @@ function RestaurantDashboard(props) {
 
   useEffect(() => {
     fetchFoods();
-  }, [foodInfo, check]);
+  }, [check]);
 
   const fetchFoods = async () => {
     try {
       const foodData = await API.graphql(graphqlOperation(listFoods));
       const foodList = foodData.data.listFoods.items;
-
       const restaurantData = await API.graphql(
         graphqlOperation(listRestaurants)
       );
       const restaurantCheck = restaurantData.data.listRestaurants.items;
-
       setCheck(restaurantCheck);
       setFoodInfo(foodList);
     } catch (error) {
@@ -93,7 +91,7 @@ function RestaurantDashboard(props) {
             <h2>{props.companyName}</h2>
             <div className="dashboard-layout">
               <div className="restaurant-info-box">
-                {check != 0 ? (
+                {check.length !== 0 ? (
                   <div>
                     {check.map((restaurant) => {
                       return (
@@ -101,8 +99,8 @@ function RestaurantDashboard(props) {
                           address={restaurant.address}
                           phoneNumber={restaurant.phone}
                           email={restaurant.email}
-                          lat2={latitude}
-                          lng2={longitude}
+                          // lat2={latitude}
+                          // lng2={longitude}
                         />
                       );
                     })}
@@ -169,7 +167,7 @@ function RestaurantDashboard(props) {
                     );
                   })}
                   <div style={{ display: "flex", alignItems: "center" }}>
-                    {check != 0 ? (
+                    {check.length !== 0 ? (
                       <button
                         style={{ background: "none", border: "none" }}
                         onClick={() => setOpenPopup(true)}

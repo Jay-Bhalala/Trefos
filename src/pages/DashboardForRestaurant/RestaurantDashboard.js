@@ -95,13 +95,17 @@ function RestaurantDashboard(props) {
               <div className="restaurant-info-box">
                 {check != 0 ? (
                   <div>
-                    <RestaurantInfo
-                      address="skdjghdhb"
-                      phoneNumber="098726345"
-                      email="hfehebv@ijfhvdfnjv.com"
-                      lat2={latitude}
-                      lng2={longitude}
-                    />
+                    {check.map((restaurant) => {
+                      return (
+                        <RestaurantInfo
+                          address={restaurant.address}
+                          phoneNumber={restaurant.phone}
+                          email={restaurant.email}
+                          lat2={latitude}
+                          lng2={longitude}
+                        />
+                      );
+                    })}
                     <div {...getRootProps({ className: "dropzone" })}>
                       <input {...getInputProps()} />
                       <div className="drag-drop-button">

@@ -72,6 +72,8 @@ function Discover(props) {
   function stringUrl(string) {
     if (string.includes("%20")) {
       return string.replaceAll("%20", " ");
+    } else {
+      return string;
     }
   }
 

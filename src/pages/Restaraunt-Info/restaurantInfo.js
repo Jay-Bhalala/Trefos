@@ -12,15 +12,6 @@ import "../css-files/restaurantInfo.css";
 import Popup from "../DashboardForRestaurant/Popup.js";
 
 function RestaurantInfo(props) {
-  const [fullName, setFullName] = useState("Enter Address");
-  const [showInputEle, setShowInputEle] = useState(false);
-
-  const [fullNumber, setFullNumber] = useState("Enter Phone Number");
-  const [showInputEle2, setShowInputEle2] = useState(false);
-
-  const [fullEmail, setFullEmail] = useState("Enter Email");
-  const [showInputEle3, setShowInputEle3] = useState(false);
-
   const [openPopup, setOpenPopup] = useState(false);
 
   return (
@@ -36,34 +27,31 @@ function RestaurantInfo(props) {
           <Card.Body>
             <Card.Title>Contact Info</Card.Title>
             <Card.Text>
-              <FontAwesomeIcon icon={faThumbTack} /> Address:
-              <Edit
-                value={fullName}
-                handleChange={(e) => setFullName(e.target.value)}
-                handleDoubleClick={() => setShowInputEle(true)}
-                handleBlur={() => setShowInputEle(false)}
-                showInputEle={showInputEle}
-              />
+              <div style={{ display: "flex" }}>
+                <div>
+                  <FontAwesomeIcon icon={faThumbTack} />
+                </div>
+                <div style={{ marginLeft: ".25rem" }}>Address:</div>
+                <div style={{ marginLeft: ".55rem" }}>{props.address}</div>
+              </div>
             </Card.Text>
             <Card.Text>
-              <FontAwesomeIcon icon={faPhone} /> Phone Number:
-              <Edit
-                value={fullNumber}
-                handleChange={(e) => setFullNumber(e.target.value)}
-                handleDoubleClick={() => setShowInputEle2(true)}
-                handleBlur={() => setShowInputEle2(false)}
-                showInputEle={showInputEle2}
-              />
+              <div style={{ display: "flex" }}>
+                <div>
+                  <FontAwesomeIcon icon={faPhone} />
+                </div>
+                <div style={{ marginLeft: ".25rem" }}>Phone Number:</div>
+                <div style={{ marginLeft: ".55rem" }}>{props.phoneNumber}</div>
+              </div>
             </Card.Text>
             <Card.Text>
-              <FontAwesomeIcon icon={faMailForward} /> Email:
-              <Edit
-                value={fullEmail}
-                handleChange={(e) => setFullEmail(e.target.value)}
-                handleDoubleClick={() => setShowInputEle3(true)}
-                handleBlur={() => setShowInputEle3(false)}
-                showInputEle={showInputEle3}
-              />
+              <div style={{ display: "flex" }}>
+                <div>
+                  <FontAwesomeIcon icon={faMailForward} />
+                </div>
+                <div style={{ marginLeft: ".25rem" }}>Email:</div>
+                <div style={{ marginLeft: ".55rem" }}>{props.email}</div>
+              </div>
             </Card.Text>
             {/* <Button variant="primary"><FontAwesomeIcon icon={faMarker} /> Edit Info</Button> */}
           </Card.Body>

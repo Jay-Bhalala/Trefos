@@ -96,8 +96,8 @@ function App() {
                     email={restaurant.email}
                     food={restaurant.Foods}
                     id={restaurant.id}
-                    l2 = {restaurant.longitude}
-                    lg2 = {restaurant.latitude}
+                    l2={restaurant.latitude}
+                    lg2={restaurant.longitude}
                   />
                 </div>
               }

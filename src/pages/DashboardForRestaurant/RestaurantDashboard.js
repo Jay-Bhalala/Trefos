@@ -10,12 +10,14 @@ import Popup from "./Popup";
 import AddFoodForm from "./addFoodForm";
 import { Authenticator } from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
-import { API, graphqlOperation } from "aws-amplify";
+import { API, graphqlOperation, Auth, Hub } from "aws-amplify";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import CreateRestForm from "../Restaraunt-Info/createRestForm";
 import { listFoods, listRestaurants } from "../../graphql/queries";
 import Geocode from "react-geocode";
+import NavbarRestaurant from "../../navbars/NavBarRestaurant";
+import NavbarDefault from "../../navbars/NavbarDefault";
 
 function RestaurantDashboard(props) {
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
@@ -34,10 +36,11 @@ function RestaurantDashboard(props) {
 
   const [foodInfo, setFoodInfo] = useState([]);
   const [check, setCheck] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
     fetchFoods();
-  }, [check]);
+  }, [check, loggedIn]);
 
   const fetchFoods = async () => {
     try {
@@ -53,6 +56,36 @@ function RestaurantDashboard(props) {
       console.log("error on fetching foods", error);
     }
   };
+
+  useEffect(() => {
+    assessLoggedInState();
+  }, []);
+
+  const assessLoggedInState = async () => {
+    try {
+      const user = await Auth.currentAuthenticatedUser();
+      setLoggedIn(true);
+    } catch {
+      setLoggedIn(false);
+    }
+  };
+
+  const signedOut = async () => {
+    try {
+      await Auth.signOut();
+      setLoggedIn(false);
+    } catch (e) {
+      console.log("error signing out", e);
+    }
+  };
+
+  Hub.listen("auth", (data) => {
+    const { payload } = data;
+
+    if (payload.event === "signIn") {
+      setLoggedIn(true);
+    }
+  });
 
   // var latitude = 0;
   // var longitude = 0;
@@ -74,6 +107,7 @@ function RestaurantDashboard(props) {
 
   return (
     <>
+      {loggedIn ? <NavbarRestaurant /> : <NavbarDefault />}
       <h1
         style={{
           display: "flex",
@@ -137,7 +171,13 @@ function RestaurantDashboard(props) {
                   </Button>
                 </div>
 
-                <button onClick={signOut} className="sign-out-button">
+                <button
+                  onClick={() => {
+                    signOut();
+                    signedOut();
+                  }}
+                  className="sign-out-button"
+                >
                   Sign Out
                 </button>
               </div>

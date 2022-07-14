@@ -39,12 +39,47 @@ function App() {
 
   return (
     <>
-      <NavbarDefault />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/aboutus" element={<AboutUs />} />
-        <Route exact path="/contactus" element={<Contact />} />
-        <Route exact path="/discover" element={<Discover />} />
+        <Route
+          exact
+          path="/"
+          element={
+            <div>
+              <NavbarDefault />
+              <Home />
+            </div>
+          }
+        />
+        <Route
+          exact
+          path="/aboutus"
+          element={
+            <div>
+              <NavbarDefault />
+              <AboutUs />
+            </div>
+          }
+        />
+        <Route
+          exact
+          path="/contactus"
+          element={
+            <div>
+              <NavbarDefault />
+              <Contact />
+            </div>
+          }
+        />
+        <Route
+          exact
+          path="/discover"
+          element={
+            <div>
+              <NavbarDefault />
+              <Discover />
+            </div>
+          }
+        />
         <Route exact path="/liked" element={<Liked />} />
         {restarauntInfo.map((restaurant) => {
           return (
@@ -52,14 +87,17 @@ function App() {
               exact
               path={`/discover/${restaurant.name}`}
               element={
-                <Viewable
-                  companyName="Sample Restaraunt"
-                  address={restaurant.address}
-                  phone={restaurant.phone}
-                  email={restaurant.email}
-                  food={restaurant.Foods}
-                  id={restaurant.id}
-                />
+                <div>
+                  <NavbarDefault />
+                  <Viewable
+                    companyName="Sample Restaraunt"
+                    address={restaurant.address}
+                    phone={restaurant.phone}
+                    email={restaurant.email}
+                    food={restaurant.Foods}
+                    id={restaurant.id}
+                  />
+                </div>
               }
             />
           );

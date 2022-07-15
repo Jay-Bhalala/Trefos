@@ -36,18 +36,18 @@ function Viewable(props) {
   };
 
   return (
-    <div>
-      <h2>{props.companyName}</h2>
-
-      <div className="dashboard-layout">
-        <div>
-          <RestaurantInfo
+    <div className="dashboard-layout">
+      <div className="restaurant-info-box">
+      <h2>{props.companyName.replace(/%20/g, " ")}</h2>
+        <div >
+          <RestaurantInfo 
             location={props.address}
             number={props.phone}
             mail={props.email}
             lat2={props.l2}
             lng2={props.lg2}
           />
+        </div>
         </div>
         <div>
           <h1>Avaiable Foods</h1>
@@ -76,7 +76,6 @@ function Viewable(props) {
             })}
           </div>
         </div>
-      </div>
     </div>
   );
 }

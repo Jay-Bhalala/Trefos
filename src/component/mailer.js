@@ -26,7 +26,7 @@ const Mailer = () => {
         marginTop: "50px",
         width: "50%",
         flexDirection: "column",
-        padding: "1.5rem",
+        padding: "2.2rem",
       }}
     >
       <h1 style={{ marginTop: "25px" }}> Contact Form</h1>

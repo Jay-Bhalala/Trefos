@@ -47,6 +47,7 @@ function App() {
             <div>
               <NavbarDefault />
               <Home />
+              <Footer />
             </div>
           }
         />
@@ -57,6 +58,7 @@ function App() {
             <div>
               <NavbarDefault />
               <AboutUs />
+              <Footer />
             </div>
           }
         />
@@ -67,6 +69,7 @@ function App() {
             <div>
               <NavbarDefault />
               <Contact />
+              <Footer />
             </div>
           }
         />
@@ -77,6 +80,7 @@ function App() {
             <div>
               <NavbarDefault />
               <Discover />
+              <Footer />
             </div>
           }
         />
@@ -99,6 +103,7 @@ function App() {
                     l2={restaurant.latitude}
                     lg2={restaurant.longitude}
                   />
+                  <Footer />
                 </div>
               }
             />
@@ -109,7 +114,7 @@ function App() {
           path="/map"
           element={
             <div>
-              <NavbarDefault /> <MapDisplay />
+              <NavbarDefault /> <MapDisplay /> <Footer />
             </div>
           }
         />
@@ -118,7 +123,6 @@ function App() {
           element={<RestaurantDashboard companyName="Example Company Name" />}
         />
       </Routes>
-      <Footer />
     </>
   );
 }

@@ -15,7 +15,6 @@ import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import CreateRestForm from "../Restaraunt-Info/createRestForm";
 import { listFoods, listRestaurants } from "../../graphql/queries";
-import Geocode from "react-geocode";
 import NavbarRestaurant from "../../navbars/NavBarRestaurant";
 import NavbarDefault from "../../navbars/NavbarDefault";
 
@@ -87,32 +86,48 @@ function RestaurantDashboard(props) {
     }
   });
 
+  function stringUrl(string) {
+    if (string.includes("%20")) {
+      return string.replaceAll("%20", " ");
+    } else {
+      return string;
+    }
+  }
 
   return (
     <>
-      {loggedIn ? <NavbarRestaurant /> : <NavbarDefault />}
-      <h1
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "10vh",
-          fontSize: "1.5rem",
-        }}
-      >
-        The Following Content Is Only Available For Restaurant Accounts
-      </h1>
+      {loggedIn ? (
+        <NavbarRestaurant />
+      ) : (
+        <div>
+          <NavbarDefault />
+          <h1
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "10vh",
+              fontSize: "1.5rem",
+            }}
+          >
+            The Following Content Is Only Available For Restaurant Accounts
+          </h1>
+        </div>
+      )}
       <Authenticator>
         {({ signOut }) => (
           <div>
-            <h2>{props.companyName}</h2>
             <div className="dashboard-layout">
               <div className="restaurant-info-box">
+                {check.map((restaurant) => {
+                  return <h2>{stringUrl(restaurant.name)}</h2>;
+                })}
                 {check.length !== 0 ? (
                   <div>
                     {check.map((restaurant) => {
                       return (
                         <RestaurantInfo
+                          id={restaurant.id}
                           address={restaurant.address}
                           phoneNumber={restaurant.phone}
                           email={restaurant.email}
@@ -143,17 +158,6 @@ function RestaurantDashboard(props) {
                     </Button>
                   </div>
                 )}
-                <br></br>
-                <div>
-                  <Button
-                    variant="outlined"
-                    startIcon={<AddIcon />}
-                    //onClick={() => setOpenCreatePopup(true)}
-                  >
-                    Update Photo
-                  </Button>
-                </div>
-
                 <button
                   onClick={() => {
                     signOut();
@@ -185,6 +189,7 @@ function RestaurantDashboard(props) {
                           days={food.pickUp}
                           quantity={food.pounds}
                           old={food.daysOld}
+                          id={food.id}
                         />
                       </div>
                     );

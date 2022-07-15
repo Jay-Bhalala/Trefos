@@ -90,7 +90,7 @@ function App() {
                 <div>
                   <NavbarDefault />
                   <Viewable
-                    companyName="Sample Restaraunt"
+                    companyName={restaurant.name}
                     address={restaurant.address}
                     phone={restaurant.phone}
                     email={restaurant.email}

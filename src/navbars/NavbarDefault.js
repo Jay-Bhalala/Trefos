@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  Container,
-  Offcanvas,
-} from "react-bootstrap";
+import { Navbar, Nav, Container, Offcanvas } from "react-bootstrap";
 import logo from "./Cratos_3_1.svg";
 
 function NavbarDefault() {

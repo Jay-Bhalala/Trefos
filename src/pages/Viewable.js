@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import RestarauntFoodCard from "./DashboardForRestaurant/restarauntFoodCard";
+import RestarauntFoodCard from "./DashboardForRestaurant/foodCardViewable";
 import RestaurantInfo from "./Restaraunt-Info/viewableRestaurantInfo.js";
 import img from "./DashboardForRestaurant/lettuceTestImage.svg";
 import "./css-files/RestaurantDashboard.css";

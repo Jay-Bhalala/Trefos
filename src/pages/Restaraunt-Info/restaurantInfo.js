@@ -10,6 +10,7 @@ import StaticMap from "../DashboardForRestaurant/StaticMap.js";
 import Edit from "../DashboardForRestaurant/Edit.js";
 import "../css-files/restaurantInfo.css";
 import Popup from "../DashboardForRestaurant/Popup.js";
+import EditRestForm from "./editRestFrom.js";
 
 function RestaurantInfo(props) {
   const [openPopup, setOpenPopup] = useState(false);
@@ -68,7 +69,9 @@ function RestaurantInfo(props) {
           openPopup={openPopup}
           setOpenPopup={setOpenPopup}
           title={"Edit Restaraunt Profile"}
-        ></Popup>
+        >
+          <EditRestForm id={props.id} />
+        </Popup>
       </div>
     </>
   );

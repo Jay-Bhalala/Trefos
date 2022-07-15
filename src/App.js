@@ -84,7 +84,7 @@ function App() {
             </div>
           }
         />
-        <Route exact path="/liked" element={<Liked />} />
+        <Route exact path="/liked" element={<><NavbarDefault /> <Liked /><Footer /> </>} />
         {restarauntInfo.map((restaurant) => {
           return (
             <Route

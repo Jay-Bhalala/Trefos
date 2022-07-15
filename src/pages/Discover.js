@@ -87,6 +87,20 @@ function Discover(props) {
         }}
       >
         <h2>Discover Restaurants</h2>
+        <div className="disover-buttons-outside-container">
+          <div className="discover-buttons-container" style={{padding: '1.25rem'}}>
+            <div>
+              <Link to="/liked" className="link-button">
+                Liked
+              </Link>
+            </div>
+            <div>
+              <Link to="/map" className="link-button">
+                Map
+              </Link>
+            </div>
+          </div>
+        </div>
         <MDBCol md="6">
           <input
             className="form-control"
@@ -111,20 +125,6 @@ function Discover(props) {
             valueLabelFormat={valueLabelFormat}
             onChange={handleChange}
           />
-        </div>
-      </div>
-      <div className="disover-buttons-outside-container">
-        <div className="discover-buttons-container">
-          <div>
-            <Link to="/liked" className="link-button">
-              Liked
-            </Link>
-          </div>
-          <div>
-            <Link to="/map" className="link-button">
-              Map
-            </Link>
-          </div>
         </div>
       </div>
       <div style={{ padding: "2rem" }}>

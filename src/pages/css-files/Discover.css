@@ -32,8 +32,10 @@
     text-decoration: none;
     background: #F4ba9b;
     color: white;
-    padding: .5rem;
-    border-radius: .25rem;
+    padding: 14px 205px;;
+    border-radius: .5rem;
+    margin-right: 12px;
+    margin-left: 12px;
 }
 
 .link-button:hover{

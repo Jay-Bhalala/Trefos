@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { MDBRow } from "mdb-react-ui-kit";
 import RestaurantCard from "./RestaurantCard";
 import { MDBCol } from "mdbreact";
-import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import "./css-files/Discover.css";
 import { Link } from "react-router-dom";
@@ -112,13 +111,6 @@ function Discover(props) {
             valueLabelFormat={valueLabelFormat}
             onChange={handleChange}
           />
-        </div>
-
-        <div>
-          <button className="filter-button" onClick={console.log(value)}>
-            {" "}
-            Search{" "}
-          </button>
         </div>
       </div>
       <div className="disover-buttons-outside-container">

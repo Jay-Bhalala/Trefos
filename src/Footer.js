@@ -15,16 +15,16 @@ return (
 			<Row>
 			<Column>
 				<Heading>About Us</Heading>
-				<FooterLink href="#">More About Us</FooterLink>
+				<FooterLink href="/aboutus">More About Us</FooterLink>
 			</Column>
 			<Column>
 				<Heading>Services</Heading>
-				<FooterLink href="#">Restaurants</FooterLink>
-				<FooterLink href="#">Food Banks</FooterLink>
+				<FooterLink href="/restaurant">Restaurants</FooterLink>
+				<FooterLink href="/discover">Food Banks</FooterLink>
 			</Column>
 			<Column>
 				<Heading>Contact Us</Heading>
-				<FooterLink href="#">Leave Us A Message</FooterLink>
+				<FooterLink href="/contactus">Leave Us A Message</FooterLink>
 			</Column>
 			<Column>
 				<Heading>Social Media</Heading>

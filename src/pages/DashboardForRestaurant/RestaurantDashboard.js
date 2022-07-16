@@ -237,7 +237,9 @@ function RestaurantDashboard(props) {
                     onAddFood={() => {
                       fetchFoods();
                       setOpenPopup(false);
+                      console.log(restaurant.pounds);
                     }}
+                    pounds={restaurant.pounds}
                   ></AddFoodForm>
                 );
               })}

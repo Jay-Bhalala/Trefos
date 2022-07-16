@@ -4,7 +4,10 @@ import TextField from "@mui/material/TextField";
 import { v4 } from "uuid";
 import Button from "@mui/material/Button";
 import { API, graphqlOperation } from "aws-amplify";
-import { createFood } from "../../../src/graphql/mutations.js";
+import {
+  createFood,
+  updateRestaurant,
+} from "../../../src/graphql/mutations.js";
 
 const theme = createTheme({
   palette: {
@@ -19,7 +22,7 @@ const initialValues = {
   id: "",
   name: "",
   daysOld: "",
-  pounds: 0,
+  pounds: 0.0,
   pickUp: "",
 };
 
@@ -39,7 +42,7 @@ function AddFoodForm(props) {
     let temp = {};
     temp.name = values.name ? "" : "This Field is Required.";
     temp.daysOld = values.daysOld ? "" : "This Field is Required.";
-    temp.pounds = values.pounds ? 0 : "This Field is Required.";
+    temp.pounds = values.pounds ? 0.0 : "This Field is Required.";
     temp.pickUp = values.pickUp ? "" : "This Field is Required.";
     setErrors({
       ...temp,
@@ -51,6 +54,8 @@ function AddFoodForm(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
+      let poundsCur = props.pounds;
+      let poundsNew = values.pounds;
       await API.graphql({
         query: createFood,
         variables: {
@@ -64,6 +69,17 @@ function AddFoodForm(props) {
           },
         },
       });
+      await API.graphql({
+        query: updateRestaurant,
+        variables: {
+          input: {
+            id: props.id,
+            pounds: values.pounds,
+            name: props.name,
+          },
+        },
+      });
+      console.log(values.pounds + Number(poundsCur));
       props.onAddFood();
       setValues(initialValues);
       setErrors({});

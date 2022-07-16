@@ -78,6 +78,8 @@ function CreateRestForm(props) {
             email: values.email,
             latitude: latitude,
             longitude: longitude,
+            type: "restaraunt",
+            pounds: 0.0,
           },
         },
       });

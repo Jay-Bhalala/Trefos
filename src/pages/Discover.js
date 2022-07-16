@@ -10,6 +10,7 @@ import { listRestaurants } from "../graphql/queries";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import SplitButton from "react-bootstrap/SplitButton";
+import { searchRestaurants } from "../graphql/queries";
 
 const marks = [
   {
@@ -46,6 +47,7 @@ function calculateValue(value) {
 
 function Discover(props) {
   const [restarauntInfo, setRestarauntInfo] = useState([]);
+  const [restarauntAscSort, setRestarauntAscSort] = useState([]);
 
   useEffect(() => {
     fetchRestaurants();
@@ -80,6 +82,33 @@ function Discover(props) {
     }
   }
 
+  const fetchRestaurantsByAsc = async () => {
+    try {
+      const restarauntAscData = await API.graphql({
+        query: searchRestaurants,
+        variables: {
+          sort: {
+            direction: "asc",
+            field: "pounds",
+          },
+        },
+        authMode: "AWS_IAM",
+      });
+      const restaurantAscDataList =
+        restarauntAscData.data.searchRestaurants.items;
+      console.log(restaurantAscDataList);
+    } catch (e) {
+      console.log("error fetching asc", e);
+    }
+  };
+
+  const handleSelect = (e) => {
+    if (e == "fetchAsc") {
+      fetchRestaurantsByAsc();
+      console.log(restarauntAscSort);
+    }
+  };
+
   return (
     <>
       <div
@@ -109,22 +138,25 @@ function Discover(props) {
           </div>
         </div>
         <div className="discover">
-        <MDBCol md="6">
-          <input
-            className="form-control"
-            type="text"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </MDBCol>
-        {/* <div className="discover"> */}
+          <MDBCol md="6">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </MDBCol>
+          {/* <div className="discover"> */}
           <DropdownButton
             align={{ lg: "end" }}
             title="Sort By:"
             id="dropdown-menu-align-responsive-1"
+            onSelect={handleSelect}
           >
-            <Dropdown.Item eventKey="1">Newly Added (Default)</Dropdown.Item>
-            <Dropdown.Item eventKey="2">
+            <Dropdown.Item eventKey="default">
+              Newly Added (Default)
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="fetchAsc">
               Ascending Weight of Food Available
             </Dropdown.Item>
             <Dropdown.Item eventKey="2">

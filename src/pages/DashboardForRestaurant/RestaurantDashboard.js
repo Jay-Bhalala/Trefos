@@ -169,7 +169,7 @@ function RestaurantDashboard(props) {
                 </button>
               </div>
               <div>
-                <h1>Available Foods</h1>
+                <h1>Avaiable Foods</h1>
                 <div className="food-card-grid">
                   {/* <div>
                     <RestarauntFoodCard

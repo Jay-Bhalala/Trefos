@@ -96,3 +96,55 @@ export const listRestaurants = /* GraphQL */ `
     }
   }
 `;
+export const searchRestaurants = /* GraphQL */ `
+  query SearchRestaurants(
+    $filter: SearchableRestaurantFilterInput
+    $sort: [SearchableRestaurantSortInput]
+    $limit: Int
+    $nextToken: String
+    $from: Int
+    $aggregates: [SearchableRestaurantAggregationInput]
+  ) {
+    searchRestaurants(
+      filter: $filter
+      sort: $sort
+      limit: $limit
+      nextToken: $nextToken
+      from: $from
+      aggregates: $aggregates
+    ) {
+      items {
+        id
+        name
+        address
+        phone
+        email
+        pounds
+        Foods {
+          nextToken
+        }
+        latitude
+        longitude
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+      total
+      aggregateItems {
+        name
+        result {
+          ... on SearchableAggregateScalarResult {
+            value
+          }
+          ... on SearchableAggregateBucketResult {
+            buckets {
+              key
+              doc_count
+            }
+          }
+        }
+      }
+    }
+  }
+`;

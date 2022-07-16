@@ -1,7 +1,7 @@
 type Food @model @auth(rules: [{allow: public, operations: [read], provider: iam}, {allow: owner}]) {
   id: ID!
   name: String!
-  pounds: Int!
+  pounds: Float!
   daysOld: String!
   pickUp: String!
   restaurantID: ID! @index(name: "byRestaurant")
@@ -14,7 +14,7 @@ type Restaurant @model @searchable @auth(rules: [{allow: owner}, {allow: public,
   phone: String!
   email: String!
   type: String! @index(name: "restaurantsByPounds", queryField: "restaurantsByPounds", sortKeyFields: ["pounds"])
-  pounds: Int
+  pounds: Float!
   Foods: [Food] @hasMany(indexName: "byRestaurant", fields: ["id"])
   latitude: Float!
   longitude: Float!

@@ -101,7 +101,7 @@ export const listRestaurants = /* GraphQL */ `
 export const restaurantsByPounds = /* GraphQL */ `
   query RestaurantsByPounds(
     $type: String!
-    $pounds: ModelIntKeyConditionInput
+    $pounds: ModelFloatKeyConditionInput
     $sortDirection: ModelSortDirection
     $filter: ModelRestaurantFilterInput
     $limit: Int

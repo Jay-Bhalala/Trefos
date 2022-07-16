@@ -14,6 +14,14 @@
     margin-top: 1.75rem;
 }
 
+.discover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    margin-top: .5rem;
+}
+
 .discover-buttons-container{
     display: flex;
     flex-direction: row;

@@ -7,6 +7,9 @@ import "./css-files/Discover.css";
 import { Link } from "react-router-dom";
 import { API, graphqlOperation } from "aws-amplify";
 import { listRestaurants } from "../graphql/queries";
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import SplitButton from 'react-bootstrap/SplitButton';
 
 const marks = [
   {
@@ -109,22 +112,16 @@ function Discover(props) {
             aria-label="Search"
           />
         </MDBCol>
-
-        <div className="slider-box-2">
-          <h1 style={{ fontSize: "1.25rem", width: "100%" }}>
-            Weight of Food Available in Pounds:
-          </h1>
-          <Slider
-            className="slider-text-style"
-            aria-label="Always visible"
-            defaultValue={80}
-            getAriaValueText={valuetext}
-            step={5}
-            marks={marks}
-            valueLabelDisplay="on"
-            valueLabelFormat={valueLabelFormat}
-            onChange={handleChange}
-          />
+        <div className="discover">
+          <DropdownButton
+            align={{ lg: 'end' }}
+            title="Sort By:"
+            id="dropdown-menu-align-responsive-1"
+          >
+            <Dropdown.Item eventKey="1">Newly Added (Default)</Dropdown.Item>
+            <Dropdown.Item eventKey="2">Ascending Weight of Food Available</Dropdown.Item>
+            <Dropdown.Item eventKey="2">Descending Weight of Food Available</Dropdown.Item>
+          </DropdownButton>
         </div>
       </div>
       <div style={{ padding: "2rem" }}>

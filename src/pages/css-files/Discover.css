@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45%;
+    width: 85%;
     margin-top: .5rem;
 }
 
@@ -27,7 +27,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 50%
 }
 
 .disover-buttons-outside-container{
@@ -40,7 +39,6 @@
     text-decoration: none;
     background: #F4ba9b;
     color: white;
-    padding: 14px 205px;;
     border-radius: .5rem;
     margin-right: 12px;
     margin-left: 12px;

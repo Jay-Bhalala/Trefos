@@ -98,16 +98,17 @@ function Discover(props) {
           >
             <div>
               <Link to="/liked" className="link-button">
-                Liked
+                Restaurants You Have Liked
               </Link>
             </div>
             <div>
               <Link to="/map" className="link-button">
-                Map
+                Map Of All Available Restaurants
               </Link>
             </div>
           </div>
         </div>
+        <div className="discover">
         <MDBCol md="6">
           <input
             className="form-control"
@@ -116,7 +117,7 @@ function Discover(props) {
             aria-label="Search"
           />
         </MDBCol>
-        <div className="discover">
+        {/* <div className="discover"> */}
           <DropdownButton
             align={{ lg: "end" }}
             title="Sort By:"

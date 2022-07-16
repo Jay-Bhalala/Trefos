@@ -46,6 +46,7 @@ export const getRestaurant = /* GraphQL */ `
       address
       phone
       email
+      type
       pounds
       Foods {
         items {
@@ -82,6 +83,45 @@ export const listRestaurants = /* GraphQL */ `
         address
         phone
         email
+        type
+        pounds
+        Foods {
+          nextToken
+        }
+        latitude
+        longitude
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
+export const restaurantsByPounds = /* GraphQL */ `
+  query RestaurantsByPounds(
+    $type: String!
+    $pounds: ModelIntKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelRestaurantFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    restaurantsByPounds(
+      type: $type
+      pounds: $pounds
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        name
+        address
+        phone
+        email
+        type
         pounds
         Foods {
           nextToken
@@ -119,6 +159,7 @@ export const searchRestaurants = /* GraphQL */ `
         address
         phone
         email
+        type
         pounds
         Foods {
           nextToken

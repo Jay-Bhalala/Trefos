@@ -12,10 +12,14 @@ function restarauntFoodCard(props) {
   };
 
   const deletedFood = async () => {
-    await API.graphql({
-      query: mutations.deleteFood,
-      variables: { input: foodDetails },
-    });
+    try {
+      await API.graphql({
+        query: mutations.deleteFood,
+        variables: { input: foodDetails },
+      });
+    } catch (e) {
+      console.log("error on delete", e);
+    }
   };
 
   return (

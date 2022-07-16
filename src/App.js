@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     fetchRestaurants();
-  }, [restarauntInfo]);
+  }, []);
 
   const fetchRestaurants = async () => {
     try {
@@ -32,6 +32,7 @@ function App() {
       const restaurantList = restaurantData.data.listRestaurants.items;
 
       setRestarauntInfo(restaurantList);
+      console.log(restaurantList);
     } catch (error) {
       console.log("error on fetching", error);
     }
@@ -84,7 +85,16 @@ function App() {
             </div>
           }
         />
-        <Route exact path="/liked" element={<><NavbarDefault /> <Liked /><Footer /> </>} />
+        <Route
+          exact
+          path="/liked"
+          element={
+            <>
+              <NavbarDefault /> <Liked />
+              <Footer />{" "}
+            </>
+          }
+        />
         {restarauntInfo.map((restaurant) => {
           return (
             <Route

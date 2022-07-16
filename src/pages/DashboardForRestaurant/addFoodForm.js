@@ -64,6 +64,7 @@ function AddFoodForm(props) {
           },
         },
       });
+      props.onAddFood();
       setValues(initialValues);
       setErrors({});
     }

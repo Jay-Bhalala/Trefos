@@ -70,7 +70,13 @@ function RestaurantInfo(props) {
           setOpenPopup={setOpenPopup}
           title={"Edit Restaraunt Profile"}
         >
-          <EditRestForm id={props.id} />
+          <EditRestForm
+            id={props.id}
+            // onUpdateRest={() => {
+            //   props.onEditRest();
+            //   setOpenPopup(false);
+            // }}
+          />
         </Popup>
       </div>
     </>

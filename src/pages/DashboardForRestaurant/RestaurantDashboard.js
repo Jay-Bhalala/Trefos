@@ -39,20 +39,30 @@ function RestaurantDashboard(props) {
 
   useEffect(() => {
     fetchFoods();
-  }, [check, loggedIn]);
+    fetchRest();
+  }, [loggedIn]);
 
   const fetchFoods = async () => {
     try {
       const foodData = await API.graphql(graphqlOperation(listFoods));
       const foodList = foodData.data.listFoods.items;
+      setFoodInfo(foodList);
+      console.log(foodList);
+    } catch (error) {
+      console.log("error on fetching foods", error);
+    }
+  };
+
+  const fetchRest = async () => {
+    try {
       const restaurantData = await API.graphql(
         graphqlOperation(listRestaurants)
       );
       const restaurantCheck = restaurantData.data.listRestaurants.items;
       setCheck(restaurantCheck);
-      setFoodInfo(foodList);
-    } catch (error) {
-      console.log("error on fetching foods", error);
+      console.log(restaurantCheck);
+    } catch (e) {
+      console.log("error on fetching restaurant", e);
     }
   };
 
@@ -133,6 +143,7 @@ function RestaurantDashboard(props) {
                           email={restaurant.email}
                           lat2={restaurant.latitude}
                           lng2={restaurant.longitude}
+                          // onEditRest={fetchRest}
                         />
                       );
                     })}
@@ -215,7 +226,15 @@ function RestaurantDashboard(props) {
               title={"add new food"}
             >
               {check.map((restaurant) => {
-                return <AddFoodForm id={restaurant.id}></AddFoodForm>;
+                return (
+                  <AddFoodForm
+                    id={restaurant.id}
+                    onAddFood={() => {
+                      fetchFoods();
+                      setOpenPopup(false);
+                    }}
+                  ></AddFoodForm>
+                );
               })}
             </Popup>
             <Popup
@@ -223,7 +242,12 @@ function RestaurantDashboard(props) {
               setOpenPopup={setOpenCreatePopup}
               title="create new restaurant"
             >
-              <CreateRestForm></CreateRestForm>
+              <CreateRestForm
+                onAddRest={() => {
+                  fetchRest();
+                  setOpenCreatePopup(false);
+                }}
+              ></CreateRestForm>
             </Popup>
           </div>
         )}

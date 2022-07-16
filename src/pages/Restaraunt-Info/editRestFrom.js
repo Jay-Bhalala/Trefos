@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import { v4 } from "uuid";
 import { API } from "aws-amplify";
 import * as mutations from "../../graphql/mutations";
 import Geocode from "react-geocode";
@@ -81,6 +80,7 @@ function EditRestForm(props) {
           },
         },
       });
+      // props.onUpdateRest();
       setValues(initialValues);
       setErrors({});
     }

@@ -7,9 +7,9 @@ import "./css-files/Discover.css";
 import { Link } from "react-router-dom";
 import { API, graphqlOperation } from "aws-amplify";
 import { listRestaurants } from "../graphql/queries";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import SplitButton from 'react-bootstrap/SplitButton';
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import SplitButton from "react-bootstrap/SplitButton";
 
 const marks = [
   {
@@ -49,7 +49,7 @@ function Discover(props) {
 
   useEffect(() => {
     fetchRestaurants();
-  }, [restarauntInfo]);
+  }, []);
 
   const fetchRestaurants = async () => {
     try {
@@ -59,6 +59,7 @@ function Discover(props) {
       });
       const restaurantList = restaurantData.data.listRestaurants.items;
       setRestarauntInfo(restaurantList);
+      console.log(restaurantList);
     } catch (error) {
       console.log("error on fetching", error);
     }
@@ -91,7 +92,10 @@ function Discover(props) {
       >
         <h2>Discover Restaurants</h2>
         <div className="disover-buttons-outside-container">
-          <div className="discover-buttons-container" style={{padding: '1.25rem'}}>
+          <div
+            className="discover-buttons-container"
+            style={{ padding: "1.25rem" }}
+          >
             <div>
               <Link to="/liked" className="link-button">
                 Liked
@@ -114,13 +118,17 @@ function Discover(props) {
         </MDBCol>
         <div className="discover">
           <DropdownButton
-            align={{ lg: 'end' }}
+            align={{ lg: "end" }}
             title="Sort By:"
             id="dropdown-menu-align-responsive-1"
           >
             <Dropdown.Item eventKey="1">Newly Added (Default)</Dropdown.Item>
-            <Dropdown.Item eventKey="2">Ascending Weight of Food Available</Dropdown.Item>
-            <Dropdown.Item eventKey="2">Descending Weight of Food Available</Dropdown.Item>
+            <Dropdown.Item eventKey="2">
+              Ascending Weight of Food Available
+            </Dropdown.Item>
+            <Dropdown.Item eventKey="2">
+              Descending Weight of Food Available
+            </Dropdown.Item>
           </DropdownButton>
         </div>
       </div>

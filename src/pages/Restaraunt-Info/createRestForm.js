@@ -7,7 +7,6 @@ import { API } from "aws-amplify";
 import { createRestaurant } from "../../../src/graphql/mutations.js";
 import Geocode from "react-geocode";
 
-
 const initialValues = {
   id: "",
   name: "",
@@ -29,8 +28,8 @@ function CreateRestForm(props) {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
 
-Geocode.setApiKey("AIzaSyDACU97eVz7BeST6TBxUUJh1GaH36O1kTA");
-Geocode.setLanguage("en");
+  Geocode.setApiKey("AIzaSyDACU97eVz7BeST6TBxUUJh1GaH36O1kTA");
+  Geocode.setLanguage("en");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -82,6 +81,7 @@ Geocode.setLanguage("en");
           },
         },
       });
+      props.onAddRest();
       setValues(initialValues);
       setErrors({});
     }
@@ -150,11 +150,11 @@ Geocode.setLanguage("en");
           })}
         />
         <p>Upload a Photo Below</p>
-          <form action="/action_page.php">
-                    <input type="file" id="myFile" name="filename"/>
-                    {/* <input type="submit"/> */}
-                  </form>
-        <br/>
+        <form action="/action_page.php">
+          <input type="file" id="myFile" name="filename" />
+          {/* <input type="submit"/> */}
+        </form>
+        <br />
         <ThemeProvider theme={theme}>
           <Button color="neutral" variant="contained" type="submit">
             Save

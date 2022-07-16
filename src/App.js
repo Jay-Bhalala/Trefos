@@ -33,7 +33,7 @@ function App() {
 
       setRestarauntInfo(restaurantList);
     } catch (error) {
-      console.log("error on fetching", error);
+      //console.log("error on fetching", error);
     }
   };
 

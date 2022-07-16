@@ -150,10 +150,11 @@ Geocode.setLanguage("en");
           })}
         />
         <p>Upload a Photo Below</p>
-          <form action="/action_page.php">
-                    <input type="file" id="myFile" name="filename"/>
-                    {/* <input type="submit"/> */}
-                  </form>
+          <form id="imageForm">
+                    <input type="file" id="imageInput" accept= "image/*"/>
+                    <button type="submit">Upload</button>
+          </form>
+          <script src = "photo.js"></script>
         <br/>
         <ThemeProvider theme={theme}>
           <Button color="neutral" variant="contained" type="submit">

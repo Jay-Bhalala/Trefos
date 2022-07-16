@@ -143,7 +143,9 @@ function RestaurantDashboard(props) {
                           email={restaurant.email}
                           lat2={restaurant.latitude}
                           lng2={restaurant.longitude}
-                          // onEditRest={fetchRest}
+                          onEditRest={() => {
+                            fetchRest();
+                          }}
                         />
                       );
                     })}
@@ -201,6 +203,9 @@ function RestaurantDashboard(props) {
                           quantity={food.pounds}
                           old={food.daysOld}
                           id={food.id}
+                          onDelFood={() => {
+                            fetchFoods();
+                          }}
                         />
                       </div>
                     );

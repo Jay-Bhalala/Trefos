@@ -80,7 +80,7 @@ function EditRestForm(props) {
           },
         },
       });
-      // props.onUpdateRest();
+      props.onUpdateRest();
       setValues(initialValues);
       setErrors({});
     }

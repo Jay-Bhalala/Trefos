@@ -72,10 +72,10 @@ function RestaurantInfo(props) {
         >
           <EditRestForm
             id={props.id}
-            // onUpdateRest={() => {
-            //   props.onEditRest();
-            //   setOpenPopup(false);
-            // }}
+            onUpdateRest={() => {
+              props.onEditRest();
+              setOpenPopup(false);
+            }}
           />
         </Popup>
       </div>

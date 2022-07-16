@@ -17,6 +17,7 @@ function restarauntFoodCard(props) {
         query: mutations.deleteFood,
         variables: { input: foodDetails },
       });
+      props.onDelFood();
     } catch (e) {
       console.log("error on delete", e);
     }

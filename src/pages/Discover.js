@@ -5,7 +5,7 @@ import { MDBCol } from "mdbreact";
 import Slider from "@mui/material/Slider";
 import "./css-files/Discover.css";
 import { Link } from "react-router-dom";
-import { API, graphqlOperation } from "aws-amplify";
+import { API, graphqlOperation, input } from "aws-amplify";
 import { listRestaurants } from "../graphql/queries";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
@@ -135,6 +135,32 @@ function Discover(props) {
     }
   };
 
+  const handleSearch = async (e) => {
+    if (e.key === "Enter") {
+      if (e.target.value === "") {
+        console.log("no Input");
+      } else {
+        const restaurantSearchData = await API.graphql({
+          query: searchRestaurants,
+          variables: {
+            filter: {
+              name: {
+                matchPhrasePrefix: e.target.value.toString(),
+              },
+            },
+          },
+          authMode: "AWS_IAM",
+        });
+        const restaurantSearchDataList =
+          restaurantSearchData.data.searchRestaurants.items;
+        setRestarauntInfo(restaurantSearchDataList);
+        setSearchValue("");
+      }
+    }
+  };
+
+  const [searchValue, setSearchValue] = useState("");
+
   return (
     <>
       <div
@@ -146,30 +172,22 @@ function Discover(props) {
         }}
       >
         <h2>Discover Restaurants</h2>
+
         <div className="disover-buttons-outside-container">
-          <div
-            className="discover-buttons-container"
-            style={{ padding: "1.25rem" }}
-          >
-            <div>
-              <Link to="/liked" className="link-button">
-                Restaurants You Have Liked
-              </Link>
-            </div>
-            <div>
-              <Link to="/map" className="link-button">
-                Map Of All Available Restaurants
-              </Link>
-            </div>
-          </div>
+          <Link to="/map" className="link-button">
+            Map Of All known Restaurants
+          </Link>
         </div>
         <div className="discover">
           <MDBCol md="6">
             <input
+              onKeyDown={handleSearch}
               className="form-control"
               type="text"
               placeholder="Search"
               aria-label="Search"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
             />
           </MDBCol>
           {/* <div className="discover"> */}

@@ -3,7 +3,9 @@ import "./restarauntFoodCard.css";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import * as mutations from "../../graphql/mutations";
-import { API } from "aws-amplify";
+import { listRestaurants } from "../../graphql/queries";
+import { updateRestaurant } from "../../graphql/mutations";
+import { API, graphqlOperation } from "aws-amplify";
 import { Card } from "react-bootstrap";
 
 function restarauntFoodCard(props) {
@@ -17,6 +19,31 @@ function restarauntFoodCard(props) {
         query: mutations.deleteFood,
         variables: { input: foodDetails },
       });
+
+      const restPoundsData = await API.graphql(
+        graphqlOperation(listRestaurants)
+      );
+      const restPounds = restPoundsData.data.listRestaurants.items;
+
+      let restPoundsNum;
+      let restID;
+
+      {
+        restPounds.map((restaraunt) => {
+          restPoundsNum = restaraunt.pounds;
+          restID = restaraunt.id;
+        });
+      }
+      await API.graphql({
+        query: updateRestaurant,
+        variables: {
+          input: {
+            id: restID,
+            pounds: restPoundsNum - props.quantity,
+          },
+        },
+        authMode: "AMAZON_COGNITO_USER_POOLS",
+      });
       props.onDelFood();
     } catch (e) {
       console.log("error on delete", e);
@@ -25,11 +52,6 @@ function restarauntFoodCard(props) {
 
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img
-        variant="top"
-        src={props.image}
-        className="restaraunt-food-card-image"
-      />
       <Card.Body className="restaraunt-food-card-text">
         <Card.Title>{props.foodTitle}</Card.Title>
         <Card.Text>{props.old} days old</Card.Text>

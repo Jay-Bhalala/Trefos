@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: baseline;
 }
 
 .food-card-grid{

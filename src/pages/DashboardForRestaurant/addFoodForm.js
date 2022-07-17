@@ -54,8 +54,6 @@ function AddFoodForm(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      let poundsCur = props.pounds;
-      let poundsNew = values.pounds;
       await API.graphql({
         query: createFood,
         variables: {
@@ -74,13 +72,10 @@ function AddFoodForm(props) {
         variables: {
           input: {
             id: props.id,
-            pounds: values.pounds,
-            name: props.name,
+            pounds: Number(values.pounds) + Number(props.pounds),
           },
         },
       });
-      const sum = Number(values.pounds) + Number(poundsCur)
-      console.log(sum);
       props.onAddFood();
       setValues(initialValues);
       setErrors({});

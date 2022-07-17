@@ -25,8 +25,6 @@ function RestaurantDashboard(props) {
 
   const [openCreatePopup, setOpenCreatePopup] = useState(false);
 
-  // const [createRestaurant, setCreateRestaurant] = useState(false);
-
   const files = acceptedFiles.map((file) => (
     <li key={file.path}>
       {file.path} - {file.size} bytes
@@ -184,15 +182,6 @@ function RestaurantDashboard(props) {
               <div>
                 <h1>Available Foods</h1>
                 <div className="food-card-grid">
-                  {/* <div>
-                    <RestarauntFoodCard
-                      image={img}
-                      foodTitle="lettuce"
-                      days="3"
-                      quantity="25"
-                      old="3"
-                    />
-                  </div> */}
                   {foodInfo.map((food) => {
                     return (
                       <div>
@@ -234,12 +223,12 @@ function RestaurantDashboard(props) {
                 return (
                   <AddFoodForm
                     id={restaurant.id}
+                    pounds={restaurant.pounds}
                     onAddFood={() => {
                       fetchFoods();
+                      fetchRest();
                       setOpenPopup(false);
-                      console.log(restaurant.pounds);
                     }}
-                    pounds={restaurant.pounds}
                   ></AddFoodForm>
                 );
               })}

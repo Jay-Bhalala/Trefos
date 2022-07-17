@@ -47,7 +47,6 @@ function calculateValue(value) {
 
 function Discover(props) {
   const [restarauntInfo, setRestarauntInfo] = useState([]);
-  const [restarauntAscSort, setRestarauntAscSort] = useState([]);
 
   useEffect(() => {
     fetchRestaurants();
@@ -97,15 +96,42 @@ function Discover(props) {
       const restaurantAscDataList =
         restarauntAscData.data.searchRestaurants.items;
       console.log(restaurantAscDataList);
+      setRestarauntInfo(restaurantAscDataList);
     } catch (e) {
       console.log("error fetching asc", e);
+    }
+  };
+
+  const fetchRestaurantsByDesc = async () => {
+    try {
+      const restarauntAscData = await API.graphql({
+        query: searchRestaurants,
+        variables: {
+          sort: {
+            direction: "desc",
+            field: "pounds",
+          },
+        },
+        authMode: "AWS_IAM",
+      });
+      const restaurantAscDataList =
+        restarauntAscData.data.searchRestaurants.items;
+      console.log(restaurantAscDataList);
+      setRestarauntInfo(restaurantAscDataList);
+    } catch (e) {
+      console.log("error fetching desc", e);
     }
   };
 
   const handleSelect = (e) => {
     if (e == "fetchAsc") {
       fetchRestaurantsByAsc();
-      console.log(restarauntAscSort);
+    }
+    if (e == "fetchDesc") {
+      fetchRestaurantsByDesc();
+    }
+    if (e == "default") {
+      fetchRestaurants();
     }
   };
 
@@ -159,7 +185,7 @@ function Discover(props) {
             <Dropdown.Item eventKey="fetchAsc">
               Ascending Weight of Food Available
             </Dropdown.Item>
-            <Dropdown.Item eventKey="2">
+            <Dropdown.Item eventKey="fetchDesc">
               Descending Weight of Food Available
             </Dropdown.Item>
           </DropdownButton>

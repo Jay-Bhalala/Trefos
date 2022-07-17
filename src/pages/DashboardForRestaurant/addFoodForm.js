@@ -79,7 +79,8 @@ function AddFoodForm(props) {
           },
         },
       });
-      console.log(values.pounds + Number(poundsCur));
+      const sum = Number(values.pounds) + Number(poundsCur)
+      console.log(sum);
       props.onAddFood();
       setValues(initialValues);
       setErrors({});

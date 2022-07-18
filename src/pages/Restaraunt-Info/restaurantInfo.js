@@ -22,7 +22,7 @@ function RestaurantInfo(props) {
         crossorigin="anonymous"
       ></script>
       <div>
-        <Card style={{ width: "100%", height: "auto" }}>
+        <Card style={{ width: "34rem", height: "auto" }}>
           {/* <Card.Img variant="top" src={Test} /> */}
           <StaticMap lat1={props.lat2} lng1={props.lng2} />
           <Card.Body>

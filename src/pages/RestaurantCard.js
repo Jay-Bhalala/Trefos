@@ -13,7 +13,12 @@ function RestaurantCard(props) {
     <>
       <MDBCol>
         <MDBCard className="h-100">
-          <MDBCardImage src={props.src1} alt="..." position="top" />
+          <MDBCardImage
+            src={props.src1}
+            alt="..."
+            position="top"
+            style={{ height: "20rem", width: "100%" }}
+          />
           <MDBCardBody className="text-center">
             <MDBCardTitle>
               <Link to={`/discover/${props.restaurantName}`}>

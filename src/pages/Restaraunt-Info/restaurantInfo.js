@@ -23,7 +23,7 @@ function RestaurantInfo(props) {
         crossorigin="anonymous"
       ></script>
       <div>
-        <Card style={{ width: "34rem", height: "auto" }}>
+        <Card style={{ width: "100%", height: "auto" }}>
           {/* <Card.Img variant="top" src={Test} /> */}
           <StaticMap lat1={props.lat2} lng1={props.lng2} />
           <Card.Body>
@@ -57,13 +57,18 @@ function RestaurantInfo(props) {
             </Card.Text>
             {/* <Button variant="primary"><FontAwesomeIcon icon={faMarker} /> Edit Info</Button> */}
             <Card.Text>
-              <div style={{ display: "flex" }}>
-                <div>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ display: "flex" }}>
                   <FontAwesomeIcon icon={faCamera} />
+                  <p style={{ marginLeft: ".25rem" }}>Profile Picture:</p>
                 </div>
-                <div style={{ marginLeft: ".25rem" }}>Profile Picture:</div>
                 {/* <div style={{ marginLeft: ".55rem" }}>{props.email}</div> */}
-                <img src={props.imge}></img>
+                <div style={{ width: "50%" }}>
+                  <img
+                    src={props.imge}
+                    style={{ height: "auto", width: "100%" }}
+                  ></img>
+                </div>
               </div>
             </Card.Text>
           </Card.Body>

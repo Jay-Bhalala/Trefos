@@ -175,7 +175,7 @@ function Discover(props) {
 
         <div className="disover-buttons-outside-container">
           <Link to="/map" className="link-button">
-            Map Of All known Restaurants
+            Map Of All Registered Restaurants
           </Link>
         </div>
         <div className="discover">
@@ -210,7 +210,7 @@ function Discover(props) {
         </div>
       </div>
       <div style={{ padding: "2rem" }}>
-        <MDBRow className="row-cols-1 row-cols-md-4 g-4">
+        <MDBRow className="row-cols-1 row-cols-lg-4 row-cols-md-2 g-4">
           {/* <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"

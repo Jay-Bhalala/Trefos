@@ -12,7 +12,7 @@ function HomeHero(props) {
           </div>
           <div>
             <p className="description-text">
-              Trefo aims to reduce the amount of food being wasted in our
+              Trefos aims to reduce the amount of food being wasted in our
               community by connecting local restaurants to nearby food banks.
             </p>
           </div>

@@ -70,6 +70,8 @@ function CreateRestForm(props) {
   };
 
   const handleSubmit = async (e) => {
+    let url = stringUrl3(stringUrl2("https://trefos4fe2ddf357554017968f953b6f1e7bed170357-dev.s3.amazonaws.com/" + values.image));
+    console.log(url)
     e.preventDefault();
     if (validate()) {
       let latitude = 0;
@@ -97,7 +99,7 @@ function CreateRestForm(props) {
             longitude: longitude,
             type: "restaraunt",
             pounds: 0.0,
-            image: values.image,
+            image: url,
           },
         },
       });
@@ -114,7 +116,20 @@ function CreateRestForm(props) {
       return string;
     }
   }
-
+  function stringUrl2(string) {
+    if (string.includes(" ")) {
+      return string.replaceAll(" ", "");
+    } else {
+      return string;
+    }
+  }
+  function stringUrl3(string) {
+    if (string.includes("C:\\fakepath\\")) {
+      return string.replaceAll("C:\\fakepath\\", "");
+    } else {
+      return string;
+    }
+  }
 
   const [progress , setProgress] = useState(0);
   const [selectedFile, setSelectedFile] = useState(null);

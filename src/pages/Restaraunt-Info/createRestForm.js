@@ -71,7 +71,6 @@ function CreateRestForm(props) {
 
   const handleSubmit = async (e) => {
     let url = stringUrl3(stringUrl2("https://trefos4fe2ddf357554017968f953b6f1e7bed170357-dev.s3.amazonaws.com/" + values.image));
-    console.log(url)
     e.preventDefault();
     if (validate()) {
       let latitude = 0;

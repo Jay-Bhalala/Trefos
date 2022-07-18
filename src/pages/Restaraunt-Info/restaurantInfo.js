@@ -5,6 +5,7 @@ import {
   faThumbTack,
   faPhone,
   faMailForward,
+  faCamera,
 } from "@fortawesome/free-solid-svg-icons";
 import StaticMap from "../DashboardForRestaurant/StaticMap.js";
 import Edit from "../DashboardForRestaurant/Edit.js";
@@ -55,6 +56,16 @@ function RestaurantInfo(props) {
               </div>
             </Card.Text>
             {/* <Button variant="primary"><FontAwesomeIcon icon={faMarker} /> Edit Info</Button> */}
+            <Card.Text>
+              <div style={{ display: "flex" }}>
+                <div>
+                  <FontAwesomeIcon icon={faCamera} />
+                </div>
+                <div style={{ marginLeft: ".25rem" }}>Profile Picture:</div>
+                {/* <div style={{ marginLeft: ".55rem" }}>{props.email}</div> */}
+                <img src={props.imge}></img>
+              </div>
+            </Card.Text>
           </Card.Body>
           <div className="restaurant-info-button-container">
             <button

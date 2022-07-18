@@ -141,6 +141,7 @@ function RestaurantDashboard(props) {
                           email={restaurant.email}
                           lat2={restaurant.latitude}
                           lng2={restaurant.longitude}
+                          imge={restaurant.image}
                           onEditRest={() => {
                             fetchRest();
                           }}

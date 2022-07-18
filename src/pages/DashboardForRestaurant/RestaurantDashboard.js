@@ -103,7 +103,7 @@ function RestaurantDashboard(props) {
   }
 
   return (
-    <>
+    <div style={{ marginBottom: "3rem" }}>
       {loggedIn ? (
         <NavbarRestaurant />
       ) : (
@@ -239,7 +239,7 @@ function RestaurantDashboard(props) {
           </div>
         )}
       </Authenticator>
-    </>
+    </div>
   );
 }
 

@@ -40,11 +40,12 @@
     border-radius: .5rem;
     margin-right: 12px;
     margin-left: 12px;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     text-align: center;
+    font-size: large
 }
 
 .link-button:hover{

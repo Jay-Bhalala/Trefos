@@ -6,6 +6,21 @@ import { v4 } from "uuid";
 import { API } from "aws-amplify";
 import { createRestaurant } from "../../../src/graphql/mutations.js";
 import Geocode from "react-geocode";
+import AWS from 'aws-sdk'
+
+const S3_BUCKET ='trefos4fe2ddf357554017968f953b6f1e7bed170357-dev';
+const REGION ='us-east-1';
+
+
+AWS.config.update({
+    accessKeyId: 'AKIAQN6XYQQF3U4VKBL2',
+    secretAccessKey: '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'
+})
+
+const myBucket = new AWS.S3({
+    params: { Bucket: S3_BUCKET},
+    region: REGION,
+})
 
 const initialValues = {
   id: "",
@@ -100,6 +115,38 @@ function CreateRestForm(props) {
     }
   }
 
+
+  const [progress , setProgress] = useState(0);
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleInputChange1 = (e) => {
+    setSelectedFile(e.target.files[0]);
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const uploadFile = (file) => {
+
+      const params = {
+          ACL: 'public-read',
+          Body: file,
+          Bucket: S3_BUCKET,
+          Key: file.name
+      };
+
+      myBucket.putObject(params)
+          .on('httpUploadProgress', (evt) => {
+              setProgress(Math.round((evt.loaded / evt.total) * 100))
+          })
+          .send((err) => {
+              if (err) console.log(err)
+          })
+  }
+
+
   return (
     <form onSubmit={handleSubmit}>
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -159,7 +206,7 @@ function CreateRestForm(props) {
           name="image" 
           type="file" 
           value={values.image}
-          onChange={handleInputChange}
+          onChange={handleInputChange1}
           {...(errors.email && {
             error: true,
             helperText: errors.email,
@@ -167,7 +214,7 @@ function CreateRestForm(props) {
         />
         <br />
         <ThemeProvider theme={theme}>
-          <Button color="neutral" variant="contained" type="submit">
+          <Button color="neutral" variant="contained" type="submit" onClick={() => uploadFile(selectedFile)}>
             Save
           </Button>
         </ThemeProvider>

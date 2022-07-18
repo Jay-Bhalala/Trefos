@@ -10,7 +10,12 @@ import { Link } from "react-router-dom";
 
 function RestaurantCard(props) {
   return (
-    <>
+    <Link
+      to={`/discover/${props.restaurantName}`}
+      style={{
+        textDecoration: "none",
+      }}
+    >
       <MDBCol>
         <MDBCard className="h-100">
           <MDBCardImage
@@ -21,14 +26,30 @@ function RestaurantCard(props) {
           />
           <MDBCardBody className="text-center">
             <MDBCardTitle>
-              <Link to={`/discover/${props.restaurantName}`}>
+              {/* <Link
+                to={`/discover/${props.restaurantName}`}
+                // style={{
+                //   textDecoration: "none",
+                //   color: "black",
+                //   fontWeight: "bold",
+                // }}
+              >
                 {props.restaurantName}
-              </Link>
+              </Link> */}
+              <p
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  fontWeight: "bold",
+                }}
+              >
+                {props.restaurantName}
+              </p>
             </MDBCardTitle>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
-    </>
+    </Link>
   );
 }
 

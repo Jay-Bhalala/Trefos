@@ -60,7 +60,9 @@ function RestaurantInfo(props) {
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div style={{ display: "flex" }}>
                   <FontAwesomeIcon icon={faCamera} />
-                  <p style={{ marginLeft: ".25rem" }}>Profile Picture:</p>
+                  <p style={{ marginLeft: ".25rem" }}>
+                    Profile Picture Preview:
+                  </p>
                 </div>
                 {/* <div style={{ marginLeft: ".55rem" }}>{props.email}</div> */}
                 <div style={{ width: "50%" }}>

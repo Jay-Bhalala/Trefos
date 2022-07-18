@@ -212,6 +212,13 @@ function EditRestForm(props) {
             helperText: errors.email,
           })}
         />
+        <div>
+          Please Input Your Restaurant's Profile Picture Below: 
+          <ul>
+              <li>Recomended Image Dimensions - Height: 1280 px / Width: 2048 px</li>
+              <li>Name Your File Following This Format: "RestaurantName_CityName"</li>
+          </ul>
+        </div>
         <input 
           name="image" 
           type="file" 

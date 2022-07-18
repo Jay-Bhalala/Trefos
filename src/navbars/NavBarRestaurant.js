@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container, Offcanvas } from "react-bootstrap";
-import logo from "./Cratos_3_1.svg";
+import logo from "./TrefosLogo.svg";
 
 function NavbarRestaurant() {
   return (

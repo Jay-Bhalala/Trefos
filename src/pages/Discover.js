@@ -162,7 +162,7 @@ function Discover(props) {
   const [searchValue, setSearchValue] = useState("");
 
   return (
-    <>
+    <div style={{ paddingRight: ".75rem", paddingLeft: ".75rem" }}>
       <div
         style={{
           justifyContent: "center",
@@ -209,7 +209,7 @@ function Discover(props) {
           </DropdownButton>
         </div>
       </div>
-      <div style={{ padding: "2rem" }}>
+      <div style={{ marginTop: "2rem" }}>
         <MDBRow className="row-cols-1 row-cols-xl-4 row-cols-lg-2 g-4">
           {/* <RestaurantCard
             restaurantName="Sample Restaurant"
@@ -226,7 +226,7 @@ function Discover(props) {
           })}
         </MDBRow>
       </div>
-    </>
+    </div>
   );
 }
 

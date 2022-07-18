@@ -9,6 +9,7 @@ import useGeoLocation from "../hooks/useGeoLocation";
 import { Alert, Button } from "react-bootstrap";
 import { listRestaurants } from "../graphql/queries";
 import { API } from "aws-amplify";
+import { Link } from "react-router-dom";
 
 const markerIcon = new L.Icon({
   iconUrl: require("./marker.png"),
@@ -66,6 +67,14 @@ function MapDisplay(props) {
     }
   };
 
+  function stringUrl(string) {
+    if (string.includes("%20")) {
+      return string.replaceAll("%20", " ");
+    } else {
+      return string;
+    }
+  }
+
   return (
     <>
       <>
@@ -100,11 +109,20 @@ function MapDisplay(props) {
             attribution={osm.maptiler.attribution}
           />
           {restarauntInfo.map((restaurant) => (
-            <Marker position={[restaurant.latitude, restaurant.longitude]} icon={markerIcon}>
+            <Marker
+              position={[restaurant.latitude, restaurant.longitude]}
+              icon={markerIcon}
+            >
               <Popup>
-                <b>
-                  {restaurant.name}
-                </b>
+                <Link
+                  to={`/discover/${restaurant.name}`}
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                  }}
+                >
+                  {stringUrl(restaurant.name)}
+                </Link>
               </Popup>
             </Marker>
           ))}

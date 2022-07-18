@@ -6,7 +6,6 @@ import {
   MDBCardTitle,
   MDBCol,
 } from "mdb-react-ui-kit";
-import Like from "./Liked/LikeButton.js";
 import { Link } from "react-router-dom";
 
 function RestaurantCard(props) {
@@ -21,7 +20,6 @@ function RestaurantCard(props) {
                 {props.restaurantName}
               </Link>
             </MDBCardTitle>
-            <Like />
           </MDBCardBody>
         </MDBCard>
       </MDBCol>

@@ -147,16 +147,21 @@ function RestaurantDashboard(props) {
                         />
                       );
                     })}
+
+
+
                     <div {...getRootProps({ className: "dropzone" })}>
                       <input {...getInputProps()} />
                       <div className="drag-drop-button">
-                        Drag 'n' drop your restaurant's profile picture here, or
-                        click to select a file
+                        Remove This
                       </div>
                     </div>
                     <aside>
                       <ul>{files}</ul>
                     </aside>
+
+
+
                   </div>
                 ) : (
                   <div>

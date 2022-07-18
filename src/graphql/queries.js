@@ -64,6 +64,7 @@ export const getRestaurant = /* GraphQL */ `
       }
       latitude
       longitude
+      image
       createdAt
       updatedAt
       owner
@@ -90,6 +91,7 @@ export const listRestaurants = /* GraphQL */ `
         }
         latitude
         longitude
+        image
         createdAt
         updatedAt
         owner
@@ -128,6 +130,7 @@ export const restaurantsByPounds = /* GraphQL */ `
         }
         latitude
         longitude
+        image
         createdAt
         updatedAt
         owner
@@ -166,6 +169,7 @@ export const searchRestaurants = /* GraphQL */ `
         }
         latitude
         longitude
+        image
         createdAt
         updatedAt
         owner

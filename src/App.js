@@ -7,7 +7,6 @@ import Contact from "./pages/Contact.js";
 import AboutUs from "./pages/AboutUs.js";
 import RestaurantDashboard from "./pages/DashboardForRestaurant/RestaurantDashboard.js";
 import Discover from "./pages/Discover.js";
-import Liked from "./pages/Liked/Liked.js";
 import MapDisplay from "./pages/MapDisplay.js";
 import Footer from "./Footer.js";
 import Viewable from "./pages/Viewable";
@@ -83,16 +82,6 @@ function App() {
               <Discover />
               <Footer />
             </div>
-          }
-        />
-        <Route
-          exact
-          path="/liked"
-          element={
-            <>
-              <NavbarDefault /> <Liked />
-              <Footer />{" "}
-            </>
           }
         />
         {restarauntInfo.map((restaurant) => {

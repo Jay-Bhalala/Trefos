@@ -72,6 +72,7 @@ export const onCreateRestaurant = /* GraphQL */ `
       }
       latitude
       longitude
+      image
       createdAt
       updatedAt
       owner
@@ -104,6 +105,7 @@ export const onUpdateRestaurant = /* GraphQL */ `
       }
       latitude
       longitude
+      image
       createdAt
       updatedAt
       owner
@@ -136,6 +138,7 @@ export const onDeleteRestaurant = /* GraphQL */ `
       }
       latitude
       longitude
+      image
       createdAt
       updatedAt
       owner

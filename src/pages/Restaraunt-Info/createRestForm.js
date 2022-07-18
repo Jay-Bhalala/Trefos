@@ -13,6 +13,7 @@ const initialValues = {
   address: "",
   phone: "",
   email: "",
+  image: ""
 };
 
 const theme = createTheme({
@@ -45,6 +46,7 @@ function CreateRestForm(props) {
     temp.address = values.address ? "" : "This Field is Required.";
     temp.phone = values.phone ? "" : "this field is Required";
     temp.email = values.email ? "" : "This Field is Required.";
+    temp.image = values.image ? "" : "This Field is Required.";
     setErrors({
       ...temp,
     });
@@ -80,6 +82,7 @@ function CreateRestForm(props) {
             longitude: longitude,
             type: "restaraunt",
             pounds: 0.0,
+            image: values.image,
           },
         },
       });
@@ -151,11 +154,17 @@ function CreateRestForm(props) {
             helperText: errors.email,
           })}
         />
-        <p>Upload a Photo Below</p>
-        <form action="/action_page.php">
-          <input type="file" id="myFile" name="filename" />
-          {/* <input type="submit"/> */}
-        </form>
+        {/* <Upload /> */}
+        <input 
+          name="image" 
+          type="file" 
+          value={values.image}
+          onChange={handleInputChange}
+          {...(errors.email && {
+            error: true,
+            helperText: errors.email,
+          })}
+        />
         <br />
         <ThemeProvider theme={theme}>
           <Button color="neutral" variant="contained" type="submit">

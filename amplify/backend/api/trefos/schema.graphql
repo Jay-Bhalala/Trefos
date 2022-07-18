@@ -18,4 +18,5 @@ type Restaurant @model @searchable @auth(rules: [{allow: owner}, {allow: public,
   Foods: [Food] @hasMany(indexName: "byRestaurant", fields: ["id"])
   latitude: Float!
   longitude: Float!
+  image: String!
 } 

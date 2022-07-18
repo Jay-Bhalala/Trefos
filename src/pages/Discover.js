@@ -220,7 +220,7 @@ function Discover(props) {
             return (
               <RestaurantCard
                 restaurantName={stringUrl(restaurant.name)}
-                src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"
+                src1={restaurant.image}
               />
             );
           })}

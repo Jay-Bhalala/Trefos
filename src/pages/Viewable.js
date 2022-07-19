@@ -38,9 +38,9 @@ function Viewable(props) {
   return (
     <div className="dashboard-layout">
       <div className="restaurant-info-box">
-      <h2>{props.companyName.replace(/%20/g, " ")}</h2>
-        <div >
-          <RestaurantInfo 
+        <h2>{props.companyName.replace(/%20/g, " ")}</h2>
+        <div>
+          <RestaurantInfo
             location={props.address}
             number={props.phone}
             mail={props.email}
@@ -48,20 +48,14 @@ function Viewable(props) {
             lng2={props.lg2}
           />
         </div>
-        </div>
-        <div>
-          <h1>Avaiable Foods</h1>
-          <div className="food-card-grid">
-            {/* <div>
-              <RestarauntFoodCard
-                image={img}
-                foodTitle="lettuce"
-                days="3"
-                quantity="25"
-                old="3"
-              />
-            </div> */}
-            {food.map((foods) => {
+      </div>
+      <div>
+        <h1>Avaiable Foods</h1>
+        <div className="food-card-grid">
+          {food.length === 0 ? (
+            <div>No Avaiable Food at this Restaurant</div>
+          ) : (
+            food.map((foods) => {
               return (
                 <div>
                   <RestarauntFoodCard
@@ -73,9 +67,10 @@ function Viewable(props) {
                   />
                 </div>
               );
-            })}
-          </div>
+            })
+          )}
         </div>
+      </div>
     </div>
   );
 }

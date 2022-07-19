@@ -53,7 +53,7 @@ function Viewable(props) {
         <h1>Avaiable Foods</h1>
         <div className="food-card-grid">
           {food.length === 0 ? (
-            <div>No Avaiable Food at this Restaurant</div>
+            <div>No Avaiable Food At This Restaurant</div>
           ) : (
             food.map((foods) => {
               return (

@@ -204,7 +204,7 @@ function CreateRestForm(props) {
         />
         <TextField
           variant="outlined"
-          label="email"
+          label="Email"
           type="text"
           name="email"
           style={{ margin: "1rem" }}

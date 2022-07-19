@@ -125,7 +125,7 @@ function AddFoodForm(props) {
         />
         <TextField
           variant="outlined"
-          label="Days available for Pickup"
+          label="Days Available For Pickup"
           type="number"
           name="pickUp"
           style={{ margin: "1rem" }}

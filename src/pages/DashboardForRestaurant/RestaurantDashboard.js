@@ -208,7 +208,7 @@ function RestaurantDashboard(props) {
             <Popup
               openPopup={openPopup}
               setOpenPopup={setOpenPopup}
-              title={"add new food"}
+              title={"Add New Food"}
             >
               {check.map((restaurant) => {
                 return (
@@ -227,7 +227,7 @@ function RestaurantDashboard(props) {
             <Popup
               openPopup={openCreatePopup}
               setOpenPopup={setOpenCreatePopup}
-              title="create new restaurant"
+              title="Create New Restaurant"
             >
               <CreateRestForm
                 onAddRest={() => {

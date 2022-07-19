@@ -160,7 +160,7 @@ function EditRestForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <p>Must update all fields in order to update restaurant info</p>
+        <p>You Must Update All Fields In Order To Update Restaurant Info</p>
         <TextField
           variant="outlined"
           label="Restaraunt Name"
@@ -201,7 +201,7 @@ function EditRestForm(props) {
         />
         <TextField
           variant="outlined"
-          label="email"
+          label="Email"
           type="text"
           name="email"
           style={{ margin: "1rem" }}

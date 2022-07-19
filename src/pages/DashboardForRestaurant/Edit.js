@@ -16,7 +16,7 @@ function Edit(props) {
             onChange={props.handleChange}
             onBlur={props.handleBlur}
             autoFocus
-            placeholder="Your first name"
+            placeholder="Your First Name"
           />
         ) : (
           <span onDoubleClick={props.handleDoubleClick}>{props.value}</span>

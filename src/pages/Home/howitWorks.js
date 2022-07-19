@@ -8,27 +8,27 @@ import HowitWorksCard from "./howItWorksCard";
 function howitWorks(props) {
   return (
     <div className="how-work-container">
-      <div className="heading-text">How Trefo Works</div>
+      <div className="heading-text">How Trefos Works</div>
       <div className="work-container">
         <HowitWorksCard
           number="1"
           image={notiIcon}
-          heading="Notification"
-          description="A restarunt has excesses food from service and a local food bank is then notified"
+          heading=""
+          description="Be informed when a restaurant near your food bank has a excess of food"
         />
         <hr className="h-2" />
         <HowitWorksCard
           number="2"
           image={deliveryIcon}
-          heading="Delivery"
-          description="The excess food from the restarunt is delivered to and stored at a local food bank"
+          heading=""
+          description="Get the neccesary information from our database of contact information to get in touch with the restaurant to pick up the food"
         />
         <hr className="h-2" />
         <HowitWorksCard
           number="3"
           image={distributeIcon}
-          heading="Distrubtion"
-          description="The food bank can now provide more food to those in need with our resources"
+          heading=""
+          description="Repeat the process again to continously keep your food bank supplied and reduce food waste in your community!"
         />
         <hr className="h-2" />
       </div>

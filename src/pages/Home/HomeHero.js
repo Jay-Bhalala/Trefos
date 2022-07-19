@@ -8,12 +8,12 @@ function HomeHero(props) {
       <div className="container">
         <div className="text-container">
           <div>
-            <h1 className="large-text">Providing resources to those in need</h1>
+            <h1 className="large-text">Providing Food To The Hungry</h1>
           </div>
           <div>
             <p className="description-text">
-              Trefos aims to reduce the amount of food being wasted in our
-              community by connecting local restaurants to nearby food banks.
+              Trefos aims to reduce the amount of food waste in our
+              community by connecting local restaurants to nearby food banks
             </p>
           </div>
         </div>

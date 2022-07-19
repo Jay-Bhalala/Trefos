@@ -17,8 +17,7 @@ function impactCard(props) {
           <div className="little-text">
             <p className="heading-text-container">Restaurants</p>
             <p>
-              Restaurants only have to create a profile and 
-              update when they have food avaliable to donate.
+              Restaurants can create a profile and update their food stocks when they have food avaliable to donate for all food banks on the platform to view.
             </p>
           </div>
         </div>
@@ -29,23 +28,7 @@ function impactCard(props) {
           <div className="little-text">
             <p className="heading-text-container">Food Banks</p>
             <p>
-              Food banks just have to sign into the 
-              website, select which restaurant and product 
-              preferences they would like, and can choose to 
-              pick up or have to the food deliver to them.
-
-            </p>
-          </div>
-        </div>
-        <div className="impact-text-card">
-          <div>
-            <img src={connectIcon} className="image" />
-          </div>
-          <div className="little-text">
-            <p className="heading-text-container">Volunteers</p>
-            <p>
-              Volunteers can aid the in the deliver of food,
-              and assist local food bank.
+              Food banks don't need to sign up and can discover restaurants on the platform with just the touch of a button!
             </p>
           </div>
         </div>

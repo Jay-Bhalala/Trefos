@@ -85,7 +85,7 @@ function MapDisplay(props) {
             view your location so that you can see all restaurants near you.
             Your location is displayed with a blue dot while the locations of
             all available restaurants are shown with red markers. Just click on
-            any of those red markers to get the address to the restaurant
+            any of those red markers to get the name of the restaurant
             selected.
           </p>
           <hr />

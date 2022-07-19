@@ -39,7 +39,7 @@ function Viewable(props) {
     <div className="dashboard-layout">
       <div className="restaurant-info-box">
         <h2>{props.companyName.replace(/%20/g, " ")}</h2>
-        <div>
+        <div style={{ width: "100%" }}>
           <RestaurantInfo
             location={props.address}
             number={props.phone}
@@ -49,7 +49,7 @@ function Viewable(props) {
           />
         </div>
       </div>
-      <div>
+      <div className="food-card-grid-container">
         <h1>Avaiable Foods</h1>
         <div className="food-card-grid">
           {food.length === 0 ? (

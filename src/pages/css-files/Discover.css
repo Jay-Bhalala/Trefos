@@ -48,6 +48,16 @@
     font-size: large
 }
 
+@media screen and (max-width: 600px) {
+    .link-button{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem; 
+    }
+  }
+
+
 .link-button:hover{
     text-decoration: none;
     color: white;

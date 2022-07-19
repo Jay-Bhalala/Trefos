@@ -8,7 +8,7 @@ function Popup(props) {
   return (
     <Dialog
       open={props.openPopup}
-      PaperProps={{ sx: { width: "30%", height: "auto" } }}
+      PaperProps={{ sx: { width: "100%", height: "auto" } }}
     >
       <DialogTitle>
         <div style={{ display: "flex", justifyContent: "space-around" }}>

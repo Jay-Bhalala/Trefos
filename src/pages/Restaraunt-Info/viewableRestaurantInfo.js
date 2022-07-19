@@ -10,13 +10,13 @@ import StaticMap from "../DashboardForRestaurant/StaticMap.js";
 
 function RestaurantInfo(props) {
   return (
-    <>
+    <div>
       <script
         src="https://kit.fontawesome.com/59be458d1a.js"
         crossorigin="anonymous"
       ></script>
       <div>
-        <Card style={{ width: "34rem", height: "auto" }}>
+        <Card style={{ width: "100%", height: "auto" }}>
           {/* <Card.Img variant="top" src={Test} /> */}
           <StaticMap lat1={props.lat2} lng1={props.lng2} />
           <Card.Body>
@@ -34,7 +34,7 @@ function RestaurantInfo(props) {
           </Card.Body>
         </Card>
       </div>
-    </>
+    </div>
   );
 }
 

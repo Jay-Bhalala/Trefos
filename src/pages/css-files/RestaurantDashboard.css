@@ -29,6 +29,7 @@
     border-radius: .5rem;
     width: 50%;
     margin-top: .5rem;
+    margin-bottom: 2rem;
 }
 
 .restaurant-info-box{
@@ -38,6 +39,10 @@
     align-items: center;
     width: 35%
 }
+
+.food-card-grid-container{
+    text-align:left;
+  }
 
 @media screen and (max-width: 1341px) {
     
@@ -53,6 +58,12 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         justify-items: center;
         gap: 0.75rem; /* 12px */
+    }
+    .food-card-grid-container{
+        text-align:center;
+      }
+      .restaurant-info-box{
+        width: 70%;
     }
   }
 
@@ -74,4 +85,7 @@
     .restaurant-info-box{
         width: 80%;
     }
+    .food-card-grid-container{
+        text-align:center;
+      }
   }

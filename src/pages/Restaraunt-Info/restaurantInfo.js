@@ -17,7 +17,7 @@ function RestaurantInfo(props) {
   const [openPopup, setOpenPopup] = useState(false);
 
   return (
-    <>
+    <div>
       <script
         src="https://kit.fontawesome.com/59be458d1a.js"
         crossorigin="anonymous"
@@ -97,7 +97,7 @@ function RestaurantInfo(props) {
           />
         </Popup>
       </div>
-    </>
+    </div>
   );
 }
 

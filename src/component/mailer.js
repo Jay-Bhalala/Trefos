@@ -21,10 +21,9 @@ const Mailer = () => {
 
   return (
     <div
-      className="container border"
+      className="container border contact-container"
       style={{
         marginTop: "50px",
-        width: "50%",
         flexDirection: "column",
         padding: "2.2rem",
       }}

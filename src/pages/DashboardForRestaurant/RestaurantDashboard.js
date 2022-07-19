@@ -116,6 +116,7 @@ function RestaurantDashboard(props) {
               alignItems: "center",
               height: "10vh",
               fontSize: "1.5rem",
+              textAlign: "center",
             }}
           >
             The Following Content Is Only Available For Restaurant Accounts

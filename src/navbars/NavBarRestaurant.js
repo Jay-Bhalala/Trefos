@@ -32,7 +32,7 @@ function NavbarRestaurant() {
               >
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                    Cratos
+                    Trefos
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>

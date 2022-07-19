@@ -15,7 +15,7 @@ function homeAbout(props) {
       <div className="p-home-abput-container">
         <p className="p-home-about">
           The Trefos team connects restaurants to food banks to help save food
-          waste by helping the hungry. Our Software both restaurants and food
+          waste by helping the hungry. Our software provides both restaurants and food
           banks with the resources necessary to bridge the hunger gap.
         </p>
       </div>

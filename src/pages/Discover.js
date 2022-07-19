@@ -210,7 +210,7 @@ function Discover(props) {
         </div>
       </div>
       <div style={{ marginTop: "2rem" }}>
-        <MDBRow className="row-cols-2 row-cols-xl-4 row-cols-md-2 row-cols-lg-2  g-4">
+        <MDBRow className="row-cols-1 row-cols-xl-4 row-cols-md-2 row-cols-lg-2  g-4">
           {/* <RestaurantCard
             restaurantName="Sample Restaurant"
             src1="https://alderuccio.com.au/wp-content/uploads/2017/06/crust-gourmet-pizza-logo-jpg.jpg"

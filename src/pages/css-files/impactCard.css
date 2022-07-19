@@ -50,3 +50,10 @@
         display: none;
     }
   }
+
+  @media screen and (max-width: 1600px){
+    .connecting-text-container{
+        margin-left: 0;
+    }
+  }
+

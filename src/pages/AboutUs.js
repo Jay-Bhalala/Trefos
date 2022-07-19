@@ -10,7 +10,7 @@ function AboutUs(props) {
       </div>
       <div className="about-us-heading-text-2">
         <div className="our-mission-container">
-          <h1>Mission</h1>
+          <h1 className="about-us-text4">Mission</h1>
         </div>
         <div className="our-mission-container">
           <p>
@@ -21,25 +21,23 @@ function AboutUs(props) {
           </p>
         </div>
       </div>
-      <div className="lol">
-        <div className="about-us-heading-text-3">
-          <h1>Impact</h1>
+      
+      <div className="about-us-heading-text-10">
+        <div className="our-mission-container">
+          <h1 className="about-us-text4">Impact</h1>
         </div>
-        <div className="how-we-impact-container">
-          <div className="values-conatiner">
-            <div className="impact-description-container">
-              <p>
-                In the U.S., around 85% of the food not used
+        <div className="our-mission-container">
+          <p>
+          In the U.S., around 85% of the food not used
                 by restaurants is thrown out. We aim to reduce this
                 number by providing food banks with a network of readily available restaurants who can provide extra food to them. We value every piece of
                 food donated and distrubted.
-              </p>
-            </div>
-          </div>
+          </p>
         </div>
       </div>
+
       <div class="wrapper">
-        <h1>Team</h1>
+        <h1 className="about-us-text4">Team</h1>
         <div class="team">
           <div class="team_member">
             <div class="team_img">

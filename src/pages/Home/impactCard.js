@@ -8,7 +8,7 @@ function impactCard(props) {
     <div className="large-container">
       <div>
         <div className="impact-text">
-          <h1>Conencting the community</h1>
+          <h1>Connecting The Community</h1>
         </div>
         <div className="impact-text-card">
           <div>

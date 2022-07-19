@@ -3,8 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .about-us-heading-text-2{
@@ -12,15 +12,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     background-color: #F4ccac;
     color: white;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.about-us-heading-text-10{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .about-us-text{
     font-weight: 750;
-    font-size: 3.5rem;
+    font-size: 4rem;
+}
+
+.about-us-text4{
+  font-weight: 750;
+  font-size: 3rem;
 }
 
 .our-mission-container{

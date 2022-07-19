@@ -18,7 +18,7 @@ function impactCard(props) {
             <p>
               Restaurants can create a profile and update their food stocks when
               they have food avaliable to donate for all food banks on the
-              platform to view.
+              platform to view
             </p>
           </div>
         </div>
@@ -30,7 +30,7 @@ function impactCard(props) {
             <h1>Food Banks</h1>
             <p>
               Food banks don't need to sign up and can discover restaurants on
-              the platform with just the touch of a button!
+              the platform with just the touch of a button
             </p>
           </div>
         </div>

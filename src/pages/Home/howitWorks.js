@@ -28,7 +28,7 @@ function howitWorks(props) {
           number="3"
           image={distributeIcon}
           heading=""
-          description="Repeat the process again to continously keep your food bank supplied and reduce food waste in your community!"
+          description="Repeat the process again to continously keep your food bank supplied and reduce food waste in your community"
         />
         <hr className="h-2" />
       </div>

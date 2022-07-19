@@ -14,24 +14,25 @@ function AboutUs(props) {
         </div>
         <div className="our-mission-container">
           <p>
-            We aim to minimize the amount of food being wasted in our
-            community by redistrubting excess food from restaurants into the
-            hands of those in need. We strive to provide clean, high-quality food
-            to food banks who can help the hungry.
+            We aim to minimize the amount of food being wasted in our community
+            by redistrubting excess food from restaurants into the hands of
+            those in need. We strive to provide clean, high-quality food to food
+            banks who can help the hungry.
           </p>
         </div>
       </div>
-      
+
       <div className="about-us-heading-text-10">
         <div className="our-mission-container">
           <h1 className="about-us-text4">Impact</h1>
         </div>
         <div className="our-mission-container">
           <p>
-          In the U.S., around 85% of the food not used
-                by restaurants is thrown out. We aim to reduce this
-                number by providing food banks with a network of readily available restaurants who can provide extra food to them. We value every piece of
-                food donated and distrubted.
+            In the U.S., around 85% of the food not used by restaurants is
+            thrown out. We aim to reduce this number by providing food banks
+            with a network of readily available restaurants who can provide
+            extra food to them. We value every piece of food donated and
+            distrubted.
           </p>
         </div>
       </div>

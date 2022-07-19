@@ -7,6 +7,7 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
+import "../pages/css-files/restCard.css";
 
 function RestaurantCard(props) {
   return (
@@ -22,7 +23,8 @@ function RestaurantCard(props) {
             src={props.src1}
             alt="..."
             position="top"
-            style={{ height: "20rem", width: "100%" }}
+            // style={{ height: "20rem", width: "100%" }}
+            className="rest-card-image"
           />
           <MDBCardBody className="text-center">
             <MDBCardTitle>

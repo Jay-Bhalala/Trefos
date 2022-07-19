@@ -1,0 +1,25 @@
+.rest-card-image{
+    height: 20rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 960px){
+    .rest-card-image{
+        height: 15rem;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .rest-card-image{
+        height: 12rem;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .rest-card-image{
+        height: 10rem;
+        width: 100%;
+    }
+}

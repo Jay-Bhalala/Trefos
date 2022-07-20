@@ -86,7 +86,7 @@ function RestaurantInfo(props) {
         <Popup
           openPopup={openPopup}
           setOpenPopup={setOpenPopup}
-          title={"Edit Restaraunt Profile"}
+          title={"Edit Your Restaraunt Profile (All Information Provided Will Be Publicly Viewable)"}
         >
           <EditRestForm
             id={props.id}

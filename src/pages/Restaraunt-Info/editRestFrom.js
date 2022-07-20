@@ -160,7 +160,7 @@ function EditRestForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <p>You Must Update All Fields In Order To Update Restaurant Info</p>
+        <p>You Must Update All The Fields Below In Order To Update Your Info</p>
         <TextField
           variant="outlined"
           label="Restaraunt Name"
@@ -175,7 +175,7 @@ function EditRestForm(props) {
         />
         <TextField
           variant="outlined"
-          label="Address"
+          label="Restaurant Address"
           type="text"
           name="address"
           style={{ margin: "1rem" }}
@@ -188,7 +188,7 @@ function EditRestForm(props) {
         />
         <TextField
           variant="outlined"
-          label="Phone Number"
+          label="Restaurant Phone Number"
           type="text"
           name="phone"
           style={{ margin: "1rem" }}
@@ -201,7 +201,7 @@ function EditRestForm(props) {
         />
         <TextField
           variant="outlined"
-          label="Email"
+          label="Restaurant Email"
           type="text"
           name="email"
           style={{ margin: "1rem" }}
@@ -213,7 +213,7 @@ function EditRestForm(props) {
           })}
         />
         <div>
-          Please Input Your Restaurant's Profile Picture Below: 
+          Please Input Your Restaurant's Public Profile Picture Below: 
           <ul>
               <li>Recomended Image Dimensions - Height: 1280 px / Width: 2048 px</li>
               <li>Name Your File Following This Format: "RestaurantName_CityName"</li>

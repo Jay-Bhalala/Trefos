@@ -228,7 +228,7 @@ function RestaurantDashboard(props) {
             <Popup
               openPopup={openCreatePopup}
               setOpenPopup={setOpenCreatePopup}
-              title="Create New Restaurant"
+              title="Create A New Restaurant Below (All Information Provided Will Be Publicly Viewable)"
             >
               <CreateRestForm
                 onAddRest={() => {

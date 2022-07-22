@@ -1,0 +1,190 @@
+.about-us-heading-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.about-us-heading-text-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #F4ccac;
+    color: white;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.about-us-heading-text-10{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 0rem;
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.about-us-text{
+    font-weight: 750;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.about-us-text4{
+  font-weight: 750;
+  font-size: 3rem;
+}
+
+.our-mission-container{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.our-mission-container60{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 2.3rem;
+}
+
+.our-mission-container61{
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0rem;
+}
+
+.about-us-heading-text-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    margin-top: 2rem;
+}
+
+.how-we-impact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.lol{
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+@media screen and (min-width: 850px) {
+  .how-we-impact-container{
+    flex-direction: row;
+  }
+  .values-conatiner{
+    width: 20%;
+  }
+  .lol{
+    margin-right: 0rem;
+  margin-left: 0rem;
+  }
+}
+
+@media screen and (min-width: 1400px ) {
+  .values-conatiner{
+    width: 20%;
+    height: 15rem;
+  }
+}
+
+
+
+.values-conatiner{
+    background-color: lightgray;
+    padding: .5rem;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+.impact-description-container{
+    width: 100%;
+}
+
+.wrapper{
+    margin-top: 50px;
+  }
+  
+  .wrapper h1{
+    
+    font-size: 52px;
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  
+  .team{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+  
+  .team .team_member{
+    background: #fff;
+    margin: 5px;
+   
+    width: 300px;
+    padding: 20px;
+    line-height: 20px;
+    color: #8e8b8b;  
+    position: relative;
+  }
+  
+  .team .team_member h3{
+    color: #243c44;
+    font-size: 26px;
+    margin-top: 50px;
+  }
+  
+  .team .team_member p.role{
+    color: #ccc;
+    margin: 12px 0;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  
+  .team .team_member .team_img{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    margin-top: 1rem;
+  }
+  
+  .team .team_member .team_img img{
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+  }
+

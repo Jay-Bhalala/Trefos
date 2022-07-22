@@ -10,6 +10,7 @@ import Discover from "./pages/Discover.js";
 import MapDisplay from "./pages/MapDisplay.js";
 import Footer from "./Footer.js";
 import Viewable from "./pages/Viewable";
+import Volunteer from "./pages/Volunteer";
 
 import { listFoods, listRestaurants } from "./graphql/queries";
 import { API } from "aws-amplify";
@@ -69,6 +70,17 @@ function App() {
             <div>
               <NavbarDefault />
               <Contact />
+              <Footer />
+            </div>
+          }
+        />
+        <Route
+          exact
+          path="/volunteer"
+          element={
+            <div>
+              <NavbarDefault />
+              <Volunteer />
               <Footer />
             </div>
           }

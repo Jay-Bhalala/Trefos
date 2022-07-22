@@ -39,6 +39,7 @@ function NavbarDefault() {
                   <Nav className="justify-content-end flex-grow-1 pe-3">
                     <Nav.Link href="/discover">Discover Restaurants</Nav.Link>
                     <Nav.Link href="/restaurant">Restaurant Dashboard</Nav.Link>
+                    <Nav.Link href="/volunteer">Volunteering</Nav.Link>
                     <Nav.Link href="/aboutus">About Us</Nav.Link>
                     <Nav.Link href="/contactus">Contact</Nav.Link>
                   </Nav>

@@ -216,6 +216,7 @@ function RestaurantDashboard(props) {
                   <AddFoodForm
                     id={restaurant.id}
                     pounds={restaurant.pounds}
+                    totalpounds={restaurant.totalpounds}
                     onAddFood={() => {
                       fetchFoods();
                       fetchRest();

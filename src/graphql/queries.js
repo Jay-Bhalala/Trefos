@@ -48,6 +48,7 @@ export const getRestaurant = /* GraphQL */ `
       email
       type
       pounds
+      totalpounds
       Foods {
         items {
           id
@@ -86,6 +87,7 @@ export const listRestaurants = /* GraphQL */ `
         email
         type
         pounds
+        totalpounds
         Foods {
           nextToken
         }
@@ -125,6 +127,7 @@ export const restaurantsByPounds = /* GraphQL */ `
         email
         type
         pounds
+        totalpounds
         Foods {
           nextToken
         }
@@ -164,6 +167,7 @@ export const searchRestaurants = /* GraphQL */ `
         email
         type
         pounds
+        totalpounds
         Foods {
           nextToken
         }

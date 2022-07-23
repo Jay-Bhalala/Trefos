@@ -15,6 +15,7 @@ type Restaurant @model @searchable @auth(rules: [{allow: owner}, {allow: public,
   email: String!
   type: String! @index(name: "restaurantsByPounds", queryField: "restaurantsByPounds", sortKeyFields: ["pounds"])
   pounds: Float!
+  totalpounds: Float!
   Foods: [Food] @hasMany(indexName: "byRestaurant", fields: ["id"])
   latitude: Float!
   longitude: Float!

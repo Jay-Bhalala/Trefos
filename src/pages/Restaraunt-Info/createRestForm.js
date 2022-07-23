@@ -98,6 +98,7 @@ function CreateRestForm(props) {
             longitude: longitude,
             type: "restaraunt",
             pounds: 0.0,
+            totalpounds: 0.0,
             image: url,
           },
         },

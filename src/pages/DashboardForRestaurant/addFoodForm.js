@@ -73,6 +73,7 @@ function AddFoodForm(props) {
           input: {
             id: props.id,
             pounds: Number(values.pounds) + Number(props.pounds),
+            totalpounds: Number(values.pounds) + Number(props.totalpounds),
           },
         },
       });
@@ -109,6 +110,9 @@ function AddFoodForm(props) {
             error: true,
             helperText: errors.daysOld,
           })}
+          InputProps={{
+            inputProps: { min: 0 }
+          }}
         />
         <TextField
           variant="outlined"
@@ -122,6 +126,9 @@ function AddFoodForm(props) {
             error: true,
             helperText: errors.pounds,
           })}
+          InputProps={{
+            inputProps: { min: 0 }
+          }}
         />
         <TextField
           variant="outlined"
@@ -135,6 +142,9 @@ function AddFoodForm(props) {
             error: true,
             helperText: errors.pickUp,
           })}
+          InputProps={{
+            inputProps: { min: 0 }
+          }}
         />
         <ThemeProvider theme={theme}>
           <Button color="neutral" variant="contained" type="submit">

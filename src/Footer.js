@@ -19,8 +19,9 @@ return (
 			</Column>
 			<Column>
 				<Heading>Services</Heading>
-				<FooterLink href="/restaurant">Restaurants</FooterLink>
-				<FooterLink href="/discover">Food Banks</FooterLink>
+				<FooterLink href="/restaurant">For Restaurants</FooterLink>
+				<FooterLink href="/discover">For Food Banks</FooterLink>
+				<FooterLink href="/volunteer">For Volunteers</FooterLink>
 			</Column>
 			<Column>
 				<Heading>Contact Us</Heading>

@@ -1,6 +1,6 @@
 import React from "react";
 import "../css-files/impactCard.css";
-import foodBank from "./foodbank.svg";
+import foodBank from "./undraw_deliveries_2r4y.svg";
 import connectIcon from "./connectIcon.svg";
 
 function impactCard(props) {

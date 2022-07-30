@@ -221,6 +221,8 @@ function Discover(props) {
               <RestaurantCard
                 restaurantName={stringUrl(restaurant.name)}
                 src1={restaurant.image}
+                address={restaurant.address}
+                pounds={restaurant.pounds}
               />
             );
           })}

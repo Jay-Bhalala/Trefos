@@ -185,6 +185,7 @@ function RestaurantDashboard(props) {
                           old={food.daysOld}
                           id={food.id}
                           onDelFood={() => {
+                            fetchRest();
                             fetchFoods();
                           }}
                         />

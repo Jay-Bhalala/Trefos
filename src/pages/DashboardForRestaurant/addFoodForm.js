@@ -67,6 +67,8 @@ function AddFoodForm(props) {
           },
         },
       });
+      console.log(props.pounds);
+      console.log(props.totalpounds);
       await API.graphql({
         query: updateRestaurant,
         variables: {
@@ -111,7 +113,7 @@ function AddFoodForm(props) {
             helperText: errors.daysOld,
           })}
           InputProps={{
-            inputProps: { min: 0 }
+            inputProps: { min: 0 },
           }}
         />
         <TextField
@@ -127,7 +129,7 @@ function AddFoodForm(props) {
             helperText: errors.pounds,
           })}
           InputProps={{
-            inputProps: { min: 0 }
+            inputProps: { min: 0, step: "any" },
           }}
         />
         <TextField
@@ -143,7 +145,7 @@ function AddFoodForm(props) {
             helperText: errors.pickUp,
           })}
           InputProps={{
-            inputProps: { min: 0 }
+            inputProps: { min: 0 },
           }}
         />
         <ThemeProvider theme={theme}>

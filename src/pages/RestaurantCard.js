@@ -47,6 +47,24 @@ function RestaurantCard(props) {
               >
                 {props.restaurantName}
               </p>
+              <p
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  fontWeight: "lighter",
+                }}
+              >
+                {props.address}
+              </p>
+              <p
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  fontWeight: "lighter",
+                }}
+              >
+                {props.pounds} Pounds of food avaiable
+              </p>
             </MDBCardTitle>
           </MDBCardBody>
         </MDBCard>

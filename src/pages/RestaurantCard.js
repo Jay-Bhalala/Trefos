@@ -63,7 +63,7 @@ function RestaurantCard(props) {
                   fontWeight: "lighter",
                 }}
               >
-                {props.pounds} Pounds of food avaiable
+                {props.pounds} Pounds Of Food Avaiable
               </p>
             </MDBCardTitle>
           </MDBCardBody>

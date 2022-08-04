@@ -30,7 +30,7 @@
 }
 
 .image-hidden{
-    display: block;
+    display: none;
 }
 
 .help-image-container{
@@ -41,9 +41,7 @@
 }
 
 @media screen and (max-width: 1600px) {
-    .image-hidden{
-        display: none;
-    }
+    
     .large-container{
         display: flex;
         flex-direction: row;
@@ -61,9 +59,9 @@
     }
   }
 
-@media screen and (max-width: 1350px) {
+@media screen and (min-width:1440px) {
     .image-hidden{
-        display: none;
+        display: block;
     }
   }
 
@@ -72,4 +70,6 @@
         margin-left: 0;
     }
   }
+
+  
 

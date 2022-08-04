@@ -64,6 +64,7 @@ function Viewable(props) {
                     days={foods.pickUp}
                     quantity={foods.pounds}
                     old={foods.daysOld}
+                    createdAt={foods.createdAt}
                   />
                 </div>
               );

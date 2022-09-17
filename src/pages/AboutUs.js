@@ -82,7 +82,7 @@ function AboutUs(props) {
               />
             </div>
             <h3>Nikhil Jain</h3>
-            <p class="role">Marketing Lead</p>
+            <p class="role">Co-Founder & Marketing Lead</p>
           </div>
         </div>
       </div>

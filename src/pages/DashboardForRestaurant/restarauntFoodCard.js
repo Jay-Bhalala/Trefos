@@ -54,7 +54,6 @@ function restarauntFoodCard(props) {
     <Card style={{ width: "18rem" }}>
       <Card.Body className="restaraunt-food-card-text">
         <Card.Title>{props.foodTitle}</Card.Title>
-        <Card.Text>Posted On : {props.createdAt.substring(0, 10)}</Card.Text>
         <Card.Text>{props.old} Day(s) Old</Card.Text>
         <Card.Text>{props.quantity} lbs</Card.Text>
         <Card.Text>Available To Pick Up For {props.days} Days</Card.Text>

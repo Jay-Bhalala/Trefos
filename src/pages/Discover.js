@@ -60,7 +60,6 @@ function Discover(props) {
       });
       const restaurantList = restaurantData.data.listRestaurants.items;
       setRestarauntInfo(restaurantList);
-      console.log(restaurantList);
     } catch (error) {
       console.log("error on fetching", error);
     }
@@ -95,7 +94,6 @@ function Discover(props) {
       });
       const restaurantAscDataList =
         restarauntAscData.data.searchRestaurants.items;
-      console.log(restaurantAscDataList);
       setRestarauntInfo(restaurantAscDataList);
     } catch (e) {
       console.log("error fetching asc", e);
@@ -178,7 +176,7 @@ function Discover(props) {
             Map Of All Registered Restaurants
           </Link>
         </div>
-        <div className="discover">
+        {/* <div className="discover">
           <MDBCol md="6">
             <input
               onKeyDown={handleSearch}
@@ -190,7 +188,7 @@ function Discover(props) {
               onChange={(e) => setSearchValue(e.target.value)}
             />
           </MDBCol>
-          {/* <div className="discover"> */}
+          <div className="discover">
           <DropdownButton
             align={{ lg: "end" }}
             title="Sort By:"
@@ -207,7 +205,7 @@ function Discover(props) {
               Descending Weight of Food Available
             </Dropdown.Item>
           </DropdownButton>
-        </div>
+        </div> */}
       </div>
       <div style={{ marginTop: "2rem" }}>
         <MDBRow className="row-cols-1 row-cols-xl-4 row-cols-md-2 row-cols-lg-2  g-4">

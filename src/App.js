@@ -32,7 +32,6 @@ function App() {
       const restaurantList = restaurantData.data.listRestaurants.items;
 
       setRestarauntInfo(restaurantList);
-      console.log(restaurantList);
     } catch (error) {
       console.log("error on fetching", error);
     }

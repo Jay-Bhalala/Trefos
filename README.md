@@ -1,5 +1,3 @@
-Programmers: Jay Bhalala & Jeremy Chuah
-
 Articles about Trefos:
 - [Plano Magazine](https://planomagazine.com/trefos/)
 - [Dallas Observer](https://www.dallasobserver.com/restaurants/food-waste-a-group-of-high-school-students-are-taking-action-14457220)
